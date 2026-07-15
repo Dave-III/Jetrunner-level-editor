@@ -1,0 +1,19 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "JETRUNNER Stub",
+  "Description": "Stub JETRUNNER classes for authoring custom maps.",
+  "Category": "Modding",
+  "CreatedBy": "JLE",
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "JETRUNNER",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "Flashback",
+  "Description": "Dummy mount point for Flashback content path testing.",
+  "Category": "Other",
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "IsExperimentalVersion": false,
+  "EnabledByDefault": true,
+  "Modules": []
+}

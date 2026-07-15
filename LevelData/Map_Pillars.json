@@ -1,0 +1,31 @@
+{
+  "levelName": "Map_Pillars",
+  "worldSettings": {
+    "defaultRuleset": "/Flashback/Content/Rulesets/TimeTrial/Ruleset_TimeTrial.Ruleset_TimeTrial",
+    "isMenuWorld": false,
+    "energyAtStart": 100.0,
+    "worldStartingPolarity": 0,
+    "isFlashbackWorld": true
+  },
+  "playerStart": {
+    "position": { "x": -600, "y": 0, "z": 200 },
+    "rotation": { "pitch": 0, "yaw": 0, "roll": 0 },
+    "teamId": 0
+  },
+  "objects": [
+    {
+      "id": "obj_001",
+      "assetId": "ice_platform_4x4",
+      "position": { "x": 0, "y": 0, "z": 100 },
+      "rotation": { "pitch": 0, "yaw": 0, "roll": 0 },
+      "scale": { "x": 2, "y": 2, "z": 0.25 }
+    },
+    {
+      "id": "obj_002",
+      "assetId": "launch_pad",
+      "position": { "x": 400, "y": 0, "z": 100 },
+      "rotation": { "pitch": 0, "yaw": 90, "roll": 0 },
+      "scale": { "x": 1, "y": 1, "z": 1 }
+    }
+  ]
+}
