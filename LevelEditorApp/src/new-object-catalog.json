@@ -1,0 +1,1358 @@
+[
+    {
+        "assetId":  "static_barrel",
+        "objectName":  "Barrel",
+        "label":  "Barrel",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bush_flower_01",
+        "objectName":  "Bush_Flower_01",
+        "label":  "Bush w/ Yellow Flowers",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stone_flower_bed_01",
+        "objectName":  "Stone_Flower_Bed_01",
+        "label":  "Flower Bed",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tree_02",
+        "objectName":  "Tree_02",
+        "label":  "Twisted Tree",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bushes_new_01",
+        "objectName":  "Bushes_New_01",
+        "label":  "Small Bush",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bushes_new_02",
+        "objectName":  "Bushes_New_02",
+        "label":  "Short Bush",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bushes_new_03",
+        "objectName":  "Bushes_New_03",
+        "label":  "Tall Bush",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bushes_new_04",
+        "objectName":  "Bushes_New_04",
+        "label":  "Round Bush",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bushes_new_04_flowers",
+        "objectName":  "Bushes_New_04_Flowers",
+        "label":  "Round Bush w/ Yellow Flowers",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bushes_new_05",
+        "objectName":  "Bushes_New_05",
+        "label":  "Dome Bush",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bushes_new_08",
+        "objectName":  "Bushes_New_08",
+        "label":  "Bush w/ Stem",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bushes_new_09",
+        "objectName":  "Bushes_New_09",
+        "label":  "Bush w/ Taller Stem",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bench_01",
+        "objectName":  "Bench_01",
+        "label":  "Wooden Bench",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tree_fallen_01",
+        "objectName":  "Tree_Fallen_01",
+        "label":  "Wood Log",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tree_stump_01",
+        "objectName":  "Tree_Stump_01",
+        "label":  "Tree Stump",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_rockformation_02",
+        "objectName":  "RockFormation_02",
+        "label":  "Mossy Rock Pillar",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_rockformation_04",
+        "objectName":  "RockFormation_04",
+        "label":  "Mossy Rock Stone",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_rocksround_one",
+        "objectName":  "RocksRound_One",
+        "label":  "Round Rock Pillar",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_rocksround_three",
+        "objectName":  "RocksRound_Three",
+        "label":  "Round Boulder",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tree_large_01",
+        "objectName":  "Tree_Large_01",
+        "label":  "Large Tree 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tree_large_02",
+        "objectName":  "Tree_Large_02",
+        "label":  "Large Tree 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tree_large_03",
+        "objectName":  "Tree_Large_03",
+        "label":  "Large Tree 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tree_large_04",
+        "objectName":  "Tree_Large_04",
+        "label":  "Large Tree 4",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_treebirch_01",
+        "objectName":  "TreeBirch_01",
+        "label":  "Birch Tree 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_treebirch_02",
+        "objectName":  "TreeBirch_02",
+        "label":  "Birch Tree 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_treebirch_03",
+        "objectName":  "TreeBirch_03",
+        "label":  "Birch Tree 4",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_treebirch_04",
+        "objectName":  "TreeBirch_04",
+        "label":  "Birch Tree 4",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_treebirch_05",
+        "objectName":  "TreeBirch_05",
+        "label":  "Birch Tree 5",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_fern_2",
+        "objectName":  "Fern_2",
+        "label":  "Small Plant",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cube_beveled",
+        "objectName":  "Cube_Beveled",
+        "label":  "White Rounded Cube",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_heart",
+        "objectName":  "Heart",
+        "label":  "Heart",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_starparticle",
+        "objectName":  "StarParticle",
+        "label":  "Star",
+        "note":  "initially horizontal"
+    },
+    {
+        "assetId":  "static_grass_clump_01",
+        "objectName":  "Grass_Clump_01",
+        "label":  "Grass 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_grass_clump_02",
+        "objectName":  "Grass_Clump_02",
+        "label":  "Grass 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_grass_clump_03",
+        "objectName":  "Grass_Clump_03",
+        "label":  "Grass 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_grass_clump_04",
+        "objectName":  "Grass_Clump_04",
+        "label":  "Grass 4",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_grass_clump_05",
+        "objectName":  "Grass_Clump_05",
+        "label":  "Grass 5",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_concretecube_cube_001",
+        "objectName":  "ConcreteCube_Cube_001",
+        "label":  "Concrete Cube",
+        "note":  "identical texture to the concrete pillar so Could get rid of but this would remove all the \"segments\" and can be used for anything"
+    },
+    {
+        "assetId":  "static_galley_planks_gallery",
+        "objectName":  "Galley_Planks_Gallery",
+        "label":  "Audience Gallery (Central Park)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_metalbeam",
+        "objectName":  "MetalBeam",
+        "label":  "Metal I Beam",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_platform_plank_leg",
+        "objectName":  "Platform_Plank_Leg",
+        "label":  "unsure ?",
+        "note":  "is the wooden legs that have no collision on the wooden platforms"
+    },
+    {
+        "assetId":  "static_rock",
+        "objectName":  "Rock",
+        "label":  "Mossy Stone",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_woodenbox",
+        "objectName":  "WoodenBox",
+        "label":  "Wooden Box",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tarp_meshes_sm_tarp_01",
+        "objectName":  "Tarp_Meshes_SM_Tarp_01",
+        "label":  "unsure",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tarp_meshes_sm_tarp_03",
+        "objectName":  "Tarp_Meshes_SM_Tarp_03",
+        "label":  "unsure",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tarp_meshes_sm_tarp_04",
+        "objectName":  "Tarp_Meshes_SM_Tarp_04",
+        "label":  "unsure",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tarp_meshes_sm_tarp_05",
+        "objectName":  "Tarp_Meshes_SM_Tarp_05",
+        "label":  "unsure",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_tarp_meshes_sm_tarp_06",
+        "objectName":  "Tarp_Meshes_SM_Tarp_06",
+        "label":  "unsure",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_constructionpathblocker",
+        "objectName":  "ConstructionPathBlocker",
+        "label":  "Construction Road Blocker",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_shippingcontainer",
+        "objectName":  "ShippingContainer",
+        "label":  "Shipping Container",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_reservoirbuildings_building1",
+        "objectName":  "ReservoirBuildings_Building1",
+        "label":  "Central Park Side Reservoir 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_reservoirbuildings_building2",
+        "objectName":  "ReservoirBuildings_Building2",
+        "label":  "Central Park Side Reservoir 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_reservoirbuildings_building3",
+        "objectName":  "ReservoirBuildings_Building3",
+        "label":  "Central Park Side Reservoir 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_flag",
+        "objectName":  "Flag",
+        "label":  "Setback Flag",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_leafpile2_flatt",
+        "objectName":  "LeafPile2_Flatt",
+        "label":  "Flat Leaf Pile",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_leafpile2_high",
+        "objectName":  "LeafPile2_High",
+        "label":  "Tall Leaf Pile",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_statue_theman",
+        "objectName":  "Statue_TheMan",
+        "label":  "Statue of Statue: The Man (Mossy)",
+        "note":  "check if kills player ?"
+    },
+    {
+        "assetId":  "static_statueplatform",
+        "objectName":  "StatuePlatform",
+        "label":  "Base of Statue: The Man",
+        "note":  "check if kills player ?"
+    },
+    {
+        "assetId":  "static_digitalgallery_gallery",
+        "objectName":  "DigitalGallery_Gallery",
+        "label":  "Audience Gallery (Red \u0026 Short)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_foliagehouse",
+        "objectName":  "FoliageHouse",
+        "label":  "Outhouse",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_07",
+        "objectName":  "Cliff_07",
+        "label":  "Tall Cliff (Mossy)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_08",
+        "objectName":  "Cliff_08",
+        "label":  "Cliff Cube (Mossy)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_09",
+        "objectName":  "Cliff_09",
+        "label":  "Cliff Pillar (Mossy)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_10",
+        "objectName":  "Cliff_10",
+        "label":  "Cliff Arch (Mossy)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_11",
+        "objectName":  "Cliff_11",
+        "label":  "Shorter Cliff Pillar (Mossy)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bglargerock",
+        "objectName":  "BGLargeRock",
+        "label":  "Mossy Stone Wedge",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_farmountains_mt1",
+        "objectName":  "FarMountains_Mt1",
+        "label":  "Mossy Mountain Peak",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_farplateau",
+        "objectName":  "FarPlateau",
+        "label":  "Mossy Mountain Plateau",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_vine01",
+        "objectName":  "Vine01",
+        "label":  "Vine 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_vine02",
+        "objectName":  "Vine02",
+        "label":  "Vine 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_vine05",
+        "objectName":  "Vine05",
+        "label":  "Vine 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_vine06",
+        "objectName":  "Vine06",
+        "label":  "Vine 4",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_vines_2m",
+        "objectName":  "Vines_2m",
+        "label":  "Vine Wall",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_building5",
+        "objectName":  "Building5",
+        "label":  "Skypiercer Building 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_building5_v2",
+        "objectName":  "Building5_V2",
+        "label":  "Skypiercer Building 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_building6",
+        "objectName":  "Building6",
+        "label":  "Skypiercer Building 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_building63",
+        "objectName":  "Building63",
+        "label":  "Skypiercer Sci-tech Building",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_building6_v2",
+        "objectName":  "Building6_V2",
+        "label":  "Skypiercer Building 4",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_building8",
+        "objectName":  "Building8",
+        "label":  "Skypiercer Gray Building",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_buildingfill1",
+        "objectName":  "BuildingFill1",
+        "label":  "Skypiercer Building 5",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_lottetower",
+        "objectName":  "LotteTower",
+        "label":  "Skypiercer Tower",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_sign_entertainment",
+        "objectName":  "Sign_Entertainment",
+        "label":  "Entertainment Sign",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_sign_hotel",
+        "objectName":  "Sign_HOTEL",
+        "label":  "Hotel Sign",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_sign_restaurant",
+        "objectName":  "Sign_Restaurant",
+        "label":  "Restaurant Sign",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_artinstallation01",
+        "objectName":  "ArtInstallation01",
+        "label":  "Hanging Sky Pillar (No Cables)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_artinstallation02",
+        "objectName":  "ArtInstallation02",
+        "label":  "Sky Pillar 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_artinstallation03",
+        "objectName":  "ArtInstallation03",
+        "label":  "Sky Pillar 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_artinstallation04",
+        "objectName":  "ArtInstallation04",
+        "label":  "Sky Pillar 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_mallbush",
+        "objectName":  "MallBush",
+        "label":  "Short Square Bush",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_mallbush_cube_001",
+        "objectName":  "MallBush_Cube_001",
+        "label":  "Tall Square Bush",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bone_osrs",
+        "objectName":  "Bone_OSRS",
+        "label":  "Small Bone Pile",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_bone_pile",
+        "objectName":  "Bone_Pile",
+        "label":  "Large Bone Pile",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_christmastree",
+        "objectName":  "ChristmasTree",
+        "label":  "Snowy Evergreen Tree",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_sword_sweihander",
+        "objectName":  "Sword_Sweihander",
+        "label":  "Sword",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_hookpad",
+        "objectName":  "HookPad",
+        "label":  "JetHook Pad",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_artic_light",
+        "objectName":  "Artic_Light",
+        "label":  "Light Pole",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_artic_pillar_2x1",
+        "objectName":  "Artic_Pillar_2x1",
+        "label":  "Arctic Pillar (2x1)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_artic_pillar_3x1",
+        "objectName":  "Artic_Pillar_3x1",
+        "label":  "Arctic Pillar (3x1)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_artic_platform",
+        "objectName":  "Artic_Platform",
+        "label":  "Arctic Platform",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_artic_platform_2x2",
+        "objectName":  "Artic_Platform_2x2",
+        "label":  "Arctic Platform (with cables)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_artic_tent",
+        "objectName":  "Artic_Tent",
+        "label":  "Arctic Tent",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_ice_arch",
+        "objectName":  "Ice_Arch",
+        "label":  "Ice Arch",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_icicles_01",
+        "objectName":  "icicles_01",
+        "label":  "Icicles 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_icicles_02",
+        "objectName":  "icicles_02",
+        "label":  "Icicles 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_pack_ice_01",
+        "objectName":  "Pack_Ice_01",
+        "label":  "Glacier",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_snow_01",
+        "objectName":  "Snow_01",
+        "label":  "Snow Platform",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_snow_pile_01",
+        "objectName":  "Snow_pile_01",
+        "label":  "Large Snow Pile",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_snow_pile_02",
+        "objectName":  "Snow_pile_02",
+        "label":  "Snow Pile (Edge)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_snowman",
+        "objectName":  "Snowman",
+        "label":  "Snowman",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_fjord_cruiseship_radiant_vista",
+        "objectName":  "Fjord_CruiseShip_Radiant_Vista",
+        "label":  "Cruise Ship",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_ice_chunksingle_00",
+        "objectName":  "Ice_ChunkSingle_00",
+        "label":  "Ice Chunk 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_ice_chunksingle_01",
+        "objectName":  "Ice_ChunkSingle_01",
+        "label":  "Ice Chunk 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_ice_chunksingle_02",
+        "objectName":  "Ice_ChunkSingle_02",
+        "label":  "Ice Chunk 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_ice_chunksingle_03",
+        "objectName":  "Ice_ChunkSingle_03",
+        "label":  "Ice Chunk 4",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_ice_chunksingle_04",
+        "objectName":  "Ice_ChunkSingle_04",
+        "label":  "Ice Chunk 5",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iciclesingle_00",
+        "objectName":  "IcicleSingle_00",
+        "label":  "Icicle (Up) 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iciclesingle_01",
+        "objectName":  "IcicleSingle_01",
+        "label":  "Icicle (Up) 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iciclesingle_02",
+        "objectName":  "IcicleSingle_02",
+        "label":  "Icicle (Up) 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_snow_chunksingle_00",
+        "objectName":  "Snow_ChunkSingle_00",
+        "label":  "Snow Chunk 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_snow_chunksingle_01",
+        "objectName":  "Snow_ChunkSingle_01",
+        "label":  "Snow Chunk 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_snow_chunksingle_02",
+        "objectName":  "Snow_ChunkSingle_02",
+        "label":  "Snow Chunk 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_snow_chunksingle_03",
+        "objectName":  "Snow_ChunkSingle_03",
+        "label":  "Snow Chunk 4",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_snow_chunksingle_04",
+        "objectName":  "Snow_ChunkSingle_04",
+        "label":  "Snow Chunk 5",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_ice_platform01",
+        "objectName":  "Ice_Platform01",
+        "label":  "Ice Platform (No Bottom)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iceberg01",
+        "objectName":  "IceBerg01",
+        "label":  "Iceberg (Square)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iceberg01_snow",
+        "objectName":  "IceBerg01_Snow",
+        "label":  "Snowy Iceberg (Square)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iceberg02",
+        "objectName":  "IceBerg02",
+        "label":  "Iceberg (Rect.)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iceberg02_snow",
+        "objectName":  "IceBerg02_Snow",
+        "label":  "Snowy Iceberg (Rect.)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iceberg03",
+        "objectName":  "IceBerg03",
+        "label":  "Iceberg (Oval)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iceberg03_snow",
+        "objectName":  "IceBerg03_Snow",
+        "label":  "Snowy Iceberg (Oval)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iceberg04",
+        "objectName":  "Iceberg04",
+        "label":  "Iceberg (D Shape)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iceberg04_snow",
+        "objectName":  "Iceberg04_Snow",
+        "label":  "Snowy Iceberg (D Shape)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iceberg06",
+        "objectName":  "Iceberg06",
+        "label":  "Jagged Iceberg",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iceberg08",
+        "objectName":  "Iceberg08",
+        "label":  "Pointy Iceberg",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_iceberg7",
+        "objectName":  "Iceberg7",
+        "label":  "Iceberg Wall",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_02",
+        "objectName":  "Cliff_02",
+        "label":  "Cliff 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_03",
+        "objectName":  "Cliff_03",
+        "label":  "Cliff 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_04",
+        "objectName":  "Cliff_04",
+        "label":  "Cliff 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_05",
+        "objectName":  "Cliff_05",
+        "label":  "Cliff 4",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_06",
+        "objectName":  "Cliff_06",
+        "label":  "Cliff 5",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_top_flat_01",
+        "objectName":  "Cliff_TOP_FLAT_01",
+        "label":  "Cliff Rock Cube 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cliff_top_flat_02",
+        "objectName":  "Cliff_TOP_FLAT_02",
+        "label":  "Cliff Rock Cube 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_doublefencewithrope",
+        "objectName":  "DoubleFenceWithRope",
+        "label":  "Fence w/ Rope",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_sparringdummy",
+        "objectName":  "SparringDummy",
+        "label":  "Sparring Pole",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_temple_bottom_4x4_01",
+        "objectName":  "Temple_Bottom_4x4_01",
+        "label":  "Peony House Base (4x4)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_torigate01",
+        "objectName":  "ToriGate01",
+        "label":  "Tori Gate",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_woodenoctagonplatform",
+        "objectName":  "WoodenOctagonPlatform",
+        "label":  "Wooden Octagon Platform",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_woodensquareplatform",
+        "objectName":  "WoodenSquarePlatform",
+        "label":  "Wooden Square Platform",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_temple_3x6_bottom_01",
+        "objectName":  "Temple_3x6_BOTTOM_01",
+        "label":  "Peony House Base (3x6)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_temple_bottom_4x5",
+        "objectName":  "Temple_Bottom_4x5",
+        "label":  "Peony House Base (4x5)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_peony_temple_3x6",
+        "objectName":  "Peony_Temple_3x6",
+        "label":  "Peony Temple (3x6)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_peony_temple_4x5",
+        "objectName":  "Peony_Temple_4x5",
+        "label":  "Peony Temple (4x5)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_peony_temple_5x6_2_openings",
+        "objectName":  "Peony_Temple_5x6_2_Openings",
+        "label":  "Peony Temple (5x6)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_peonytemple4x4_doors",
+        "objectName":  "PeonyTemple4x4_Doors",
+        "label":  "Peony Temple (4x4)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_sacredgroundstemple",
+        "objectName":  "SacredGroundsTemple",
+        "label":  "Peony Temple (Sacred Grounds)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_temple_tower_5x5_01",
+        "objectName":  "Temple_Tower_5x5_01",
+        "label":  "Peony Temple Tower (5x5)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_single_brick_01",
+        "objectName":  "Single_Brick_01",
+        "label":  "Brick 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_single_brick_02",
+        "objectName":  "Single_Brick_02",
+        "label":  "Brick 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_single_brick_03",
+        "objectName":  "Single_Brick_03",
+        "label":  "Brick 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_flowerpatch_blue",
+        "objectName":  "FlowerPatch_Blue",
+        "label":  "Blue Flowers",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_flowerpatch_orange",
+        "objectName":  "FlowerPatch_Orange",
+        "label":  "Orange Flowers",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_flowerpatch_peach",
+        "objectName":  "FlowerPatch_Peach",
+        "label":  "Peach Flowers",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_flowerpatch_purple",
+        "objectName":  "FlowerPatch_Purple",
+        "label":  "Purple Flowers",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_flowerpatch_red",
+        "objectName":  "FlowerPatch_Red",
+        "label":  "Red Flowers",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_flowerpatch_yellow",
+        "objectName":  "FlowerPatch_Yellow",
+        "label":  "Yellow Flowers",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_palm_00",
+        "objectName":  "Palm_00",
+        "label":  "Pam Tree",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_rio_attach_door_01",
+        "objectName":  "Rio_Attach_Door_01",
+        "label":  "Rio Door",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_rio_attach_window_01",
+        "objectName":  "Rio_Attach_Window_01",
+        "label":  "Rio Window (Boarded)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_rio_rock_01",
+        "objectName":  "Rio_Rock_01",
+        "label":  "Mossy Boulder",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_rio_rock_02",
+        "objectName":  "Rio_Rock_02",
+        "label":  "Mossy Pillar (Round)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_willowtree_00",
+        "objectName":  "WillowTree_00",
+        "label":  "Willow Tree 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_willowtree_02",
+        "objectName":  "WillowTree_02",
+        "label":  "Willow Tree 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_2x2_rio_house_01",
+        "objectName":  "2x2_RIO_House_01",
+        "label":  "Rio House (2x2)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_2x2_rio_platform_flat_01",
+        "objectName":  "2x2_Rio_Platform_Flat_01",
+        "label":  "Rio Dirt Platform (2x2)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_2x2_rio_platform_top_brick_01",
+        "objectName":  "2x2_Rio_Platform_TOP_Brick_01",
+        "label":  "Rio Brick Platform (2x2)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_2x3_rio_house_01",
+        "objectName":  "2x3_RIO_House_01",
+        "label":  "Rio House (2x3)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_2x3_rio_platform_top_brick_01",
+        "objectName":  "2x3_Rio_Platform_TOP_Brick_01",
+        "label":  "Rio Brick Platform (2x3)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_2x4_rop_platform_01",
+        "objectName":  "2x4_Rop_Platform_01",
+        "label":  "Rio Dirt Platform (2x3)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_2x3_stage_01",
+        "objectName":  "2x3_Stage_01",
+        "label":  "Stage Platform (2x3)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_effectbox_00",
+        "objectName":  "EffectBox_00",
+        "label":  "Control Box",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_effectbox_01",
+        "objectName":  "EffectBox_01",
+        "label":  "Control Box (Smaller)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_speakers_1x4_bent",
+        "objectName":  "Speakers_1x4_Bent",
+        "label":  "Speakers (Bent)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_1x1",
+        "objectName":  "Stage_1x1",
+        "label":  "Stage Platform (1x1)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_2x2",
+        "objectName":  "Stage_2x2",
+        "label":  "Stage Platform (2x2)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_2x3",
+        "objectName":  "Stage_2x3",
+        "label":  "Stage Platform (2x3)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_3x3",
+        "objectName":  "Stage_3x3",
+        "label":  "Stage Platform (3x3)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_acousticpanel_01",
+        "objectName":  "Stage_AcousticPanel_01",
+        "label":  "Acoustic Panel 1",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_acousticpanel_02",
+        "objectName":  "Stage_AcousticPanel_02",
+        "label":  "Acoustic Panel 2",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_acousticpanel_03",
+        "objectName":  "Stage_AcousticPanel_03",
+        "label":  "Acoustic Panel 3",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_floor01",
+        "objectName":  "Stage_Floor01",
+        "label":  "Stage Platform (No Support)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_speaker",
+        "objectName":  "Stage_Speaker",
+        "label":  "Tilted Speaker",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_speaker01",
+        "objectName":  "Stage_Speaker01",
+        "label":  "Speaker",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_spotlight",
+        "objectName":  "Stage_Spotlight",
+        "label":  "Stage Spotlight",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stage_storage_box",
+        "objectName":  "Stage_Storage_Box",
+        "label":  "Storage Box",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stageslope_filled",
+        "objectName":  "StageSlope_Filled",
+        "label":  "Stage Slope",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_stageslope_stair",
+        "objectName":  "StageSlope_Stair",
+        "label":  "Stage Stairs",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_strut_1x4_wall",
+        "objectName":  "Strut_1x4_Wall",
+        "label":  "Strut (1x4)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_strut_6x6",
+        "objectName":  "Strut_6x6",
+        "label":  "Strut Arch (6x6)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_ledarrowstraight",
+        "objectName":  "LEDArrowStraight",
+        "label":  "Arrow",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_x_sign",
+        "objectName":  "X_Sign",
+        "label":  "X Sign",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_fountain",
+        "objectName":  "Fountain",
+        "label":  "Fountain",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_specialplatform2x7_1",
+        "objectName":  "SpecialPlatform2x7_1",
+        "label":  "Grass Platform (2x7)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_toweredgecapdetail_1",
+        "objectName":  "TowerEdgeCapDetail_1",
+        "label":  "Gold Trim (Corner)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_toweredgedetail_1",
+        "objectName":  "TowerEdgeDetail_1",
+        "label":  "Gold Trim (Sharp Corner)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_towermidwalldetail_1",
+        "objectName":  "TowerMidWallDetail_1",
+        "label":  "Gold Trim (Wall)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_cloudbody",
+        "objectName":  "CloudBody",
+        "label":  "Cloud",
+        "note":  "check if kills player ?"
+    },
+    {
+        "assetId":  "static_basekit_cube_01",
+        "objectName":  "BaseKit_Cube_01",
+        "label":  "White Cube",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_cylinder_01",
+        "objectName":  "BaseKit_Cylinder_01",
+        "label":  "White Cylinder",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_door_01",
+        "objectName":  "BaseKit_Door_01",
+        "label":  "Orange Door",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_floor_01",
+        "objectName":  "BaseKit_Floor_01",
+        "label":  "White Platform (Square)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_floorcylinder_01",
+        "objectName":  "BaseKit_FloorCylinder_01",
+        "label":  "White Platform (Circle)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_floorquartercylinder_01",
+        "objectName":  "BaseKit_FloorQuarterCylinder_01",
+        "label":  "White Platform (1/4 Circle)",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_flootslope_01",
+        "objectName":  "BaseKit_FlootSlope_01",
+        "label":  "White Ramp",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_ledgecylinder_01",
+        "objectName":  "BaseKit_LedgeCylinder_01",
+        "label":  "White Rounded Circular Edge",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_ledgequartercylinder_01",
+        "objectName":  "BaseKit_LedgeQuarterCylinder_01",
+        "label":  "White Rounded 1/4 Circular Edge",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_pillar_01",
+        "objectName":  "BaseKit_Pillar_01",
+        "label":  "White Pillar",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_wall_01",
+        "objectName":  "BaseKit_Wall_01",
+        "label":  "White Wall",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_wallquartercylinder_01",
+        "objectName":  "BaseKit_WallQuarterCylinder_01",
+        "label":  "White 1/4 Cylinder Wall",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_basekit_wallslantedshort_01",
+        "objectName":  "BaseKit_WallSlantedShort_01",
+        "label":  "White Right Triangle",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_baskit_smol_door_01",
+        "objectName":  "Baskit_Smol_Door_01",
+        "label":  "White Door",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_baskit_smol_ledgecorner_01",
+        "objectName":  "Baskit_Smol_LedgeCorner_01",
+        "label":  "Orange Rectangle",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_baskit_smol_ledgecylinder_01",
+        "objectName":  "Baskit_Smol_LedgeCylinder_01",
+        "label":  "Orange Rounded Circular Edge",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_baskit_smol_ledgefloor_01",
+        "objectName":  "Baskit_Smol_LedgeFloor_01",
+        "label":  "Orange Plank",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_baskit_smol_ledgequartercylinder_01",
+        "objectName":  "Baskit_Smol_LedgeQuarterCylinder_01",
+        "label":  "Orange Rounded 1/4 Circular Edge",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_baskit_smol_pillar_01",
+        "objectName":  "Baskit_Smol_Pillar_01",
+        "label":  "Orange Pillar",
+        "note":  ""
+    },
+    {
+        "assetId":  "static_carpet",
+        "objectName":  "Carpet",
+        "label":  "Red Carpet",
+        "note":  ""
+    }
+]

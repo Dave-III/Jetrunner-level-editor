@@ -1,0 +1,77 @@
+# Unreal Engine generated output
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+Plugins/**/Binaries/
+Plugins/**/Intermediate/
+
+# Electron / Node generated output
+LevelEditorApp/node_modules/
+LevelEditorApp/dist/
+LevelEditorApp/.vite/
+LevelEditorApp/release*/
+LevelEditorApp/asar-stage*/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Generated level-editor output and inspection work
+Analysis/
+.asset-inspect*/
+.pak_compare/
+UAssetPipeline/Working/
+UAssetPipeline/Output/
+UAssetPipeline/Projects/
+UAssetPipeline/Packaging/
+UAssetPipeline/Inspection/
+UAssetPipeline/Staging/
+UAssetPipeline/RebuildFrameworkSource/
+UAssetPipeline/Vendor/
+PackagedMods/
+Output/
+BuildArtifacts/
+JETRUNNER-Level-Editor*/
+JLE 0.9.3*/
+Shipping-Cleanup-Archive/
+Levels/Verification Backups/
+Saved Levels/Verification Backups/
+Logs/
+BuildAndInstallLevel.latest*.log
+Scripts/__pycache__/
+
+# Bundled third-party binaries are supplied separately
+UAssetPipeline/Tools/UAssetGUI/*
+!UAssetPipeline/Tools/UAssetGUI/.gitkeep
+UAssetPipeline/Tools/repak/*
+!UAssetPipeline/Tools/repak/.gitkeep
+UAssetPipeline/Tools/FModel/
+UAssetPipeline/Tools/FModel.zip
+UAssetPipeline/Tools/node/
+UAssetPipeline/Resources/
+UAssetPipeline/TestOutput/
+
+# Large Unreal and packaged asset files
+*.pak
+*.ucas
+*.utoc
+*.uasset
+*.umap
+*.uexp
+*.ubulk
+*.uptnl
+
+# Keep source/template JSON and placeholder directories tracked
+!UAssetPipeline/Templates/
+!UAssetPipeline/Templates/.gitkeep
+
+# Local editor and OS files
+.codex-tmp/
+.vs/
+.vscode/
+.idea/
+*.sln.DotSettings.user
+Thumbs.db
+Desktop.ini
+.DS_Store

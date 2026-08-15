@@ -13,6 +13,10 @@ class JETRUNNER_API ASBPlayerStart : public APlayerStart
 public:
     ASBPlayerStart(const FObjectInitializer& ObjectInitializer);
 
+    /** Authoring helper used by the JSON compiler to serialize genuine tags. */
+    UFUNCTION(BlueprintCallable, Category = "JLE|Compiler")
+    void SetJLEGameplayTags(FName InGameModeTagName, FName InTeamTagName);
+
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (AllowPrivateAccess = true))
     FGameplayTag GameModeGameplayTag;
 

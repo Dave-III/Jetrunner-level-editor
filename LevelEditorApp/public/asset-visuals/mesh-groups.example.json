@@ -1,0 +1,20 @@
+{
+  "groups": {
+    "wooden_platform": [
+      "**/SM_Wooden_Square_Platform.glb",
+      "**/Wooden_Square_Platform.glb"
+    ],
+    "wooden_platform_2x2": [
+      "**/WoodenPlatform_2x2_Top.glb",
+      "**/WoodenPlatform_2x2_Bot.glb"
+    ],
+    "sky_platform": [
+      "**/SkyPlatform/**/*.glb"
+    ]
+  },
+  "familyAliases": {
+    "ice_platform_2x3": "ice_platform_2x2",
+    "ice_platform_2x4": "ice_platform_2x2",
+    "ice_platform_3x5": "ice_platform_2x2"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "levelName": "New_Static_Object_Smoke",
+  "levelId": "JLE_NEW_STATIC_OBJECT_SMOKE",
+  "playerStart": {
+    "position": { "x": 0, "y": 0, "z": 100 },
+    "rotation": { "pitch": 0, "yaw": 0, "roll": 0 }
+  },
+  "timeTrialGoal": {
+    "position": { "x": 500, "y": 0, "z": 100 },
+    "rotation": { "pitch": 0, "yaw": 0, "roll": 0 },
+    "scale": { "x": 1, "y": 1, "z": 1 }
+  },
+  "objects": [
+    {
+      "assetId": "static_barrel",
+      "position": { "x": 250, "y": 0, "z": 0 },
+      "rotation": { "pitch": 0, "yaw": 0, "roll": 0 },
+      "scale": { "x": 1, "y": 1, "z": 1 },
+      "entityData": {}
+    }
+  ]
+}

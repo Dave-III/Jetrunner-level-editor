@@ -1,0 +1,38 @@
+name: Release Windows editor
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows-release:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: LevelEditorApp
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: LevelEditorApp/package-lock.json
+      - run: npm ci
+      - name: Validate editor
+        working-directory: .
+        run: |
+          node Scripts/Validate-EditorInteractions.mjs
+          node Scripts/Audit-AssetSupport.mjs
+          node Scripts/Validate-AssetSupportSerialization.mjs
+          node Scripts/Validate-PreviewCollision.mjs
+      - name: Build NSIS installer and publish GitHub Release
+        run: npm run release:github
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CSC_LINK: ${{ secrets.WINDOWS_CERTIFICATE }}
+          CSC_KEY_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}

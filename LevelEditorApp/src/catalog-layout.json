@@ -1,0 +1,2626 @@
+[
+    {
+        "assetId":  "player_start",
+        "objectName":  "SBPlayerStart",
+        "label":  "Player Start",
+        "catalog":  "gameplay",
+        "group":  "game",
+        "order":  0
+    },
+    {
+        "assetId":  "energy_pickup",
+        "objectName":  "BP_EnergyPickup",
+        "label":  "Gun Pickup",
+        "catalog":  "gameplay",
+        "group":  "pickups",
+        "order":  1
+    },
+    {
+        "assetId":  "blast_jelly_container",
+        "objectName":  "BP_BlastJellyContainer",
+        "label":  "Blast Jelly",
+        "catalog":  "gameplay",
+        "group":  "traversal",
+        "order":  2
+    },
+    {
+        "assetId":  "polarity_flipper",
+        "objectName":  "BP_PolarityFlipper",
+        "label":  "Polarity Flipper",
+        "catalog":  "gameplay",
+        "group":  "interactable",
+        "order":  3
+    },
+    {
+        "assetId":  "damage_box",
+        "objectName":  "BP_DamageBox",
+        "label":  "Damage Box",
+        "catalog":  "gameplay",
+        "group":  "hazards",
+        "order":  4
+    },
+    {
+        "assetId":  "arcade_token",
+        "objectName":  "BP_ArcadeToken",
+        "label":  "Coin",
+        "catalog":  "gameplay",
+        "group":  "misc",
+        "order":  5
+    },
+    {
+        "assetId":  "time_trial_goal",
+        "objectName":  "BP_TimeTrialGoal_Sphere",
+        "label":  "Goal Sphere",
+        "catalog":  "gameplay",
+        "group":  "game",
+        "order":  6
+    },
+    {
+        "assetId":  "ability_jetleap",
+        "objectName":  "BP_ItemOrb_JetLeap",
+        "label":  "Leap Pickup",
+        "catalog":  "gameplay",
+        "group":  "pickups",
+        "order":  7
+    },
+    {
+        "assetId":  "blast_jelly_container_evil",
+        "objectName":  "BP_BlastJellyContainer_Evil",
+        "label":  "Evil Blast Jelly",
+        "catalog":  "gameplay",
+        "group":  "traversal",
+        "order":  8
+    },
+    {
+        "assetId":  "hardlight_box",
+        "objectName":  "BP_HardlightBox",
+        "label":  "Polarity Cube",
+        "catalog":  "gameplay",
+        "group":  "interactable",
+        "order":  9
+    },
+    {
+        "assetId":  "laser_beam",
+        "objectName":  "BP_LaserBeam",
+        "label":  "Laser Beam",
+        "catalog":  "gameplay",
+        "group":  "hazards",
+        "order":  10
+    },
+    {
+        "assetId":  "arcade_token_rainbow",
+        "objectName":  "BP_ArcadeToken",
+        "label":  "Rainbow Coin",
+        "catalog":  "gameplay",
+        "group":  "misc",
+        "order":  11
+    },
+    {
+        "assetId":  "enemy_plain",
+        "objectName":  "BP_Target_Plain",
+        "label":  "Plain Target",
+        "catalog":  "gameplay",
+        "group":  "game",
+        "order":  12
+    },
+    {
+        "assetId":  "ability_jetslam",
+        "objectName":  "BP_ItemOrb_JetSlam",
+        "label":  "Slam Pickup",
+        "catalog":  "gameplay",
+        "group":  "pickups",
+        "order":  13
+    },
+    {
+        "assetId":  "blast_jelly_container_grounded",
+        "objectName":  "BP_BlastJellyContainer_Grounded",
+        "label":  "Grounded Blast Jelly",
+        "catalog":  "gameplay",
+        "group":  "traversal",
+        "order":  14
+    },
+    {
+        "assetId":  "destructible_hard_virtual",
+        "objectName":  "BP_DestructibleHard_Virtual",
+        "label":  "Destructible Box (No Jelly)",
+        "catalog":  "gameplay",
+        "group":  "interactable",
+        "order":  15
+    },
+    {
+        "assetId":  "laser_wall",
+        "objectName":  "BP_LaserWall",
+        "label":  "Laser Wall",
+        "catalog":  "gameplay",
+        "group":  "hazards",
+        "order":  16
+    },
+    {
+        "assetId":  "swanboat",
+        "objectName":  "BP_Swanboat",
+        "label":  "Enrico",
+        "catalog":  "gameplay",
+        "group":  "misc",
+        "order":  17
+    },
+    {
+        "assetId":  "enemy_gun",
+        "objectName":  "BP_Target_Gun",
+        "label":  "Gun Target",
+        "catalog":  "gameplay",
+        "group":  "game",
+        "order":  18
+    },
+    {
+        "assetId":  "ability_jetjellybomb",
+        "objectName":  "BP_ItemOrb_JetJellyBomb",
+        "label":  "Jelly Pickup",
+        "catalog":  "gameplay",
+        "group":  "pickups",
+        "order":  19
+    },
+    {
+        "assetId":  "launch_pad",
+        "objectName":  "BP_LaunchPad_Big",
+        "label":  "Launch Pad",
+        "catalog":  "gameplay",
+        "group":  "traversal",
+        "order":  20
+    },
+    {
+        "assetId":  "destructible_hard_real_virtual",
+        "objectName":  "BP_DestructibleHard_RealVirtual",
+        "label":  "Destructible Box (All)",
+        "catalog":  "gameplay",
+        "group":  "interactable",
+        "order":  21
+    },
+    {
+        "assetId":  "water_body_big",
+        "objectName":  "BP_WaterBody_Big",
+        "label":  "Water",
+        "catalog":  "gameplay",
+        "group":  "hazards",
+        "order":  22
+    },
+    {
+        "assetId":  "juan",
+        "objectName":  "BP_Juan",
+        "label":  "Juan",
+        "catalog":  "gameplay",
+        "group":  "misc",
+        "order":  23
+    },
+    {
+        "assetId":  "enemy_gatling",
+        "objectName":  "BP_Target_Gatling",
+        "label":  "Gatling Target",
+        "catalog":  "gameplay",
+        "group":  "game",
+        "order":  24
+    },
+    {
+        "assetId":  "ability_jethook",
+        "objectName":  "BP_ItemOrb_JetHook",
+        "label":  "Hook Pickup",
+        "catalog":  "gameplay",
+        "group":  "pickups",
+        "order":  25
+    },
+    {
+        "assetId":  "launch_ring",
+        "objectName":  "BP_LaunchRing",
+        "label":  "Launch Ring",
+        "catalog":  "gameplay",
+        "group":  "traversal",
+        "order":  26
+    },
+    {
+        "assetId":  "destructible_hard_virtual_fragile",
+        "objectName":  "BP_DestructibleHard_Virtual_Fragile",
+        "label":  "Breakable Glass",
+        "catalog":  "gameplay",
+        "group":  "interactable",
+        "order":  27
+    },
+    {
+        "assetId":  "kill_cloud",
+        "objectName":  "BP_KillCloud",
+        "label":  "Kill Cloud",
+        "catalog":  "gameplay",
+        "group":  "hazards",
+        "order":  28
+    },
+    {
+        "assetId":  "enemy_laser",
+        "objectName":  "BP_Target_Laser",
+        "label":  "Laser Target",
+        "catalog":  "gameplay",
+        "group":  "game",
+        "order":  29
+    },
+    {
+        "assetId":  "ability_jetfreeze",
+        "objectName":  "BP_ItemOrb_JetFreeze",
+        "label":  "Freeze Pickup",
+        "catalog":  "gameplay",
+        "group":  "pickups",
+        "order":  30
+    },
+    {
+        "assetId":  "jetmill",
+        "objectName":  "BP_Jetmill",
+        "label":  "Jetmill",
+        "catalog":  "gameplay",
+        "group":  "traversal",
+        "order":  31
+    },
+    {
+        "assetId":  "calculator",
+        "objectName":  "BP_Calculator",
+        "label":  "Calculator",
+        "catalog":  "gameplay",
+        "group":  "interactable",
+        "order":  32
+    },
+    {
+        "assetId":  "statue_the_man",
+        "objectName":  "BP_Statue_TheMan",
+        "label":  "Kill Statue",
+        "catalog":  "gameplay",
+        "group":  "hazards",
+        "order":  33
+    },
+    {
+        "assetId":  "enemy_cannon",
+        "objectName":  "BP_Target_Cannon",
+        "label":  "Cannon Target",
+        "catalog":  "gameplay",
+        "group":  "game",
+        "order":  34
+    },
+    {
+        "assetId":  "ability_jetpolarizer",
+        "objectName":  "BP_ItemOrb_JetPolarizer",
+        "label":  "Polarizer Pickup",
+        "catalog":  "gameplay",
+        "group":  "pickups",
+        "order":  35
+    },
+    {
+        "assetId":  "swing_bar",
+        "objectName":  "BP_SwingBar",
+        "label":  "Swing Bar",
+        "catalog":  "gameplay",
+        "group":  "traversal",
+        "order":  36
+    },
+    {
+        "assetId":  "block_tree",
+        "objectName":  "BP_BlockTree",
+        "label":  "Block Tree",
+        "catalog":  "gameplay",
+        "group":  "interactable",
+        "order":  37
+    },
+    {
+        "assetId":  "lars",
+        "objectName":  "BP_Lars",
+        "label":  "Lars",
+        "catalog":  "gameplay",
+        "group":  "hazards",
+        "order":  38
+    },
+    {
+        "assetId":  "enemy_wall",
+        "objectName":  "BP_Target_Wall",
+        "label":  "Wall Target",
+        "catalog":  "gameplay",
+        "group":  "game",
+        "order":  39
+    },
+    {
+        "assetId":  "health_pickup",
+        "objectName":  "BP_HealthPickup",
+        "label":  "Health Pickup",
+        "catalog":  "gameplay",
+        "group":  "pickups",
+        "order":  40
+    },
+    {
+        "assetId":  "jet_bubble",
+        "objectName":  "BP_JetBubble",
+        "label":  "Jet Bubble",
+        "catalog":  "gameplay",
+        "group":  "traversal",
+        "order":  41
+    },
+    {
+        "assetId":  "jet_water_surface",
+        "objectName":  "BP_JetWaterSurface",
+        "label":  "Jet Bubble Plane",
+        "catalog":  "gameplay",
+        "group":  "traversal",
+        "order":  42
+    },
+    {
+        "assetId":  "wooden_platform",
+        "objectName":  "BP_WoodenPlatform",
+        "label":  "Wooden Platform",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  43
+    },
+    {
+        "assetId":  "concrete_pillar",
+        "objectName":  "BP_ConcretePillar",
+        "label":  "Concrete Pillar",
+        "catalog":  "surface",
+        "group":  "pillars",
+        "order":  44
+    },
+    {
+        "assetId":  "basekit_small_basewall",
+        "objectName":  "BP_Basekit_Smol_Basewall",
+        "label":  "Basic Wall (Legs)",
+        "catalog":  "surface",
+        "group":  "walls",
+        "order":  45
+    },
+    {
+        "assetId":  "basekit_small_hollow_cylinder",
+        "objectName":  "BP_BasekitSmol_HollowCylinder",
+        "label":  "Hollow Cylinder",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  46
+    },
+    {
+        "assetId":  "sky_platform",
+        "objectName":  "BP_SkyPlatform",
+        "label":  "Sky Platform",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  47
+    },
+    {
+        "assetId":  "ancient_pillar",
+        "objectName":  "BP_AncientPillar",
+        "label":  "Mossy Pillar",
+        "catalog":  "surface",
+        "group":  "pillars",
+        "order":  48
+    },
+    {
+        "assetId":  "basekit_small_basewall_alt",
+        "objectName":  "BP_Basekit_Smol_Basewall1",
+        "label":  "Basic Wall (No Legs)",
+        "catalog":  "surface",
+        "group":  "walls",
+        "order":  49
+    },
+    {
+        "assetId":  "basekit_small_ramp",
+        "objectName":  "BP_BasekitSmol_Ramp",
+        "label":  "Ramp",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  50
+    },
+    {
+        "assetId":  "sky_platform_blue",
+        "objectName":  "BP_SkyPlatform_Blue",
+        "label":  "Blue Sky Platform",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  51
+    },
+    {
+        "assetId":  "sky_pillar",
+        "objectName":  "BP_SkyPillar",
+        "label":  "Marble Pillar",
+        "catalog":  "surface",
+        "group":  "pillars",
+        "order":  52
+    },
+    {
+        "assetId":  "lcd_screen",
+        "objectName":  "BP_LCDScreen",
+        "label":  "Polarity Display",
+        "catalog":  "surface",
+        "group":  "walls",
+        "order":  53
+    },
+    {
+        "assetId":  "static_cube_beveled",
+        "objectName":  "Cube_Beveled",
+        "label":  "White Rounded Cube",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  54
+    },
+    {
+        "assetId":  "sky_platform_gold",
+        "objectName":  "BP_SkyPlatform_Gold",
+        "label":  "Gold Sky Platform",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  55
+    },
+    {
+        "assetId":  "basekit_small_cube_tower",
+        "objectName":  "BP_Basekit_Smol_CubeTower",
+        "label":  "Basic Cube Pillar",
+        "catalog":  "surface",
+        "group":  "pillars",
+        "order":  56
+    },
+    {
+        "assetId":  "static_basekit_wall_01",
+        "objectName":  "BaseKit_Wall_01",
+        "label":  "White Wall",
+        "catalog":  "surface",
+        "group":  "walls",
+        "order":  57
+    },
+    {
+        "assetId":  "static_concretecube_cube_001",
+        "objectName":  "ConcreteCube_Cube_001",
+        "label":  "Concrete Cube",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  58
+    },
+    {
+        "assetId":  "sky_platform_yellow",
+        "objectName":  "BP_SkyPlatform_Yellow",
+        "label":  "Yellow Sky Platform",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  59
+    },
+    {
+        "assetId":  "static_basekit_pillar_01",
+        "objectName":  "BaseKit_Pillar_01",
+        "label":  "White Pillar",
+        "catalog":  "surface",
+        "group":  "pillars",
+        "order":  60
+    },
+    {
+        "assetId":  "static_basekit_wallquartercylinder_01",
+        "objectName":  "BaseKit_WallQuarterCylinder_01",
+        "label":  "White 1/4 Cylinder Wall",
+        "catalog":  "surface",
+        "group":  "walls",
+        "order":  61
+    },
+    {
+        "assetId":  "static_basekit_cube_01",
+        "objectName":  "BaseKit_Cube_01",
+        "label":  "White Cube",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  62
+    },
+    {
+        "assetId":  "basekit_small_platform",
+        "objectName":  "BP_BasekitSmol_BasePlatform",
+        "label":  "Base Platform (Full Outline)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  63
+    },
+    {
+        "assetId":  "static_baskit_smol_ledgecorner_01",
+        "objectName":  "Baskit_Smol_LedgeCorner_01",
+        "label":  "Orange Rectangle",
+        "catalog":  "surface",
+        "group":  "pillars",
+        "order":  64
+    },
+    {
+        "assetId":  "static_basekit_cylinder_01",
+        "objectName":  "BaseKit_Cylinder_01",
+        "label":  "White Cylinder",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  65
+    },
+    {
+        "assetId":  "basekit_small_platform_alt_1",
+        "objectName":  "BP_BasekitSmol_BasePlatform1",
+        "label":  "Base Platform (Side Outline)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  66
+    },
+    {
+        "assetId":  "static_baskit_smol_pillar_01",
+        "objectName":  "Baskit_Smol_Pillar_01",
+        "label":  "Orange Pillar",
+        "catalog":  "surface",
+        "group":  "pillars",
+        "order":  67
+    },
+    {
+        "assetId":  "static_basekit_door_01",
+        "objectName":  "BaseKit_Door_01",
+        "label":  "Orange Door",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  68
+    },
+    {
+        "assetId":  "basekit_small_platform_alt_2",
+        "objectName":  "BP_BasekitSmol_BasePlatform2",
+        "label":  "Base Platform (3/4 Outline)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  69
+    },
+    {
+        "assetId":  "static_artic_pillar_2x1",
+        "objectName":  "Artic_Pillar_2x1",
+        "label":  "Arctic Pillar (2x1)",
+        "catalog":  "surface",
+        "group":  "pillars",
+        "order":  70
+    },
+    {
+        "assetId":  "static_basekit_flootslope_01",
+        "objectName":  "BaseKit_FlootSlope_01",
+        "label":  "White Ramp",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  71
+    },
+    {
+        "assetId":  "basekit_small_platform_alt_3",
+        "objectName":  "BP_BasekitSmol_BasePlatform3",
+        "label":  "Base Platform (No Outline)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  72
+    },
+    {
+        "assetId":  "static_artic_pillar_3x1",
+        "objectName":  "Artic_Pillar_3x1",
+        "label":  "Arctic Pillar (3x1)",
+        "catalog":  "surface",
+        "group":  "pillars",
+        "order":  73
+    },
+    {
+        "assetId":  "static_basekit_ledgecylinder_01",
+        "objectName":  "BaseKit_LedgeCylinder_01",
+        "label":  "White Rounded Circular Edge",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  74
+    },
+    {
+        "assetId":  "digital_platform",
+        "objectName":  "BP_DigitalPlatform",
+        "label":  "Virtual Platform (Pink)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  75
+    },
+    {
+        "assetId":  "static_basekit_ledgequartercylinder_01",
+        "objectName":  "BaseKit_LedgeQuarterCylinder_01",
+        "label":  "White Rounded 1/4 Circular Edge",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  76
+    },
+    {
+        "assetId":  "virtual_platform_dark",
+        "objectName":  "BP_RealVirtualPlatform_Dark",
+        "label":  "Virtual Platform (Gray)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  77
+    },
+    {
+        "assetId":  "static_basekit_wallslantedshort_01",
+        "objectName":  "BaseKit_WallSlantedShort_01",
+        "label":  "White Right Triangle",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  78
+    },
+    {
+        "assetId":  "virtual_platform_orange",
+        "objectName":  "BP_RealVirtualPlatform_Orange",
+        "label":  "Virtual Platform (Orange)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  79
+    },
+    {
+        "assetId":  "static_baskit_smol_door_01",
+        "objectName":  "Baskit_Smol_Door_01",
+        "label":  "White Door",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  80
+    },
+    {
+        "assetId":  "virtual_platform_purple",
+        "objectName":  "BP_RealVirtualPlatform_Purple",
+        "label":  "Virtual Platform (Purple)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  81
+    },
+    {
+        "assetId":  "static_baskit_smol_ledgecylinder_01",
+        "objectName":  "Baskit_Smol_LedgeCylinder_01",
+        "label":  "Orange Rounded Circular Edge",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  82
+    },
+    {
+        "assetId":  "virtual_platform_purple_orange",
+        "objectName":  "BP_RealVirtualPlatform_PurpleAndOrange",
+        "label":  "Virtual Platform (Purple w/ Orange Outline)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  83
+    },
+    {
+        "assetId":  "static_baskit_smol_ledgefloor_01",
+        "objectName":  "Baskit_Smol_LedgeFloor_01",
+        "label":  "Orange Plank",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  84
+    },
+    {
+        "assetId":  "virtual_platform_white",
+        "objectName":  "BP_RealVirtualPlatform_White",
+        "label":  "Virtual Platform (White)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  85
+    },
+    {
+        "assetId":  "static_baskit_smol_ledgequartercylinder_01",
+        "objectName":  "Baskit_Smol_LedgeQuarterCylinder_01",
+        "label":  "Orange Rounded 1/4 Circular Edge",
+        "catalog":  "surface",
+        "group":  "extras",
+        "order":  86
+    },
+    {
+        "assetId":  "virtual_platform_white_blue",
+        "objectName":  "BP_RealVirtualPlatform_WhiteAndBlue",
+        "label":  "Virtual Platform (White w/ Blue Outline)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  87
+    },
+    {
+        "assetId":  "virtual_platform_white_gold",
+        "objectName":  "BP_RealVirtualPlatform_WhiteAndGold",
+        "label":  "Virtual Platform (White w/ Gold Outline)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  88
+    },
+    {
+        "assetId":  "virtual_platform_white_orange",
+        "objectName":  "BP_RealVirtualPlatform_WhiteAndOrange",
+        "label":  "Virtual Platform (White w/ Orange Outline)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  89
+    },
+    {
+        "assetId":  "virtual_platform_white_red",
+        "objectName":  "BP_RealVirtualPlatform_WhiteAndRed",
+        "label":  "Virtual Platform (White w/ Red Outline)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  90
+    },
+    {
+        "assetId":  "static_basekit_floor_01",
+        "objectName":  "BaseKit_Floor_01",
+        "label":  "White Platform (Square)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  91
+    },
+    {
+        "assetId":  "static_basekit_floorcylinder_01",
+        "objectName":  "BaseKit_FloorCylinder_01",
+        "label":  "White Platform (Circle)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  92
+    },
+    {
+        "assetId":  "static_basekit_floorquartercylinder_01",
+        "objectName":  "BaseKit_FloorQuarterCylinder_01",
+        "label":  "White Platform (1/4 Circle)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  93
+    },
+    {
+        "assetId":  "static_ice_platform01",
+        "objectName":  "Ice_Platform01",
+        "label":  "Ice Platform (No Bottom)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  94
+    },
+    {
+        "assetId":  "ice_platform_4x4",
+        "objectName":  "BP_RealVirtualPlatform_Ice",
+        "label":  "Ice Platform",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  94
+    },
+    {
+        "assetId":  "static_artic_platform",
+        "objectName":  "Artic_Platform",
+        "label":  "Arctic Platform",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  95
+    },
+    {
+        "assetId":  "static_artic_platform_2x2",
+        "objectName":  "Artic_Platform_2x2",
+        "label":  "Arctic Platform (with cables)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  96
+    },
+    {
+        "assetId":  "static_snow_01",
+        "objectName":  "Snow_01",
+        "label":  "Snow Platform",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  97
+    },
+    {
+        "assetId":  "static_woodenoctagonplatform",
+        "objectName":  "WoodenOctagonPlatform",
+        "label":  "Wooden Octagon Platform",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  98
+    },
+    {
+        "assetId":  "static_woodensquareplatform",
+        "objectName":  "WoodenSquarePlatform",
+        "label":  "Wooden Square Platform",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  99
+    },
+    {
+        "assetId":  "static_2x2_rio_platform_flat_01",
+        "objectName":  "2x2_Rio_Platform_Flat_01",
+        "label":  "Rio Dirt Platform (2x2)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  100
+    },
+    {
+        "assetId":  "static_2x2_rio_platform_top_brick_01",
+        "objectName":  "2x2_Rio_Platform_TOP_Brick_01",
+        "label":  "Rio Brick Platform (2x2)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  101
+    },
+    {
+        "assetId":  "static_2x3_rio_platform_top_brick_01",
+        "objectName":  "2x3_Rio_Platform_TOP_Brick_01",
+        "label":  "Rio Brick Platform (2x3)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  102
+    },
+    {
+        "assetId":  "static_2x4_rop_platform_01",
+        "objectName":  "2x4_Rop_Platform_01",
+        "label":  "Rio Dirt Platform (2x3)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  103
+    },
+    {
+        "assetId":  "static_2x3_stage_01",
+        "objectName":  "2x3_Stage_01",
+        "label":  "Stage Platform (2x3)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  104
+    },
+    {
+        "assetId":  "static_stage_1x1",
+        "objectName":  "Stage_1x1",
+        "label":  "Stage Platform (1x1)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  105
+    },
+    {
+        "assetId":  "static_stage_2x2",
+        "objectName":  "Stage_2x2",
+        "label":  "Stage Platform (2x2)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  106
+    },
+    {
+        "assetId":  "static_stage_2x3",
+        "objectName":  "Stage_2x3",
+        "label":  "Stage Platform (2x3)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  107
+    },
+    {
+        "assetId":  "static_stage_3x3",
+        "objectName":  "Stage_3x3",
+        "label":  "Stage Platform (3x3)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  108
+    },
+    {
+        "assetId":  "static_stage_floor01",
+        "objectName":  "Stage_Floor01",
+        "label":  "Stage Platform (No Support)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  109
+    },
+    {
+        "assetId":  "static_specialplatform2x7_1",
+        "objectName":  "SpecialPlatform2x7_1",
+        "label":  "Grass Platform (2x7)",
+        "catalog":  "surface",
+        "group":  "platforms",
+        "order":  110
+    },
+    {
+        "assetId":  "torch_wall",
+        "objectName":  "BP_Torch_Wall",
+        "label":  "Wall Torch",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  111
+    },
+    {
+        "assetId":  "crane",
+        "objectName":  "BP_Crane",
+        "label":  "Crane",
+        "catalog":  "props",
+        "group":  "large",
+        "order":  112
+    },
+    {
+        "assetId":  "light_pole",
+        "objectName":  "BP_LightPole",
+        "label":  "Light Pole",
+        "catalog":  "props",
+        "group":  "lights",
+        "order":  113
+    },
+    {
+        "assetId":  "static_galley_planks_gallery",
+        "objectName":  "Galley_Planks_Gallery",
+        "label":  "Audience Gallery (Central Park)",
+        "catalog":  "props",
+        "group":  "audience",
+        "order":  114
+    },
+    {
+        "assetId":  "static_bush_flower_01",
+        "objectName":  "Bush_Flower_01",
+        "label":  "Bush w/ Yellow Flowers",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  115
+    },
+    {
+        "assetId":  "static_rockformation_02",
+        "objectName":  "RockFormation_02",
+        "label":  "Mossy Rock Pillar",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  116
+    },
+    {
+        "assetId":  "static_foliagehouse",
+        "objectName":  "FoliageHouse",
+        "label":  "Outhouse",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  117
+    },
+    {
+        "assetId":  "setback_bounds_waterfall",
+        "objectName":  "BP_SetbackBoundsWaterfall",
+        "label":  "Small Waterfall",
+        "catalog":  "props",
+        "group":  "misc",
+        "order":  118
+    },
+    {
+        "assetId":  "torch_floor",
+        "objectName":  "BP_Torch_Floor",
+        "label":  "Floor Torch",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  119
+    },
+    {
+        "assetId":  "wall_monitor",
+        "objectName":  "BP_WallMonitor",
+        "label":  "Advertisement Monitor",
+        "catalog":  "props",
+        "group":  "large",
+        "order":  120
+    },
+    {
+        "assetId":  "artic_spotlight",
+        "objectName":  "BP_Artic_Spotlight",
+        "label":  "Floor Mounted Spotlight",
+        "catalog":  "props",
+        "group":  "lights",
+        "order":  121
+    },
+    {
+        "assetId":  "digital_audience_gallery",
+        "objectName":  "BP_DigitalAudienceGallery",
+        "label":  "Audience Gallery (Blue)",
+        "catalog":  "props",
+        "group":  "audience",
+        "order":  122
+    },
+    {
+        "assetId":  "static_stone_flower_bed_01",
+        "objectName":  "Stone_Flower_Bed_01",
+        "label":  "Flower Bed",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  123
+    },
+    {
+        "assetId":  "static_rockformation_04",
+        "objectName":  "RockFormation_04",
+        "label":  "Mossy Rock Stone",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  124
+    },
+    {
+        "assetId":  "static_building5",
+        "objectName":  "Building5",
+        "label":  "Skypiercer Building 1",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  125
+    },
+    {
+        "assetId":  "static_heart",
+        "objectName":  "Heart",
+        "label":  "Heart",
+        "catalog":  "props",
+        "group":  "misc",
+        "order":  126
+    },
+    {
+        "assetId":  "chinese_lantern",
+        "objectName":  "BP_ChineseLantern",
+        "label":  "Chinese Lantern",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  127
+    },
+    {
+        "assetId":  "elevator",
+        "objectName":  "BP_Elevator",
+        "label":  "Elevator",
+        "catalog":  "props",
+        "group":  "large",
+        "order":  128
+    },
+    {
+        "assetId":  "artic_spotlight_child",
+        "objectName":  "BP_Artic_Spotlight_Child",
+        "label":  "Ceiling Mounted Spotlight",
+        "catalog":  "props",
+        "group":  "lights",
+        "order":  129
+    },
+    {
+        "assetId":  "digital_audience_gallery_synth",
+        "objectName":  "BP_DigitalAudienceGallery_Synth",
+        "label":  "Audience Gallery (Red)",
+        "catalog":  "props",
+        "group":  "audience",
+        "order":  130
+    },
+    {
+        "assetId":  "static_tree_02",
+        "objectName":  "Tree_02",
+        "label":  "Twisted Tree",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  131
+    },
+    {
+        "assetId":  "static_rocksround_one",
+        "objectName":  "RocksRound_One",
+        "label":  "Round Rock Pillar",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  132
+    },
+    {
+        "assetId":  "static_building5_v2",
+        "objectName":  "Building5_V2",
+        "label":  "Skypiercer Building 2",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  133
+    },
+    {
+        "assetId":  "static_starparticle",
+        "objectName":  "StarParticle",
+        "label":  "Star",
+        "catalog":  "props",
+        "group":  "misc",
+        "order":  134
+    },
+    {
+        "assetId":  "water_pipe",
+        "objectName":  "BP_WaterPipe",
+        "label":  "Water Pipe (Gray)",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  135
+    },
+    {
+        "assetId":  "window_cleaner",
+        "objectName":  "BP_WindowCleaner",
+        "label":  "Window Cleaner",
+        "catalog":  "props",
+        "group":  "large",
+        "order":  136
+    },
+    {
+        "assetId":  "spotlight",
+        "objectName":  "BP_Spotlight",
+        "label":  "Spotlight",
+        "catalog":  "props",
+        "group":  "lights",
+        "order":  137
+    },
+    {
+        "assetId":  "static_digitalgallery_gallery",
+        "objectName":  "DigitalGallery_Gallery",
+        "label":  "Audience Gallery (Red Short)",
+        "catalog":  "props",
+        "group":  "audience",
+        "order":  138
+    },
+    {
+        "assetId":  "static_bushes_new_01",
+        "objectName":  "Bushes_New_01",
+        "label":  "Small Bush",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  139
+    },
+    {
+        "assetId":  "static_rocksround_three",
+        "objectName":  "RocksRound_Three",
+        "label":  "Round Boulder",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  140
+    },
+    {
+        "assetId":  "static_building6",
+        "objectName":  "Building6",
+        "label":  "Skypiercer Building 3",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  141
+    },
+    {
+        "assetId":  "static_cloudbody",
+        "objectName":  "CloudBody",
+        "label":  "Cloud",
+        "catalog":  "props",
+        "group":  "misc",
+        "order":  142
+    },
+    {
+        "assetId":  "water_pipe_etheral",
+        "objectName":  "BP_WaterPipe_Etheral",
+        "label":  "Water Pipe (Brown)",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  143
+    },
+    {
+        "assetId":  "bg_flood_light",
+        "objectName":  "BP_BGFloodLight",
+        "label":  "Flood Light",
+        "catalog":  "props",
+        "group":  "lights",
+        "order":  145
+    },
+    {
+        "assetId":  "digital_audience_gallery_white",
+        "objectName":  "BP_DigitalAudienceGallery_White",
+        "label":  "Audience Gallery (White)",
+        "catalog":  "props",
+        "group":  "audience",
+        "order":  146
+    },
+    {
+        "assetId":  "static_bushes_new_02",
+        "objectName":  "Bushes_New_02",
+        "label":  "Short Bush",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  147
+    },
+    {
+        "assetId":  "static_cliff_07",
+        "objectName":  "Cliff_07",
+        "label":  "Tall Cliff (Mossy)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  148
+    },
+    {
+        "assetId":  "static_building63",
+        "objectName":  "Building63",
+        "label":  "Skypiercer Sci-tech Building",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  149
+    },
+    {
+        "assetId":  "static_carpet",
+        "objectName":  "Carpet",
+        "label":  "Red Carpet",
+        "catalog":  "props",
+        "group":  "misc",
+        "order":  150
+    },
+    {
+        "assetId":  "water_pipe_rave",
+        "objectName":  "BP_WaterPipe_Rave",
+        "label":  "Water Pipe (Blue)",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  151
+    },
+    {
+        "assetId":  "wall_monitor_blimp_peony",
+        "objectName":  "BP_WallMonitor_Blimp_Peony",
+        "label":  "Blimp (Peony)",
+        "catalog":  "props",
+        "group":  "large",
+        "order":  152
+    },
+    {
+        "assetId":  "light_rims_arrow_straight",
+        "objectName":  "BP_LightRims_ArrowStraight",
+        "label":  "Polarity Lit Arrow",
+        "catalog":  "props",
+        "group":  "lights",
+        "order":  153
+    },
+    {
+        "assetId":  "rio_gallery_shard",
+        "objectName":  "BP_RioGalleyShard",
+        "label":  "Audience Gallery (Rio)",
+        "catalog":  "props",
+        "group":  "audience",
+        "order":  154
+    },
+    {
+        "assetId":  "static_bushes_new_03",
+        "objectName":  "Bushes_New_03",
+        "label":  "Tall Bush",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  155
+    },
+    {
+        "assetId":  "static_cliff_08",
+        "objectName":  "Cliff_08",
+        "label":  "Cliff Cube (Mossy)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  156
+    },
+    {
+        "assetId":  "static_building6_v2",
+        "objectName":  "Building6_V2",
+        "label":  "Skypiercer Building 4",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  157
+    },
+    {
+        "assetId":  "static_tarp_meshes_sm_tarp_01",
+        "objectName":  "Tarp_Meshes_SM_Tarp_01",
+        "label":  "Tarp 1",
+        "catalog":  "props",
+        "group":  "misc",
+        "order":  158
+    },
+    {
+        "assetId":  "ladder",
+        "objectName":  "BP_Ladder",
+        "label":  "Ladder",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  159
+    },
+    {
+        "assetId":  "light_rims",
+        "objectName":  "BP_LightRims",
+        "label":  "Polarity Lit Glow Outline",
+        "catalog":  "props",
+        "group":  "lights",
+        "order":  161
+    },
+    {
+        "assetId":  "skypiercer_gallery_shard",
+        "objectName":  "BP_Skypiercer_GalleryShard_V2",
+        "label":  "Audience Gallery (Mumbai)",
+        "catalog":  "props",
+        "group":  "audience",
+        "order":  162
+    },
+    {
+        "assetId":  "static_bushes_new_04",
+        "objectName":  "Bushes_New_04",
+        "label":  "Round Bush",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  163
+    },
+    {
+        "assetId":  "static_cliff_09",
+        "objectName":  "Cliff_09",
+        "label":  "Cliff Pillar (Mossy)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  164
+    },
+    {
+        "assetId":  "static_building8",
+        "objectName":  "Building8",
+        "label":  "Skypiercer Gray Building",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  165
+    },
+    {
+        "assetId":  "static_tarp_meshes_sm_tarp_03",
+        "objectName":  "Tarp_Meshes_SM_Tarp_03",
+        "label":  "Tarp 2",
+        "catalog":  "props",
+        "group":  "misc",
+        "order":  166
+    },
+    {
+        "assetId":  "drone",
+        "objectName":  "BP_Drone",
+        "label":  "Static Drone",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  167
+    },
+    {
+        "assetId":  "static_artic_light",
+        "objectName":  "Artic_Light",
+        "label":  "Light Pole",
+        "catalog":  "props",
+        "group":  "lights",
+        "order":  169
+    },
+    {
+        "assetId":  "peony_spectating_box",
+        "objectName":  "BP_Peony_SpectatingBox",
+        "label":  "Audience Gallery (Peony)",
+        "catalog":  "props",
+        "group":  "audience",
+        "order":  170
+    },
+    {
+        "assetId":  "static_bushes_new_04_flowers",
+        "objectName":  "Bushes_New_04_Flowers",
+        "label":  "Round Bush w/ Yellow Flowers",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  171
+    },
+    {
+        "assetId":  "static_cliff_10",
+        "objectName":  "Cliff_10",
+        "label":  "Cliff Arch (Mossy)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  172
+    },
+    {
+        "assetId":  "static_buildingfill1",
+        "objectName":  "BuildingFill1",
+        "label":  "Skypiercer Building 5",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  173
+    },
+    {
+        "assetId":  "static_tarp_meshes_sm_tarp_04",
+        "objectName":  "Tarp_Meshes_SM_Tarp_04",
+        "label":  "Tarp 3",
+        "catalog":  "props",
+        "group":  "misc",
+        "order":  174
+    },
+    {
+        "assetId":  "spectator_drone",
+        "objectName":  "BP_SpectatorDrone",
+        "label":  "Moving Drone",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  175
+    },
+    {
+        "assetId":  "static_shippingcontainer",
+        "objectName":  "ShippingContainer",
+        "label":  "Shipping Container",
+        "catalog":  "props",
+        "group":  "large",
+        "order":  176
+    },
+    {
+        "assetId":  "static_bushes_new_05",
+        "objectName":  "Bushes_New_05",
+        "label":  "Dome Bush",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  177
+    },
+    {
+        "assetId":  "static_cliff_11",
+        "objectName":  "Cliff_11",
+        "label":  "Shorter Cliff Pillar (Mossy)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  178
+    },
+    {
+        "assetId":  "static_lottetower",
+        "objectName":  "LotteTower",
+        "label":  "Skypiercer Tower",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  179
+    },
+    {
+        "assetId":  "static_tarp_meshes_sm_tarp_05",
+        "objectName":  "Tarp_Meshes_SM_Tarp_05",
+        "label":  "Tarp 4",
+        "catalog":  "props",
+        "group":  "misc",
+        "order":  180
+    },
+    {
+        "assetId":  "static_barrel",
+        "objectName":  "Barrel",
+        "label":  "Barrel",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  181
+    },
+    {
+        "assetId":  "static_fjord_cruiseship_radiant_vista",
+        "objectName":  "Fjord_CruiseShip_Radiant_Vista",
+        "label":  "Cruise Ship",
+        "catalog":  "props",
+        "group":  "large",
+        "order":  182
+    },
+    {
+        "assetId":  "static_bushes_new_08",
+        "objectName":  "Bushes_New_08",
+        "label":  "Bush w/ Stem",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  183
+    },
+    {
+        "assetId":  "static_bglargerock",
+        "objectName":  "BGLargeRock",
+        "label":  "Mossy Stone Wedge",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  184
+    },
+    {
+        "assetId":  "static_temple_bottom_4x4_01",
+        "objectName":  "Temple_Bottom_4x4_01",
+        "label":  "Peony House Base (4x4)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  185
+    },
+    {
+        "assetId":  "static_tarp_meshes_sm_tarp_06",
+        "objectName":  "Tarp_Meshes_SM_Tarp_06",
+        "label":  "Tarp 5",
+        "catalog":  "props",
+        "group":  "misc",
+        "order":  186
+    },
+    {
+        "assetId":  "static_bench_01",
+        "objectName":  "Bench_01",
+        "label":  "Wooden Bench",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  187
+    },
+    {
+        "assetId":  "static_bushes_new_09",
+        "objectName":  "Bushes_New_09",
+        "label":  "Bush w/ Taller Stem",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  188
+    },
+    {
+        "assetId":  "static_farmountains_mt1",
+        "objectName":  "FarMountains_Mt1",
+        "label":  "Mossy Mountain Peak",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  189
+    },
+    {
+        "assetId":  "static_torigate01",
+        "objectName":  "ToriGate01",
+        "label":  "Tori Gate",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  190
+    },
+    {
+        "assetId":  "monorail",
+        "objectName":  "BP_Monorail",
+        "label":  "Monorail",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  191
+    },
+    {
+        "assetId":  "static_tree_fallen_01",
+        "objectName":  "Tree_Fallen_01",
+        "label":  "Wood Log",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  192
+    },
+    {
+        "assetId":  "static_farplateau",
+        "objectName":  "FarPlateau",
+        "label":  "Mossy Mountain Plateau",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  193
+    },
+    {
+        "assetId":  "static_temple_3x6_bottom_01",
+        "objectName":  "Temple_3x6_BOTTOM_01",
+        "label":  "Peony House Base (3x6)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  194
+    },
+    {
+        "assetId":  "static_woodenbox",
+        "objectName":  "WoodenBox",
+        "label":  "Wooden Box",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  195
+    },
+    {
+        "assetId":  "static_tree_stump_01",
+        "objectName":  "Tree_Stump_01",
+        "label":  "Tree Stump",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  196
+    },
+    {
+        "assetId":  "static_cliff_02",
+        "objectName":  "Cliff_02",
+        "label":  "Cliff 1",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  197
+    },
+    {
+        "assetId":  "static_temple_bottom_4x5",
+        "objectName":  "Temple_Bottom_4x5",
+        "label":  "Peony House Base (4x5)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  198
+    },
+    {
+        "assetId":  "static_constructionpathblocker",
+        "objectName":  "ConstructionPathBlocker",
+        "label":  "Construction Road Blocker",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  199
+    },
+    {
+        "assetId":  "destructible_leaf_pile",
+        "objectName":  "BP_LeafPile_Destructible",
+        "label":  "Leaf Pile",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  200
+    },
+    {
+        "assetId":  "static_cliff_03",
+        "objectName":  "Cliff_03",
+        "label":  "Cliff 2",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  201
+    },
+    {
+        "assetId":  "static_peony_temple_3x6",
+        "objectName":  "Peony_Temple_3x6",
+        "label":  "Peony Temple (3x6)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  202
+    },
+    {
+        "assetId":  "static_flag",
+        "objectName":  "Flag",
+        "label":  "Setback Flag",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  203
+    },
+    {
+        "assetId":  "static_tree_large_01",
+        "objectName":  "Tree_Large_01",
+        "label":  "Large Tree 1",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  204
+    },
+    {
+        "assetId":  "static_cliff_04",
+        "objectName":  "Cliff_04",
+        "label":  "Cliff 3",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  205
+    },
+    {
+        "assetId":  "static_peony_temple_4x5",
+        "objectName":  "Peony_Temple_4x5",
+        "label":  "Peony Temple (4x5)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  206
+    },
+    {
+        "assetId":  "static_statue_theman",
+        "objectName":  "Statue_TheMan",
+        "label":  "Statue of Statue: The Man (Mossy)",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  207
+    },
+    {
+        "assetId":  "static_tree_large_02",
+        "objectName":  "Tree_Large_02",
+        "label":  "Large Tree 2",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  208
+    },
+    {
+        "assetId":  "static_cliff_05",
+        "objectName":  "Cliff_05",
+        "label":  "Cliff 4",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  209
+    },
+    {
+        "assetId":  "static_peony_temple_5x6_2_openings",
+        "objectName":  "Peony_Temple_5x6_2_Openings",
+        "label":  "Peony Temple (5x6)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  210
+    },
+    {
+        "assetId":  "static_statueplatform",
+        "objectName":  "StatuePlatform",
+        "label":  "Base of Statue: The Man",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  211
+    },
+    {
+        "assetId":  "static_tree_large_03",
+        "objectName":  "Tree_Large_03",
+        "label":  "Large Tree 3",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  212
+    },
+    {
+        "assetId":  "static_cliff_06",
+        "objectName":  "Cliff_06",
+        "label":  "Cliff 5",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  213
+    },
+    {
+        "assetId":  "static_peonytemple4x4_doors",
+        "objectName":  "PeonyTemple4x4_Doors",
+        "label":  "Peony Temple (4x4)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  214
+    },
+    {
+        "assetId":  "static_bone_osrs",
+        "objectName":  "Bone_OSRS",
+        "label":  "Small Bone Pile",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  215
+    },
+    {
+        "assetId":  "static_tree_large_04",
+        "objectName":  "Tree_Large_04",
+        "label":  "Large Tree 4",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  216
+    },
+    {
+        "assetId":  "static_cliff_top_flat_01",
+        "objectName":  "Cliff_TOP_FLAT_01",
+        "label":  "Cliff Rock Cube 1",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  217
+    },
+    {
+        "assetId":  "static_sacredgroundstemple",
+        "objectName":  "SacredGroundsTemple",
+        "label":  "Peony Temple (Sacred Grounds)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  218
+    },
+    {
+        "assetId":  "static_bone_pile",
+        "objectName":  "Bone_Pile",
+        "label":  "Large Bone Pile",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  219
+    },
+    {
+        "assetId":  "static_treebirch_01",
+        "objectName":  "TreeBirch_01",
+        "label":  "Birch Tree 1",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  220
+    },
+    {
+        "assetId":  "static_cliff_top_flat_02",
+        "objectName":  "Cliff_TOP_FLAT_02",
+        "label":  "Cliff Rock Cube 2",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  221
+    },
+    {
+        "assetId":  "static_temple_tower_5x5_01",
+        "objectName":  "Temple_Tower_5x5_01",
+        "label":  "Peony Temple Tower (5x5)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  222
+    },
+    {
+        "assetId":  "static_sword_sweihander",
+        "objectName":  "Sword_Sweihander",
+        "label":  "Sword",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  223
+    },
+    {
+        "assetId":  "static_treebirch_02",
+        "objectName":  "TreeBirch_02",
+        "label":  "Birch Tree 3",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  224
+    },
+    {
+        "assetId":  "static_rock",
+        "objectName":  "Rock",
+        "label":  "Mossy Stone",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  225
+    },
+    {
+        "assetId":  "static_2x2_rio_house_01",
+        "objectName":  "2x2_RIO_House_01",
+        "label":  "Rio House (2x2)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  226
+    },
+    {
+        "assetId":  "static_snowman",
+        "objectName":  "Snowman",
+        "label":  "Snowman",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  227
+    },
+    {
+        "assetId":  "static_treebirch_03",
+        "objectName":  "TreeBirch_03",
+        "label":  "Birch Tree 4",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  228
+    },
+    {
+        "assetId":  "static_ice_chunksingle_00",
+        "objectName":  "Ice_ChunkSingle_00",
+        "label":  "Ice Chunk 1",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  229
+    },
+    {
+        "assetId":  "static_rio_attach_door_01",
+        "objectName":  "Rio_Attach_Door_01",
+        "label":  "Rio Door",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  230
+    },
+    {
+        "assetId":  "static_hookpad",
+        "objectName":  "HookPad",
+        "label":  "JetHook Pad",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  231
+    },
+    {
+        "assetId":  "static_treebirch_04",
+        "objectName":  "TreeBirch_04",
+        "label":  "Birch Tree 4",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  232
+    },
+    {
+        "assetId":  "static_ice_chunksingle_01",
+        "objectName":  "Ice_ChunkSingle_01",
+        "label":  "Ice Chunk 2",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  233
+    },
+    {
+        "assetId":  "static_rio_attach_window_01",
+        "objectName":  "Rio_Attach_Window_01",
+        "label":  "Rio Window (Boarded)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  234
+    },
+    {
+        "assetId":  "static_metalbeam",
+        "objectName":  "MetalBeam",
+        "label":  "Metal I Beam",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  235
+    },
+    {
+        "assetId":  "static_treebirch_05",
+        "objectName":  "TreeBirch_05",
+        "label":  "Birch Tree 5",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  236
+    },
+    {
+        "assetId":  "static_ice_chunksingle_02",
+        "objectName":  "Ice_ChunkSingle_02",
+        "label":  "Ice Chunk 3",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  237
+    },
+    {
+        "assetId":  "static_artinstallation01",
+        "objectName":  "ArtInstallation01",
+        "label":  "Hanging Sky Pillar (No Cables)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  238
+    },
+    {
+        "assetId":  "static_fountain",
+        "objectName":  "Fountain",
+        "label":  "Fountain",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  239
+    },
+    {
+        "assetId":  "static_fern_2",
+        "objectName":  "Fern_2",
+        "label":  "Small Plant",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  240
+    },
+    {
+        "assetId":  "static_ice_chunksingle_03",
+        "objectName":  "Ice_ChunkSingle_03",
+        "label":  "Ice Chunk 4",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  241
+    },
+    {
+        "assetId":  "static_artinstallation02",
+        "objectName":  "ArtInstallation02",
+        "label":  "Sky Pillar 1",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  242
+    },
+    {
+        "assetId":  "static_doublefencewithrope",
+        "objectName":  "DoubleFenceWithRope",
+        "label":  "Fence w/ Rope",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  243
+    },
+    {
+        "assetId":  "static_grass_clump_01",
+        "objectName":  "Grass_Clump_01",
+        "label":  "Grass 1",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  244
+    },
+    {
+        "assetId":  "static_ice_chunksingle_04",
+        "objectName":  "Ice_ChunkSingle_04",
+        "label":  "Ice Chunk 5",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  245
+    },
+    {
+        "assetId":  "static_artinstallation03",
+        "objectName":  "ArtInstallation03",
+        "label":  "Sky Pillar 2",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  246
+    },
+    {
+        "assetId":  "static_sparringdummy",
+        "objectName":  "SparringDummy",
+        "label":  "Sparring Pole",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  247
+    },
+    {
+        "assetId":  "static_grass_clump_02",
+        "objectName":  "Grass_Clump_02",
+        "label":  "Grass 2",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  248
+    },
+    {
+        "assetId":  "static_iciclesingle_00",
+        "objectName":  "IcicleSingle_00",
+        "label":  "Icicle (Up) 1",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  249
+    },
+    {
+        "assetId":  "static_artinstallation04",
+        "objectName":  "ArtInstallation04",
+        "label":  "Sky Pillar 3",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  250
+    },
+    {
+        "assetId":  "static_sign_entertainment",
+        "objectName":  "Sign_Entertainment",
+        "label":  "Entertainment Sign",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  251
+    },
+    {
+        "assetId":  "static_grass_clump_03",
+        "objectName":  "Grass_Clump_03",
+        "label":  "Grass 3",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  252
+    },
+    {
+        "assetId":  "static_iciclesingle_01",
+        "objectName":  "IcicleSingle_01",
+        "label":  "Icicle (Up) 2",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  253
+    },
+    {
+        "assetId":  "static_artic_tent",
+        "objectName":  "Artic_Tent",
+        "label":  "Arctic Tent",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  254
+    },
+    {
+        "assetId":  "static_sign_hotel",
+        "objectName":  "Sign_HOTEL",
+        "label":  "Hotel Sign",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  255
+    },
+    {
+        "assetId":  "static_grass_clump_04",
+        "objectName":  "Grass_Clump_04",
+        "label":  "Grass 4",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  256
+    },
+    {
+        "assetId":  "static_iciclesingle_02",
+        "objectName":  "IcicleSingle_02",
+        "label":  "Icicle (Up) 3",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  257
+    },
+    {
+        "assetId":  "static_2x3_rio_house_01",
+        "objectName":  "2x3_RIO_House_01",
+        "label":  "Rio House (2x3)",
+        "catalog":  "props",
+        "group":  "architecture",
+        "order":  258
+    },
+    {
+        "assetId":  "static_sign_restaurant",
+        "objectName":  "Sign_Restaurant",
+        "label":  "Restaurant Sign",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  259
+    },
+    {
+        "assetId":  "static_grass_clump_05",
+        "objectName":  "Grass_Clump_05",
+        "label":  "Grass 5",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  260
+    },
+    {
+        "assetId":  "static_snow_chunksingle_00",
+        "objectName":  "Snow_ChunkSingle_00",
+        "label":  "Snow Chunk 1",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  261
+    },
+    {
+        "assetId":  "static_stage_acousticpanel_01",
+        "objectName":  "Stage_AcousticPanel_01",
+        "label":  "Acoustic Panel 1",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  262
+    },
+    {
+        "assetId":  "static_leafpile2_flatt",
+        "objectName":  "LeafPile2_Flatt",
+        "label":  "Flat Leaf Pile",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  263
+    },
+    {
+        "assetId":  "static_snow_chunksingle_01",
+        "objectName":  "Snow_ChunkSingle_01",
+        "label":  "Snow Chunk 2",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  264
+    },
+    {
+        "assetId":  "static_stage_acousticpanel_02",
+        "objectName":  "Stage_AcousticPanel_02",
+        "label":  "Acoustic Panel 2",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  265
+    },
+    {
+        "assetId":  "static_leafpile2_high",
+        "objectName":  "LeafPile2_High",
+        "label":  "Tall Leaf Pile",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  266
+    },
+    {
+        "assetId":  "static_snow_chunksingle_02",
+        "objectName":  "Snow_ChunkSingle_02",
+        "label":  "Snow Chunk 3",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  267
+    },
+    {
+        "assetId":  "static_stage_acousticpanel_03",
+        "objectName":  "Stage_AcousticPanel_03",
+        "label":  "Acoustic Panel 3",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  268
+    },
+    {
+        "assetId":  "static_vine01",
+        "objectName":  "Vine01",
+        "label":  "Vine 1",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  269
+    },
+    {
+        "assetId":  "static_snow_chunksingle_03",
+        "objectName":  "Snow_ChunkSingle_03",
+        "label":  "Snow Chunk 4",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  270
+    },
+    {
+        "assetId":  "static_stage_speaker",
+        "objectName":  "Stage_Speaker",
+        "label":  "Tilted Speaker",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  271
+    },
+    {
+        "assetId":  "static_vine02",
+        "objectName":  "Vine02",
+        "label":  "Vine 2",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  272
+    },
+    {
+        "assetId":  "static_snow_chunksingle_04",
+        "objectName":  "Snow_ChunkSingle_04",
+        "label":  "Snow Chunk 5",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  273
+    },
+    {
+        "assetId":  "static_stage_speaker01",
+        "objectName":  "Stage_Speaker01",
+        "label":  "Speaker",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  274
+    },
+    {
+        "assetId":  "static_vine05",
+        "objectName":  "Vine05",
+        "label":  "Vine 3",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  275
+    },
+    {
+        "assetId":  "static_rio_rock_01",
+        "objectName":  "Rio_Rock_01",
+        "label":  "Mossy Boulder",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  276
+    },
+    {
+        "assetId":  "static_speakers_1x4_bent",
+        "objectName":  "Speakers_1x4_Bent",
+        "label":  "Speakers (Bent)",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  277
+    },
+    {
+        "assetId":  "static_vine06",
+        "objectName":  "Vine06",
+        "label":  "Vine 4",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  278
+    },
+    {
+        "assetId":  "static_rio_rock_02",
+        "objectName":  "Rio_Rock_02",
+        "label":  "Mossy Pillar (Round)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  279
+    },
+    {
+        "assetId":  "static_effectbox_00",
+        "objectName":  "EffectBox_00",
+        "label":  "Control Box",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  280
+    },
+    {
+        "assetId":  "static_vines_2m",
+        "objectName":  "Vines_2m",
+        "label":  "Vine Wall",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  281
+    },
+    {
+        "assetId":  "static_ice_arch",
+        "objectName":  "Ice_Arch",
+        "label":  "Ice Arch",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  282
+    },
+    {
+        "assetId":  "static_effectbox_01",
+        "objectName":  "EffectBox_01",
+        "label":  "Control Box (Smaller)",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  283
+    },
+    {
+        "assetId":  "static_mallbush",
+        "objectName":  "MallBush",
+        "label":  "Short Square Bush",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  284
+    },
+    {
+        "assetId":  "static_icicles_01",
+        "objectName":  "icicles_01",
+        "label":  "Icicles 1",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  285
+    },
+    {
+        "assetId":  "static_stage_spotlight",
+        "objectName":  "Stage_Spotlight",
+        "label":  "Stage Spotlight",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  286
+    },
+    {
+        "assetId":  "static_mallbush_cube_001",
+        "objectName":  "MallBush_Cube_001",
+        "label":  "Tall Square Bush",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  287
+    },
+    {
+        "assetId":  "static_icicles_02",
+        "objectName":  "icicles_02",
+        "label":  "Icicles 2",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  288
+    },
+    {
+        "assetId":  "static_stage_storage_box",
+        "objectName":  "Stage_Storage_Box",
+        "label":  "Storage Box",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  289
+    },
+    {
+        "assetId":  "static_christmastree",
+        "objectName":  "ChristmasTree",
+        "label":  "Snowy Evergreen Tree",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  290
+    },
+    {
+        "assetId":  "static_pack_ice_01",
+        "objectName":  "Pack_Ice_01",
+        "label":  "Glacier",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  291
+    },
+    {
+        "assetId":  "static_ledarrowstraight",
+        "objectName":  "LEDArrowStraight",
+        "label":  "Arrow",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  292
+    },
+    {
+        "assetId":  "static_flowerpatch_blue",
+        "objectName":  "FlowerPatch_Blue",
+        "label":  "Blue Flowers",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  293
+    },
+    {
+        "assetId":  "static_iceberg06",
+        "objectName":  "Iceberg06",
+        "label":  "Jagged Iceberg",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  294
+    },
+    {
+        "assetId":  "static_x_sign",
+        "objectName":  "X_Sign",
+        "label":  "X Sign",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  295
+    },
+    {
+        "assetId":  "static_flowerpatch_orange",
+        "objectName":  "FlowerPatch_Orange",
+        "label":  "Orange Flowers",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  296
+    },
+    {
+        "assetId":  "static_iceberg08",
+        "objectName":  "Iceberg08",
+        "label":  "Pointy Iceberg",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  297
+    },
+    {
+        "assetId":  "static_flowerpatch_peach",
+        "objectName":  "FlowerPatch_Peach",
+        "label":  "Peach Flowers",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  298
+    },
+    {
+        "assetId":  "static_iceberg7",
+        "objectName":  "Iceberg7",
+        "label":  "Iceberg Wall",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  299
+    },
+    {
+        "assetId":  "static_flowerpatch_purple",
+        "objectName":  "FlowerPatch_Purple",
+        "label":  "Purple Flowers",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  300
+    },
+    {
+        "assetId":  "static_iceberg01",
+        "objectName":  "IceBerg01",
+        "label":  "Iceberg (Square)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  301
+    },
+    {
+        "assetId":  "static_flowerpatch_red",
+        "objectName":  "FlowerPatch_Red",
+        "label":  "Red Flowers",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  302
+    },
+    {
+        "assetId":  "static_iceberg02",
+        "objectName":  "IceBerg02",
+        "label":  "Iceberg (Rect.)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  303
+    },
+    {
+        "assetId":  "static_flowerpatch_yellow",
+        "objectName":  "FlowerPatch_Yellow",
+        "label":  "Yellow Flowers",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  304
+    },
+    {
+        "assetId":  "static_iceberg03",
+        "objectName":  "IceBerg03",
+        "label":  "Iceberg (Oval)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  305
+    },
+    {
+        "assetId":  "static_palm_00",
+        "objectName":  "Palm_00",
+        "label":  "Pam Tree",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  306
+    },
+    {
+        "assetId":  "static_iceberg04",
+        "objectName":  "Iceberg04",
+        "label":  "Iceberg (D Shape)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  307
+    },
+    {
+        "assetId":  "static_willowtree_00",
+        "objectName":  "WillowTree_00",
+        "label":  "Willow Tree 1",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  308
+    },
+    {
+        "assetId":  "static_iceberg01_snow",
+        "objectName":  "IceBerg01_Snow",
+        "label":  "Snowy Iceberg (Square)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  309
+    },
+    {
+        "assetId":  "static_willowtree_02",
+        "objectName":  "WillowTree_02",
+        "label":  "Willow Tree 2",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  310
+    },
+    {
+        "assetId":  "static_iceberg02_snow",
+        "objectName":  "IceBerg02_Snow",
+        "label":  "Snowy Iceberg (Rect.)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  311
+    },
+    {
+        "assetId":  "static_snow_pile_01",
+        "objectName":  "Snow_pile_01",
+        "label":  "Large Snow Pile",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  312
+    },
+    {
+        "assetId":  "static_iceberg03_snow",
+        "objectName":  "IceBerg03_Snow",
+        "label":  "Snowy Iceberg (Oval)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  313
+    },
+    {
+        "assetId":  "static_snow_pile_02",
+        "objectName":  "Snow_pile_02",
+        "label":  "Snow Pile (Edge)",
+        "catalog":  "props",
+        "group":  "foliage",
+        "order":  314
+    },
+    {
+        "assetId":  "static_iceberg04_snow",
+        "objectName":  "Iceberg04_Snow",
+        "label":  "Snowy Iceberg (D Shape)",
+        "catalog":  "props",
+        "group":  "terrain",
+        "order":  315
+    },
+    {
+        "assetId":  "static_platform_plank_leg",
+        "objectName":  "Platform_Plank_Leg",
+        "label":  "unsure ?",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  316
+    },
+    {
+        "assetId":  "static_reservoirbuildings_building1",
+        "objectName":  "ReservoirBuildings_Building1",
+        "label":  "Central Park Side Reservoir 1",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  317
+    },
+    {
+        "assetId":  "static_reservoirbuildings_building2",
+        "objectName":  "ReservoirBuildings_Building2",
+        "label":  "Central Park Side Reservoir 2",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  318
+    },
+    {
+        "assetId":  "static_reservoirbuildings_building3",
+        "objectName":  "ReservoirBuildings_Building3",
+        "label":  "Central Park Side Reservoir 3",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  319
+    },
+    {
+        "assetId":  "static_single_brick_01",
+        "objectName":  "Single_Brick_01",
+        "label":  "Brick 1",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  320
+    },
+    {
+        "assetId":  "static_single_brick_02",
+        "objectName":  "Single_Brick_02",
+        "label":  "Brick 2",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  321
+    },
+    {
+        "assetId":  "static_single_brick_03",
+        "objectName":  "Single_Brick_03",
+        "label":  "Brick 3",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  322
+    },
+    {
+        "assetId":  "static_stageslope_filled",
+        "objectName":  "StageSlope_Filled",
+        "label":  "Stage Slope",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  323
+    },
+    {
+        "assetId":  "static_stageslope_stair",
+        "objectName":  "StageSlope_Stair",
+        "label":  "Stage Stairs",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  324
+    },
+    {
+        "assetId":  "static_strut_1x4_wall",
+        "objectName":  "Strut_1x4_Wall",
+        "label":  "Strut (1x4)",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  325
+    },
+    {
+        "assetId":  "static_strut_6x6",
+        "objectName":  "Strut_6x6",
+        "label":  "Strut Arch (6x6)",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  326
+    },
+    {
+        "assetId":  "static_toweredgecapdetail_1",
+        "objectName":  "TowerEdgeCapDetail_1",
+        "label":  "Gold Trim (Corner)",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  327
+    },
+    {
+        "assetId":  "static_toweredgedetail_1",
+        "objectName":  "TowerEdgeDetail_1",
+        "label":  "Gold Trim (Sharp Corner)",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  328
+    },
+    {
+        "assetId":  "static_towermidwalldetail_1",
+        "objectName":  "TowerMidWallDetail_1",
+        "label":  "Gold Trim (Wall)",
+        "catalog":  "props",
+        "group":  "props",
+        "order":  329
+    }
+]

@@ -1,0 +1,984 @@
+{
+  "schemaVersion": 1,
+  "meshCount": 118,
+  "assets": {
+    "Box_3D9A1A7A__5a88804f": {
+      "unrealPath": "/Flashback/Maps/Prototyping/Vegard/_GENERATED/vegar/Box_3D9A1A7A",
+      "preview": "./meshes/Box_3D9A1A7A__5a88804f.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_SecondFloor",
+        "Environment_NewYorkSubway"
+      ]
+    },
+    "Box_B5D36B4B__2828ff10": {
+      "unrealPath": "/Flashback/Maps/Prototyping/Vegard/_GENERATED/vegar/Box_B5D36B4B",
+      "preview": "./meshes/Box_B5D36B4B__2828ff10.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_Roof",
+        "EnvironmentExtension_NewYorkSubway_SecondFloor",
+        "Environment_NewYorkSubway"
+      ]
+    },
+    "Cube__899ca7a0": {
+      "unrealPath": "/Engine/Content/BasicShapes/Cube",
+      "preview": "./meshes/Cube__899ca7a0.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_Roof",
+        "EnvironmentExtension_NewYorkSubway_SecondFloor",
+        "Environment_CentralPark",
+        "Environment_NewYorkSubway",
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "Cylinder__2be6e7b2": {
+      "unrealPath": "/Engine/Content/BasicShapes/Cylinder",
+      "preview": "./meshes/Cylinder__2be6e7b2.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_Roof"
+      ]
+    },
+    "LP_DroneArm__80f8d81d": {
+      "unrealPath": "/Game/Maps/Common/Props/Drone/LP_DroneArm",
+      "preview": "./meshes/LP_DroneArm__80f8d81d.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "LP_DroneBody__e1ca59b4": {
+      "unrealPath": "/Game/Maps/Common/Props/Drone/LP_DroneBody",
+      "preview": "./meshes/LP_DroneBody__e1ca59b4.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "LP_DroneWing__a64b4336": {
+      "unrealPath": "/Game/Maps/Common/Props/Drone/LP_DroneWing",
+      "preview": "./meshes/LP_DroneWing__a64b4336.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "Plane__7e49afe9": {
+      "unrealPath": "/Engine/Content/BasicShapes/Plane",
+      "preview": "./meshes/Plane__7e49afe9.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_SecondFloor",
+        "Environment_CentralPark",
+        "Environment_NewYorkSubway",
+        "Environment_Geiranger",
+        "Backdrop_Peony_Mountainrange_ProcPlusLandscape",
+        "Env_Rio_FreeOfCorruption",
+        "Environment_Seoul",
+        "Environment_Skypiercer"
+      ]
+    },
+    "SM_ADMoonshape__6f813c32": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/Associated/SM_ADMoonshape",
+      "preview": "./meshes/SM_ADMoonshape__6f813c32.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_ADSideUpper__0970ddcc": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/Associated/SM_ADSideUpper",
+      "preview": "./meshes/SM_ADSideUpper__0970ddcc.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_ADUpper__07b7334a": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/Associated/SM_ADUpper",
+      "preview": "./meshes/SM_ADUpper__07b7334a.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_AD_UpperCorner__34f6c596": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/Associated/SM_AD_UpperCorner",
+      "preview": "./meshes/SM_AD_UpperCorner__34f6c596.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_AudienceBannersTopside__b9d1c547": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/Associated/SM_AudienceBannersTopside",
+      "preview": "./meshes/SM_AudienceBannersTopside__b9d1c547.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_BGFloodLight__c87b6385": {
+      "unrealPath": "/Game/Maps/Common/Props/BG_FloodLight/SM_BGFloodLight",
+      "preview": "./meshes/SM_BGFloodLight__c87b6385.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_BGLargeRock__b4487107": {
+      "unrealPath": "/Game/Maps/Peony/EnvironmentKits/Background/Meshes/SM_BGLargeRock",
+      "preview": "./meshes/SM_BGLargeRock__b4487107.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_BannerGroup_Roof__11817ae1": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_BannerGroup_Roof",
+      "preview": "./meshes/SM_BannerGroup_Roof__11817ae1.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_BannersBuilding_Fix__f8ecfb10": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/Associated/SM_BannersBuilding_Fix",
+      "preview": "./meshes/SM_BannersBuilding_Fix__f8ecfb10.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_BannersBuilding__65260c59": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/Associated/SM_BannersBuilding",
+      "preview": "./meshes/SM_BannersBuilding__65260c59.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SM_BannersBuilding__77f39546": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_BannersBuilding",
+      "preview": "./meshes/SM_BannersBuilding__77f39546.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_BannersSide__31ca4e71": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/Associated/SM_BannersSide",
+      "preview": "./meshes/SM_BannersSide__31ca4e71.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_BigSupportPillar__50da2021": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_BigSupportPillar",
+      "preview": "./meshes/SM_BigSupportPillar__50da2021.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_BigSupportbeam__18477079": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_BigSupportbeam",
+      "preview": "./meshes/SM_BigSupportbeam__18477079.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Building5_V2__27df83bc": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_Building5_V2",
+      "preview": "./meshes/SM_Building5_V2__27df83bc.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark",
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_Building5__ddcd2e00": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_Building5",
+      "preview": "./meshes/SM_Building5__ddcd2e00.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Building63__b0176cdb": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_Building63",
+      "preview": "./meshes/SM_Building63__b0176cdb.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Building6_V2__6a7c949b": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_Building6_V2",
+      "preview": "./meshes/SM_Building6_V2__6a7c949b.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark",
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_Building6__0f9eeca7": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_Building6",
+      "preview": "./meshes/SM_Building6__0f9eeca7.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Building8__05a172f7": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_Building8",
+      "preview": "./meshes/SM_Building8__05a172f7.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark",
+        "Env_Rio_FreeOfCorruption",
+        "Environment_Seoul"
+      ]
+    },
+    "SM_BuildingFill1__61002f3a": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_BuildingFill1",
+      "preview": "./meshes/SM_BuildingFill1__61002f3a.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark",
+        "Environment_Geiranger",
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_Cliff_07__4e0857b3": {
+      "unrealPath": "/Game/Maps/Peony/EnvironmentKits/ArtAssets/CLiffs/SM_Cliff_07",
+      "preview": "./meshes/SM_Cliff_07__4e0857b3.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Backdrop_Peony_Mountainrange_ProcPlusLandscape"
+      ]
+    },
+    "SM_Cliff_09__9d1a104d": {
+      "unrealPath": "/Game/Maps/Peony/EnvironmentKits/ArtAssets/CLiffs/SM_Cliff_09",
+      "preview": "./meshes/SM_Cliff_09__9d1a104d.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Backdrop_Peony_Mountainrange_ProcPlusLandscape"
+      ]
+    },
+    "SM_Cliff_10__683d1cdb": {
+      "unrealPath": "/Game/Maps/Peony/EnvironmentKits/ArtAssets/CLiffs/SM_Cliff_10",
+      "preview": "./meshes/SM_Cliff_10__683d1cdb.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Backdrop_Peony_Mountainrange_ProcPlusLandscape"
+      ]
+    },
+    "SM_Cliff_11__755aa1fd": {
+      "unrealPath": "/Game/Maps/Peony/EnvironmentKits/ArtAssets/CLiffs/SM_Cliff_11",
+      "preview": "./meshes/SM_Cliff_11__755aa1fd.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Backdrop_Peony_Mountainrange_ProcPlusLandscape"
+      ]
+    },
+    "SM_Elevator_Chamber__b9a89267": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/Elevator/SM_Elevator_Chamber",
+      "preview": "./meshes/SM_Elevator_Chamber__b9a89267.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SM_Elevator_ElevatorDoor__74586bc5": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/Elevator/SM_Elevator_ElevatorDoor",
+      "preview": "./meshes/SM_Elevator_ElevatorDoor__74586bc5.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SM_Elevator_ElevatorTop__2d2f7b51": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/Elevator/SM_Elevator_ElevatorTop",
+      "preview": "./meshes/SM_Elevator_ElevatorTop__2d2f7b51.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SM_Elevator_Shaft__5cdb5ea8": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/Elevator/SM_Elevator_Shaft",
+      "preview": "./meshes/SM_Elevator_Shaft__5cdb5ea8.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SM_EntranceAddition__cf71349f": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_EntranceAddition",
+      "preview": "./meshes/SM_EntranceAddition__cf71349f.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_EntranceTunnel__43b529d1": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_EntranceTunnel",
+      "preview": "./meshes/SM_EntranceTunnel__43b529d1.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Entrance_Building__80a6fb3e": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Entrance_Building",
+      "preview": "./meshes/SM_Entrance_Building__80a6fb3e.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Entrance_Platform__061d55fa": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Entrance_Platform",
+      "preview": "./meshes/SM_Entrance_Platform__061d55fa.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_FarPlateau__851f00aa": {
+      "unrealPath": "/Game/Maps/Peony/EnvironmentKits/Background/Meshes/SM_FarPlateau",
+      "preview": "./meshes/SM_FarPlateau__851f00aa.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Backdrop_Peony_Mountainrange_ProcPlusLandscape"
+      ]
+    },
+    "SM_Flag__2a4ae889": {
+      "unrealPath": "/Game/Maps/Common/Blueprints/GameModes/Flag/SM_Flag",
+      "preview": "./meshes/SM_Flag__2a4ae889.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_FloodLightRow__eec6096b": {
+      "unrealPath": "/Game/Maps/Common/Props/FloodLight_Row/SM_FloodLightRow",
+      "preview": "./meshes/SM_FloodLightRow__eec6096b.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Base_Moonshape_Half_Seating__25e385e5": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Base_Moonshape_Half_Seating",
+      "preview": "./meshes/SM_Grandstand_Base_Moonshape_Half_Seating__25e385e5.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Base_Moonshape_Half__ca26f900": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Base_Moonshape_Half",
+      "preview": "./meshes/SM_Grandstand_Base_Moonshape_Half__ca26f900.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Base_Side_Seating__f16d02d1": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Base_Side_Seating",
+      "preview": "./meshes/SM_Grandstand_Base_Side_Seating__f16d02d1.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Base_Side__60e651c4": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Base_Side",
+      "preview": "./meshes/SM_Grandstand_Base_Side__60e651c4.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Gallery_Seating__e37f480e": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Gallery_Seating",
+      "preview": "./meshes/SM_Grandstand_Gallery_Seating__e37f480e.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Gallery__44d89b24": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Gallery",
+      "preview": "./meshes/SM_Grandstand_Gallery__44d89b24.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Lower_Corner_Seating__2a444acf": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Lower_Corner_Seating",
+      "preview": "./meshes/SM_Grandstand_Lower_Corner_Seating__2a444acf.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Lower_Corner__aacd4ab8": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Lower_Corner",
+      "preview": "./meshes/SM_Grandstand_Lower_Corner__aacd4ab8.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Lower_Side_Seating__25ee68f3": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Lower_Side_Seating",
+      "preview": "./meshes/SM_Grandstand_Lower_Side_Seating__25ee68f3.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Lower_Side__713e4403": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Lower_Side",
+      "preview": "./meshes/SM_Grandstand_Lower_Side__713e4403.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_UpperMiddle_Seating__f13c5dce": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_UpperMiddle_Seating",
+      "preview": "./meshes/SM_Grandstand_UpperMiddle_Seating__f13c5dce.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_UpperMiddle__ad01bb3f": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_UpperMiddle",
+      "preview": "./meshes/SM_Grandstand_UpperMiddle__ad01bb3f.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Upper_Corner_Seating__682f13bb": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Upper_Corner_Seating",
+      "preview": "./meshes/SM_Grandstand_Upper_Corner_Seating__682f13bb.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Upper_Corner_Support__5fbda6d8": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Upper_Corner_Support",
+      "preview": "./meshes/SM_Grandstand_Upper_Corner_Support__5fbda6d8.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Upper_Corner__462277e2": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Upper_Corner",
+      "preview": "./meshes/SM_Grandstand_Upper_Corner__462277e2.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Upper_Side_Half_Seating__40b756ef": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Upper_Side_Half_Seating",
+      "preview": "./meshes/SM_Grandstand_Upper_Side_Half_Seating__40b756ef.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grandstand_Upper_Side_Half__585f44dd": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_Grandstand_Upper_Side_Half",
+      "preview": "./meshes/SM_Grandstand_Upper_Side_Half__585f44dd.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Grass_Clump_01__b44ef48b": {
+      "unrealPath": "/Game/Maps/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Foliage/SM_Grass_Clump_01",
+      "preview": "./meshes/SM_Grass_Clump_01__b44ef48b.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark",
+        "Backdrop_Peony_Mountainrange_ProcPlusLandscape",
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_Grass_Clump_02__e53ce5a2": {
+      "unrealPath": "/Game/Maps/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Foliage/SM_Grass_Clump_02",
+      "preview": "./meshes/SM_Grass_Clump_02__e53ce5a2.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_Grass_Clump_03__28572b09": {
+      "unrealPath": "/Game/Maps/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Foliage/SM_Grass_Clump_03",
+      "preview": "./meshes/SM_Grass_Clump_03__28572b09.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_Grass_Clump_04__5302fe0b": {
+      "unrealPath": "/Game/Maps/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Foliage/SM_Grass_Clump_04",
+      "preview": "./meshes/SM_Grass_Clump_04__5302fe0b.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_Grass_Clump_05__fa7d62de": {
+      "unrealPath": "/Game/Maps/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Foliage/SM_Grass_Clump_05",
+      "preview": "./meshes/SM_Grass_Clump_05__fa7d62de.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_Jumbotron__0d46c98a": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/Associated/SM_Jumbotron",
+      "preview": "./meshes/SM_Jumbotron__0d46c98a.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_LotteTower__97eae225": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_LotteTower",
+      "preview": "./meshes/SM_LotteTower__97eae225.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_MainEntrance__9aa4775d": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_MainEntrance",
+      "preview": "./meshes/SM_MainEntrance__9aa4775d.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Monorail_Car__47c25dab": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_Monorail_Car",
+      "preview": "./meshes/SM_Monorail_Car__47c25dab.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_OuterShell__e9569afe": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_OuterShell",
+      "preview": "./meshes/SM_OuterShell__e9569afe.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Path__3e0dea2d": {
+      "unrealPath": "/Game/Maps/CentralPark/Assets/Path/SM_Path",
+      "preview": "./meshes/SM_Path__3e0dea2d.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark",
+        "Environment_Geiranger"
+      ]
+    },
+    "SM_ReservoirBuildings_Building1__e994d9e7": {
+      "unrealPath": "/Game/Maps/CentralPark/Assets/ReservoirBuildings/SM_ReservoirBuildings_Building1",
+      "preview": "./meshes/SM_ReservoirBuildings_Building1__e994d9e7.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_ReservoirBuildings_Building2__26ee97d8": {
+      "unrealPath": "/Game/Maps/CentralPark/Assets/ReservoirBuildings/SM_ReservoirBuildings_Building2",
+      "preview": "./meshes/SM_ReservoirBuildings_Building2__26ee97d8.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_ReservoirBuildings_Building3__54894e2d": {
+      "unrealPath": "/Game/Maps/CentralPark/Assets/ReservoirBuildings/SM_ReservoirBuildings_Building3",
+      "preview": "./meshes/SM_ReservoirBuildings_Building3__54894e2d.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_RioStadium_CommentatorBooth__04aff9f9": {
+      "unrealPath": "/Game/Maps/Rio/Environment/Stadium/SM_RioStadium_CommentatorBooth",
+      "preview": "./meshes/SM_RioStadium_CommentatorBooth__04aff9f9.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_RioStadium_RingGlass_Half__25cbb795": {
+      "unrealPath": "/Game/Maps/Rio/Environment/Stadium/SM_RioStadium_RingGlass_Half",
+      "preview": "./meshes/SM_RioStadium_RingGlass_Half__25cbb795.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_RioStadium_RingLower_Ads_Open__59bbae7a": {
+      "unrealPath": "/Game/Maps/Rio/Environment/Stadium/SM_RioStadium_RingLower_Ads_Open",
+      "preview": "./meshes/SM_RioStadium_RingLower_Ads_Open__59bbae7a.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_RioStadium_RingLower_HalfOpen_Audience__e2112476": {
+      "unrealPath": "/Game/Maps/Rio/Environment/Stadium/SM_RioStadium_RingLower_HalfOpen_Audience",
+      "preview": "./meshes/SM_RioStadium_RingLower_HalfOpen_Audience__e2112476.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_RioStadium_RingLower_HalfOpen__d493312f": {
+      "unrealPath": "/Game/Maps/Rio/Environment/Stadium/SM_RioStadium_RingLower_HalfOpen",
+      "preview": "./meshes/SM_RioStadium_RingLower_HalfOpen__d493312f.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_RioStadium_RingUpper_Half__6bc15030": {
+      "unrealPath": "/Game/Maps/Rio/Environment/Stadium/SM_RioStadium_RingUpper_Half",
+      "preview": "./meshes/SM_RioStadium_RingUpper_Half__6bc15030.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_Rock__fd65594d": {
+      "unrealPath": "/Game/Maps/CentralPark/Assets/Meshes/SM_Rock",
+      "preview": "./meshes/SM_Rock__fd65594d.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark",
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_Sign_Entertainment__45d8a5ae": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_Sign_Entertainment",
+      "preview": "./meshes/SM_Sign_Entertainment__45d8a5ae.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Sign_HOTEL__fd133d2d": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_Sign_HOTEL",
+      "preview": "./meshes/SM_Sign_HOTEL__fd133d2d.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Sign_Restaurant__af740e5d": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Background/Meshes/SM_Sign_Restaurant",
+      "preview": "./meshes/SM_Sign_Restaurant__af740e5d.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SM_Statue_TheMan__5eeb0566": {
+      "unrealPath": "/Game/Maps/Common/Props/StatueTheMan/SM_Statue_TheMan",
+      "preview": "./meshes/SM_Statue_TheMan__5eeb0566.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Geiranger",
+        "Backdrop_Peony_Mountainrange_ProcPlusLandscape",
+        "Env_Rio_FreeOfCorruption"
+      ]
+    },
+    "SM_TreeBirch_01__c7573290": {
+      "unrealPath": "/Game/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Trees/SM_TreeBirch_01",
+      "preview": "./meshes/SM_TreeBirch_01__c7573290.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_TreeBirch_02__e631b352": {
+      "unrealPath": "/Game/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Trees/SM_TreeBirch_02",
+      "preview": "./meshes/SM_TreeBirch_02__e631b352.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_TreeBirch_03__36198871": {
+      "unrealPath": "/Game/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Trees/SM_TreeBirch_03",
+      "preview": "./meshes/SM_TreeBirch_03__36198871.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_TreeBirch_04__7e8b507f": {
+      "unrealPath": "/Game/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Trees/SM_TreeBirch_04",
+      "preview": "./meshes/SM_TreeBirch_04__7e8b507f.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_TreeBirch_05__b5db605c": {
+      "unrealPath": "/Game/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Trees/SM_TreeBirch_05",
+      "preview": "./meshes/SM_TreeBirch_05__b5db605c.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_Tree_Large_01__2383ac13": {
+      "unrealPath": "/Game/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Trees/SM_Tree_Large_01",
+      "preview": "./meshes/SM_Tree_Large_01__2383ac13.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_Tree_Large_02__6b36ff05": {
+      "unrealPath": "/Game/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Trees/SM_Tree_Large_02",
+      "preview": "./meshes/SM_Tree_Large_02__6b36ff05.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_Tree_Large_03__79006024": {
+      "unrealPath": "/Game/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Trees/SM_Tree_Large_03",
+      "preview": "./meshes/SM_Tree_Large_03__79006024.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_Tree_Large_04__97b9b6ef": {
+      "unrealPath": "/Game/AssetPacks/DreamscapeSeries/DreamscapeMeadows/Meshes/Trees/SM_Tree_Large_04",
+      "preview": "./meshes/SM_Tree_Large_04__97b9b6ef.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_CentralPark"
+      ]
+    },
+    "SM_WallMonitor__4ee5e739": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/AdMonitor/SM_WallMonitor",
+      "preview": "./meshes/SM_WallMonitor__4ee5e739.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Env_Rio_FreeOfCorruption",
+        "Environment_Skypiercer"
+      ]
+    },
+    "SM_WindowCleanerPlatform__844c7dbc": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/WindowCleaner/SM_WindowCleanerPlatform",
+      "preview": "./meshes/SM_WindowCleanerPlatform__844c7dbc.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SM_WoodSection__960badc7": {
+      "unrealPath": "/Game/Maps/Seoul/EnvironmentKits/Stadium/Meshes/SM_WoodSection",
+      "preview": "./meshes/SM_WoodSection__960badc7.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Seoul"
+      ]
+    },
+    "SkypiercerStadium_SM_BaseADBillboard__05e16dd1": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_BaseADBillboard",
+      "preview": "./meshes/SkypiercerStadium_SM_BaseADBillboard__05e16dd1.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_Dome__b84a6661": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_Dome",
+      "preview": "./meshes/SkypiercerStadium_SM_Dome__b84a6661.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_EscelatorSet__3ebdfa0f": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_EscelatorSet",
+      "preview": "./meshes/SkypiercerStadium_SM_EscelatorSet__3ebdfa0f.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_GalleryShard_Audience__bdf4def3": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_GalleryShard_Audience",
+      "preview": "./meshes/SkypiercerStadium_SM_GalleryShard_Audience__bdf4def3.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_GalleryShard__93d4c17d": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_GalleryShard",
+      "preview": "./meshes/SkypiercerStadium_SM_GalleryShard__93d4c17d.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_GlassWall__d6f58d66": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_GlassWall",
+      "preview": "./meshes/SkypiercerStadium_SM_GlassWall__d6f58d66.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_MainSupport__c76e9b60": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_MainSupport",
+      "preview": "./meshes/SkypiercerStadium_SM_MainSupport__c76e9b60.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_StadiumBase__9e49fe30": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_StadiumBase",
+      "preview": "./meshes/SkypiercerStadium_SM_StadiumBase__9e49fe30.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_SupportBeam__2926d236": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_SupportBeam",
+      "preview": "./meshes/SkypiercerStadium_SM_SupportBeam__2926d236.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_SupportRing_Small__c7364025": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_SupportRing_Small",
+      "preview": "./meshes/SkypiercerStadium_SM_SupportRing_Small__c7364025.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_SupportRing_Thin__d26e667f": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_SupportRing_Thin",
+      "preview": "./meshes/SkypiercerStadium_SM_SupportRing_Thin__d26e667f.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_SupportRing__51d47ec0": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_SupportRing",
+      "preview": "./meshes/SkypiercerStadium_SM_SupportRing__51d47ec0.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "SkypiercerStadium_SM_VIP__0e76fd3b": {
+      "unrealPath": "/Game/Maps/Skypiercer/Environment/Stadium/SkypiercerStadium_SM_VIP",
+      "preview": "./meshes/SkypiercerStadium_SM_VIP__0e76fd3b.glb",
+      "previewAvailable": true,
+      "environments": [
+        "Environment_Skypiercer"
+      ]
+    },
+    "Subway01_Floor__2257e527": {
+      "unrealPath": "/Flashback/Maps/Prototyping/Vegard/_GENERATED/NewYork/Subway01_Floor",
+      "preview": "./meshes/Subway01_Floor__2257e527.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_SecondFloor",
+        "Environment_NewYorkSubway"
+      ]
+    },
+    "Subway01_StaircaseMainDOwn01__d632296d": {
+      "unrealPath": "/Flashback/Maps/Prototyping/Vegard/_GENERATED/NewYork/Subway01_StaircaseMainDOwn01",
+      "preview": "./meshes/Subway01_StaircaseMainDOwn01__d632296d.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_SecondFloor",
+        "Environment_NewYorkSubway"
+      ]
+    },
+    "Subway01_Wall03__634721a7": {
+      "unrealPath": "/Flashback/Maps/Prototyping/Vegard/_GENERATED/NewYork/Subway01_Wall03",
+      "preview": "./meshes/Subway01_Wall03__634721a7.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_SecondFloor",
+        "Environment_NewYorkSubway"
+      ]
+    },
+    "Subway01_Walllong__d69858a8": {
+      "unrealPath": "/Flashback/Maps/Prototyping/Vegard/_GENERATED/NewYork/Subway01_Walllong",
+      "preview": "./meshes/Subway01_Walllong__d69858a8.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_SecondFloor",
+        "Environment_NewYorkSubway"
+      ]
+    },
+    "Subway01_wall01__e3f5c618": {
+      "unrealPath": "/Flashback/Maps/Prototyping/Vegard/_GENERATED/NewYork/Subway01_wall01",
+      "preview": "./meshes/Subway01_wall01__e3f5c618.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_SecondFloor",
+        "Environment_NewYorkSubway"
+      ]
+    },
+    "Subway01_wall02__28fd212d": {
+      "unrealPath": "/Flashback/Maps/Prototyping/Vegard/_GENERATED/NewYork/Subway01_wall02",
+      "preview": "./meshes/Subway01_wall02__28fd212d.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_SecondFloor",
+        "Environment_NewYorkSubway"
+      ]
+    },
+    "SubwayPlatformEnd__6772a546": {
+      "unrealPath": "/Flashback/Maps/Prototyping/Vegard/_GENERATED/NewYork/SubwayPlatformEnd",
+      "preview": "./meshes/SubwayPlatformEnd__6772a546.glb",
+      "previewAvailable": true,
+      "environments": [
+        "EnvironmentExtension_NewYorkSubway_SecondFloor",
+        "Environment_NewYorkSubway"
+      ]
+    }
+  }
+}

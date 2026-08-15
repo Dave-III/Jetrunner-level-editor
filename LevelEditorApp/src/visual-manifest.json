@@ -1,0 +1,1286 @@
+{
+    "assetVisuals":  {
+                         "basekit_small_basewall":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_basekit_wall_01.glb"
+                                                    },
+                         "basekit_small_basewall_alt":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_basekit_wall_01.glb"
+                                                        },
+                         "arcade_token":  {
+                                              "scale":  100,
+                                              "files":  [
+                                                            "./asset-visuals/arcade_token__arcade_token.glb",
+                                                            "./asset-visuals/arcade_token__arcade_token_ghost.glb"
+                                                        ]
+                                          },
+                         "artic_spotlight":  {
+                                                 "scale":  100,
+                                                 "files":  [
+                                                               "./asset-visuals/artic_spotlight__artic_spotlight_bot.glb",
+                                                               "./asset-visuals/artic_spotlight__artic_spotlight_top.glb"
+                                                           ]
+                                             },
+                         "basekit_house":  {
+                                               "scale":  100,
+                                               "file":  "./asset-visuals/basekit_house.glb"
+                                           },
+                         "basekit_small_cube_tower":  {
+                                                          "scale":  100,
+                                                          "files":  [
+                                                                        "./asset-visuals/basekit_small_cube_tower__cube.glb",
+                                                                        "./asset-visuals/basekit_small_cube_tower__cube_daa4c09c.glb"
+                                                                    ]
+                                                      },
+                         "basekit_small_hollow_cylinder":  {
+                                                               "scale":  100,
+                                                               "file":  "./asset-visuals/basekit_small_hollow_cylinder.glb"
+                                                           },
+                         "bg_flood_light":  {
+                                                "scale":  100,
+                                                "file":  "./asset-visuals/bg_flood_light.glb"
+                                            },
+                         "block_tree":  {
+                                            "scale":  100,
+                                            "file":  "./asset-visuals/block_tree.glb"
+                                        },
+                         "chinese_lantern":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/chinese_lantern.glb"
+                                             },
+                         "concrete_pillar":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_concretecube_cube_001.glb"
+                                             },
+                         "crane":  {
+                                       "scale":  100,
+                                       "files":  [
+                                                     "./asset-visuals/crane__crane_rig_arm.glb",
+                                                     "./asset-visuals/crane__crane_rig_base.glb",
+                                                     "./asset-visuals/crane__crane_rig_body.glb",
+                                                     "./asset-visuals/crane__crane_rig_mount.glb",
+                                                     "./asset-visuals/crane__crane_arm.glb",
+                                                     "./asset-visuals/crane__crane_arm_head.glb",
+                                                     "./asset-visuals/crane__crane_body_and_house.glb",
+                                                     "./asset-visuals/crane__crane_cable.glb",
+                                                     "./asset-visuals/crane__crane_leg.glb",
+                                                     "./asset-visuals/crane__crane_magnet.glb"
+                                                 ]
+                                   },
+                         "destructible_leaf_pile":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/destructible_leaf_pile.glb"
+                                                    },
+                         "digital_audience_gallery":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/digital_audience_gallery.glb"
+                                                      },
+                         "drone":  {
+                                       "scale":  100,
+                                       "files":  [
+                                                     "./asset-visuals/drone__lp_drone_arm.glb",
+                                                     "./asset-visuals/drone__lp_drone_body.glb",
+                                                     "./asset-visuals/drone__lp_drone_wing.glb"
+                                                 ]
+                                   },
+                         "elevator":  {
+                                          "scale":  100,
+                                          "files":  [
+                                                        "./asset-visuals/elevator__elevator_chamber.glb",
+                                                        "./asset-visuals/elevator__elevator_chamber_audience.glb",
+                                                        "./asset-visuals/elevator__elevator_elevator_door.glb",
+                                                        "./asset-visuals/elevator__elevator_elevator_top.glb",
+                                                        "./asset-visuals/elevator__elevator_shaft.glb"
+                                                    ]
+                                      },
+                         "enemy_gatling":  {
+                                               "scale":  100,
+                                               "file":  "./asset-visuals/enemy_gatling.glb"
+                                           },
+                         "enemy_gun":  {
+                                           "scale":  100,
+                                           "file":  "./asset-visuals/enemy_gun.glb"
+                                       },
+                         "enemy_laser":  {
+                                             "scale":  100,
+                                             "file":  "./asset-visuals/enemy_laser.glb"
+                                         },
+                         "enemy_wall":  {
+                                            "scale":  100,
+                                            "file":  "./asset-visuals/enemy_wall.glb"
+                                        },
+                         "ice_platform_2x2":  {
+                                                  "scale":  100,
+                                                  "files":  [
+                                                                "./asset-visuals/ice_platform_2x2__2x2_ice_bot.glb",
+                                                                "./asset-visuals/ice_platform_2x2__2x2_ice_top.glb",
+                                                                "./asset-visuals/ice_platform_2x2__2x2_ice_top_snow.glb"
+                                                            ]
+                                              },
+                         "ice_platform_2x3":  {
+                                                  "scale":  100,
+                                                  "files":  [
+                                                                "./asset-visuals/ice_platform_2x3__2x3_ice_bot.glb",
+                                                                "./asset-visuals/ice_platform_2x3__2x3_ice_top.glb"
+                                                            ]
+                                              },
+                         "ice_platform_2x4":  {
+                                                  "scale":  100,
+                                                  "files":  [
+                                                                "./asset-visuals/ice_platform_2x4__2x4_ice_bot.glb",
+                                                                "./asset-visuals/ice_platform_2x4__2x4_ice_top.glb"
+                                                            ]
+                                              },
+                         "ice_platform_3x5":  {
+                                                  "scale":  100,
+                                                  "files":  [
+                                                                "./asset-visuals/ice_platform_3x5__3x5_ice_bot.glb",
+                                                                "./asset-visuals/ice_platform_3x5__3x5_ice_top.glb"
+                                                            ]
+                                              },
+                         "juan":  {
+                                      "scale":  100,
+                                      "file":  "./asset-visuals/juan.glb"
+                                  },
+                         "ladder":  {
+                                        "scale":  100,
+                                        "files":  [
+                                                      "./asset-visuals/ladder__ladder_segment.glb",
+                                                      "./asset-visuals/ladder__wooden_ladder_01.glb"
+                                                  ]
+                                    },
+                         "laser_wall":  {
+                                            "scale":  100,
+                                            "files":  [
+                                                          "./asset-visuals/laser_wall__laser_wall_emitter.glb",
+                                                          "./asset-visuals/laser_wall__laser_wall_emitter_edge.glb"
+                                                      ]
+                                        },
+                         "launch_pad":  {
+                                            "scale":  100,
+                                            "file":  "./asset-visuals/launch_pad.glb"
+                                        },
+                         "launch_ring":  {
+                                             "scale":  100,
+                                             "files":  [
+                                                           "./asset-visuals/launch_ring__launch_ring_launch_ring_energy.glb",
+                                                           "./asset-visuals/launch_ring__launch_ring_launch_ring_projectors.glb"
+                                                       ]
+                                         },
+                         "lcd_screen":  {
+                                            "scale":  100,
+                                            "file":  "./asset-visuals/lcd_screen.glb"
+                                        },
+                         "light_pole":  {
+                                            "scale":  100,
+                                            "file":  "./asset-visuals/light_pole.glb"
+                                        },
+                         "monorail":  {
+                                          "scale":  100,
+                                          "files":  [
+                                                        "./asset-visuals/monorail__monorail.glb",
+                                                        "./asset-visuals/monorail__monorail_car.glb"
+                                                    ]
+                                      },
+                         "peony_spectating_box":  {
+                                                      "scale":  100,
+                                                      "files":  [
+                                                                    "./asset-visuals/peony_spectating_box__col_sm_peony_spectating_box_01_01.glb",
+                                                                    "./asset-visuals/peony_spectating_box__peony_spectating_box_01.glb",
+                                                                    "./asset-visuals/peony_spectating_box__peony_spectating_box_spawner.glb"
+                                                                ]
+                                                  },
+                         "rio_gallery_shard":  {
+                                                   "scale":  100,
+                                                   "files":  [
+                                                                 "./asset-visuals/rio_gallery_shard__rio_stadium_gallery_shard.glb",
+                                                                 "./asset-visuals/rio_gallery_shard__rio_stadium_gallery_shard_audience.glb"
+                                                             ]
+                                               },
+                         "rio_platform_2x2":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/rio_platform_2x2.glb"
+                                              },
+                         "rio_platform_2x3":  {
+                                                  "scale":  100,
+                                                  "files":  [
+                                                                "./asset-visuals/rio_platform_2x3__2x3_rio_platform_mid_01.glb",
+                                                                "./asset-visuals/rio_platform_2x3__2x3_rio_platform_top_flat_01.glb"
+                                                            ]
+                                              },
+                         "rio_platform_2x5":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/rio_platform_2x5.glb"
+                                              },
+                         "rio_platform_3x3":  {
+                                                  "scale":  100,
+                                                  "files":  [
+                                                                "./asset-visuals/rio_platform_3x3__3x3_rio_platform_mid_01.glb",
+                                                                "./asset-visuals/rio_platform_3x3__3x3_rio_platform_top_01.glb"
+                                                            ]
+                                              },
+                         "rio_platform_3x5":  {
+                                                  "scale":  100,
+                                                  "files":  [
+                                                                "./asset-visuals/rio_platform_3x5__3x5_rio_platform_mid_01.glb",
+                                                                "./asset-visuals/rio_platform_3x5__3x5_rio_platform_top_01.glb"
+                                                            ]
+                                              },
+                         "rio_platform_3x9":  {
+                                                  "scale":  100,
+                                                  "files":  [
+                                                                "./asset-visuals/rio_platform_3x9__3x9_rio_platform_top_01.glb",
+                                                                "./asset-visuals/rio_platform_3x9__3x9_rio_platform_top_02.glb"
+                                                            ]
+                                              },
+                         "sky_pillar":  {
+                                            "scale":  100,
+                                            "files":  [
+                                                          "./asset-visuals/sky_pillar__sky_pillar_pillar_bottom.glb",
+                                                          "./asset-visuals/sky_pillar__sky_pillar_pillar_middle01.glb",
+                                                          "./asset-visuals/sky_pillar__sky_pillar_pillar_top.glb"
+                                                      ]
+                                        },
+                         "skypiercer_gallery_shard":  {
+                                                          "scale":  100,
+                                                          "files":  [
+                                                                        "./asset-visuals/skypiercer_gallery_shard__skypiercer_stadium_sm_gallery_shard.glb",
+                                                                        "./asset-visuals/skypiercer_gallery_shard__skypiercer_stadium_sm_gallery_shard_audience.glb"
+                                                                    ]
+                                                      },
+                         "skypiercer_tower_2x2":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/skypiercer_tower_2x2.glb"
+                                                  },
+                         "skypiercer_tower_2x3":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/skypiercer_tower_2x3.glb"
+                                                  },
+                         "skypiercer_tower_2x4":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/skypiercer_tower_2x4.glb"
+                                                  },
+                         "skypiercer_tower_3x3":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/skypiercer_tower_3x3.glb"
+                                                  },
+                         "skypiercer_tower_3x4":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/skypiercer_tower_3x4.glb"
+                                                  },
+                         "skypiercer_tower_4x4":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/skypiercer_tower_4x4.glb"
+                                                  },
+                         "spotlight":  {
+                                           "scale":  100,
+                                           "file":  "./asset-visuals/spotlight.glb"
+                                       },
+                         "static_2x2_rio_house_01":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_2x2_rio_house_01.glb"
+                                                     },
+                         "static_2x2_rio_platform_flat_01":  {
+                                                                 "scale":  100,
+                                                                 "file":  "./asset-visuals/static_2x2_rio_platform_flat_01.glb"
+                                                             },
+                         "static_2x2_rio_platform_top_brick_01":  {
+                                                                      "scale":  100,
+                                                                      "file":  "./asset-visuals/static_2x2_rio_platform_top_brick_01.glb"
+                                                                  },
+                         "static_2x3_rio_house_01":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_2x3_rio_house_01.glb"
+                                                     },
+                         "static_2x3_rio_platform_top_brick_01":  {
+                                                                      "scale":  100,
+                                                                      "file":  "./asset-visuals/static_2x3_rio_platform_top_brick_01.glb"
+                                                                  },
+                         "static_2x3_stage_01":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_2x3_stage_01.glb"
+                                                 },
+                         "static_2x4_rop_platform_01":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_2x4_rop_platform_01.glb"
+                                                        },
+                         "static_artic_light":  {
+                                                    "scale":  100,
+                                                    "file":  "./asset-visuals/static_artic_light.glb"
+                                                },
+                         "static_artic_pillar_2x1":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_artic_pillar_2x1.glb"
+                                                     },
+                         "static_artic_pillar_3x1":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_artic_pillar_3x1.glb"
+                                                     },
+                         "static_artic_platform":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_artic_platform.glb"
+                                                   },
+                         "static_artic_platform_2x2":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_artic_platform_2x2.glb"
+                                                       },
+                         "static_artic_tent":  {
+                                                   "scale":  100,
+                                                   "file":  "./asset-visuals/static_artic_tent.glb"
+                                               },
+                         "static_artinstallation01":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_artinstallation01.glb"
+                                                      },
+                         "static_artinstallation02":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_artinstallation02.glb"
+                                                      },
+                         "static_artinstallation03":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_artinstallation03.glb"
+                                                      },
+                         "static_artinstallation04":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_artinstallation04.glb"
+                                                      },
+                         "static_barrel":  {
+                                               "scale":  100,
+                                               "file":  "./asset-visuals/static_barrel.glb"
+                                           },
+                         "static_basekit_cube_01":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_basekit_cube_01.glb"
+                                                    },
+                         "static_basekit_cylinder_01":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_basekit_cylinder_01.glb"
+                                                        },
+                         "static_basekit_door_01":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_basekit_door_01.glb"
+                                                    },
+                         "static_basekit_floor_01":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_basekit_floor_01.glb"
+                                                     },
+                         "static_basekit_floorcylinder_01":  {
+                                                                 "scale":  100,
+                                                                 "file":  "./asset-visuals/static_basekit_floorcylinder_01.glb"
+                                                             },
+                         "static_basekit_floorquartercylinder_01":  {
+                                                                        "scale":  100,
+                                                                        "file":  "./asset-visuals/static_basekit_floorquartercylinder_01.glb"
+                                                                    },
+                         "static_basekit_flootslope_01":  {
+                                                              "scale":  100,
+                                                              "file":  "./asset-visuals/static_basekit_flootslope_01.glb"
+                                                          },
+                         "static_basekit_ledgecylinder_01":  {
+                                                                 "scale":  100,
+                                                                 "file":  "./asset-visuals/static_basekit_ledgecylinder_01.glb"
+                                                             },
+                         "static_basekit_ledgequartercylinder_01":  {
+                                                                        "scale":  100,
+                                                                        "file":  "./asset-visuals/static_basekit_ledgequartercylinder_01.glb"
+                                                                    },
+                         "static_basekit_pillar_01":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_basekit_pillar_01.glb"
+                                                      },
+                         "static_basekit_wall_01":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_basekit_wall_01.glb"
+                                                    },
+                         "static_basekit_wallquartercylinder_01":  {
+                                                                       "scale":  100,
+                                                                       "file":  "./asset-visuals/static_basekit_wallquartercylinder_01.glb"
+                                                                   },
+                         "static_basekit_wallslantedshort_01":  {
+                                                                    "scale":  100,
+                                                                    "file":  "./asset-visuals/static_basekit_wallslantedshort_01.glb"
+                                                                },
+                         "static_baskit_smol_door_01":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_baskit_smol_door_01.glb"
+                                                        },
+                         "static_baskit_smol_ledgecorner_01":  {
+                                                                   "scale":  100,
+                                                                   "file":  "./asset-visuals/static_baskit_smol_ledgecorner_01.glb"
+                                                               },
+                         "static_baskit_smol_ledgecylinder_01":  {
+                                                                     "scale":  100,
+                                                                     "file":  "./asset-visuals/static_baskit_smol_ledgecylinder_01.glb"
+                                                                 },
+                         "static_baskit_smol_ledgefloor_01":  {
+                                                                  "scale":  100,
+                                                                  "file":  "./asset-visuals/static_baskit_smol_ledgefloor_01.glb"
+                                                              },
+                         "static_baskit_smol_ledgequartercylinder_01":  {
+                                                                            "scale":  100,
+                                                                            "file":  "./asset-visuals/static_baskit_smol_ledgequartercylinder_01.glb"
+                                                                        },
+                         "static_baskit_smol_pillar_01":  {
+                                                              "scale":  100,
+                                                              "file":  "./asset-visuals/static_baskit_smol_pillar_01.glb"
+                                                          },
+                         "static_bench_01":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_bench_01.glb"
+                                             },
+                         "static_bglargerock":  {
+                                                    "scale":  100,
+                                                    "file":  "./asset-visuals/static_bglargerock.glb"
+                                                },
+                         "static_bone_osrs":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_bone_osrs.glb"
+                                              },
+                         "static_bone_pile":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_bone_pile.glb"
+                                              },
+                         "static_building5":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_building5.glb"
+                                              },
+                         "static_building5_v2":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_building5_v2.glb"
+                                                 },
+                         "static_building6":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_building6.glb"
+                                              },
+                         "static_building6_v2":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_building6_v2.glb"
+                                                 },
+                         "static_building63":  {
+                                                   "scale":  100,
+                                                   "file":  "./asset-visuals/static_building63.glb"
+                                               },
+                         "static_building8":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_building8.glb"
+                                              },
+                         "static_buildingfill1":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_buildingfill1.glb"
+                                                  },
+                         "static_bush_flower_01":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_bush_flower_01.glb"
+                                                   },
+                         "static_bushes_new_01":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_bushes_new_01.glb"
+                                                  },
+                         "static_bushes_new_02":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_bushes_new_02.glb"
+                                                  },
+                         "static_bushes_new_03":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_bushes_new_03.glb"
+                                                  },
+                         "static_bushes_new_04":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_bushes_new_04.glb"
+                                                  },
+                         "static_bushes_new_04_flowers":  {
+                                                              "scale":  100,
+                                                              "file":  "./asset-visuals/static_bushes_new_04_flowers.glb"
+                                                          },
+                         "static_bushes_new_05":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_bushes_new_05.glb"
+                                                  },
+                         "static_bushes_new_08":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_bushes_new_08.glb"
+                                                  },
+                         "static_bushes_new_09":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_bushes_new_09.glb"
+                                                  },
+                         "static_carpet":  {
+                                               "scale":  100,
+                                               "file":  "./asset-visuals/static_carpet.glb"
+                                           },
+                         "static_christmastree":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_christmastree.glb"
+                                                  },
+                         "static_cliff_02":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_cliff_02.glb"
+                                             },
+                         "static_cliff_03":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_cliff_03.glb"
+                                             },
+                         "static_cliff_04":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_cliff_04.glb"
+                                             },
+                         "static_cliff_05":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_cliff_05.glb"
+                                             },
+                         "static_cliff_06":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_cliff_06.glb"
+                                             },
+                         "static_cliff_07":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_cliff_07.glb"
+                                             },
+                         "static_cliff_08":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_cliff_08.glb"
+                                             },
+                         "static_cliff_09":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_cliff_09.glb"
+                                             },
+                         "static_cliff_10":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_cliff_10.glb"
+                                             },
+                         "static_cliff_11":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_cliff_11.glb"
+                                             },
+                         "static_cliff_top_flat_01":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_cliff_top_flat_01.glb"
+                                                      },
+                         "static_cliff_top_flat_02":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_cliff_top_flat_02.glb"
+                                                      },
+                         "static_cloudbody":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_cloudbody.glb"
+                                              },
+                         "static_concretecube_cube_001":  {
+                                                              "scale":  100,
+                                                              "file":  "./asset-visuals/static_concretecube_cube_001.glb"
+                                                          },
+                         "static_constructionpathblocker":  {
+                                                                "scale":  100,
+                                                                "file":  "./asset-visuals/static_constructionpathblocker.glb"
+                                                            },
+                         "static_cube_beveled":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_cube_beveled.glb"
+                                                 },
+                         "static_digitalgallery_gallery":  {
+                                                               "scale":  100,
+                                                               "file":  "./asset-visuals/static_digitalgallery_gallery.glb"
+                                                           },
+                         "static_doublefencewithrope":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_doublefencewithrope.glb"
+                                                        },
+                         "static_effectbox_00":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_effectbox_00.glb"
+                                                 },
+                         "static_effectbox_01":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_effectbox_01.glb"
+                                                 },
+                         "static_farmountains_mt1":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_farmountains_mt1.glb"
+                                                     },
+                         "static_farplateau":  {
+                                                   "scale":  100,
+                                                   "file":  "./asset-visuals/static_farplateau.glb"
+                                               },
+                         "static_fern_2":  {
+                                               "scale":  100,
+                                               "file":  "./asset-visuals/static_fern_2.glb"
+                                           },
+                         "static_fjord_cruiseship_radiant_vista":  {
+                                                                       "scale":  100,
+                                                                       "file":  "./asset-visuals/static_fjord_cruiseship_radiant_vista.glb"
+                                                                   },
+                         "static_flag":  {
+                                             "scale":  100,
+                                             "file":  "./asset-visuals/static_flag.glb"
+                                         },
+                         "static_flowerpatch_blue":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_flowerpatch_blue.glb"
+                                                     },
+                         "static_flowerpatch_orange":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_flowerpatch_orange.glb"
+                                                       },
+                         "static_flowerpatch_peach":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_flowerpatch_peach.glb"
+                                                      },
+                         "static_flowerpatch_purple":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_flowerpatch_purple.glb"
+                                                       },
+                         "static_flowerpatch_red":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_flowerpatch_red.glb"
+                                                    },
+                         "static_flowerpatch_yellow":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_flowerpatch_yellow.glb"
+                                                       },
+                         "static_foliagehouse":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_foliagehouse.glb"
+                                                 },
+                         "static_fountain":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_fountain.glb"
+                                             },
+                         "static_galley_planks_gallery":  {
+                                                              "scale":  100,
+                                                              "file":  "./asset-visuals/static_galley_planks_gallery.glb"
+                                                          },
+                         "static_grass_clump_01":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_grass_clump_01.glb"
+                                                   },
+                         "static_grass_clump_02":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_grass_clump_02.glb"
+                                                   },
+                         "static_grass_clump_03":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_grass_clump_03.glb"
+                                                   },
+                         "static_grass_clump_04":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_grass_clump_04.glb"
+                                                   },
+                         "static_grass_clump_05":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_grass_clump_05.glb"
+                                                   },
+                         "static_heart":  {
+                                              "scale":  100,
+                                              "file":  "./asset-visuals/static_heart.glb"
+                                          },
+                         "static_hookpad":  {
+                                                "scale":  100,
+                                                "file":  "./asset-visuals/static_hookpad.glb"
+                                            },
+                         "static_ice_arch":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_ice_arch.glb"
+                                             },
+                         "static_ice_chunksingle_00":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_ice_chunksingle_00.glb"
+                                                       },
+                         "static_ice_chunksingle_01":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_ice_chunksingle_01.glb"
+                                                       },
+                         "static_ice_chunksingle_02":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_ice_chunksingle_02.glb"
+                                                       },
+                         "static_ice_chunksingle_03":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_ice_chunksingle_03.glb"
+                                                       },
+                         "static_ice_chunksingle_04":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_ice_chunksingle_04.glb"
+                                                       },
+                         "static_ice_platform01":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_ice_platform01.glb"
+                                                   },
+                         "static_iceberg01":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_iceberg01.glb"
+                                              },
+                         "static_iceberg01_snow":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_iceberg01_snow.glb"
+                                                   },
+                         "static_iceberg02":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_iceberg02.glb"
+                                              },
+                         "static_iceberg02_snow":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_iceberg02_snow.glb"
+                                                   },
+                         "static_iceberg03":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_iceberg03.glb"
+                                              },
+                         "static_iceberg03_snow":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_iceberg03_snow.glb"
+                                                   },
+                         "static_iceberg04":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_iceberg04.glb"
+                                              },
+                         "static_iceberg04_snow":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_iceberg04_snow.glb"
+                                                   },
+                         "static_iceberg06":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_iceberg06.glb"
+                                              },
+                         "static_iceberg08":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_iceberg08.glb"
+                                              },
+                         "static_iceberg7":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_iceberg7.glb"
+                                             },
+                         "static_icicles_01":  {
+                                                   "scale":  100,
+                                                   "file":  "./asset-visuals/static_icicles_01.glb"
+                                               },
+                         "static_icicles_02":  {
+                                                   "scale":  100,
+                                                   "file":  "./asset-visuals/static_icicles_02.glb"
+                                               },
+                         "static_iciclesingle_00":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_iciclesingle_00.glb"
+                                                    },
+                         "static_iciclesingle_01":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_iciclesingle_01.glb"
+                                                    },
+                         "static_iciclesingle_02":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_iciclesingle_02.glb"
+                                                    },
+                         "static_leafpile2_flatt":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_leafpile2_flatt.glb"
+                                                    },
+                         "static_leafpile2_high":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_leafpile2_high.glb"
+                                                   },
+                         "static_ledarrowstraight":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_ledarrowstraight.glb"
+                                                     },
+                         "static_lottetower":  {
+                                                   "scale":  100,
+                                                   "file":  "./asset-visuals/static_lottetower.glb"
+                                               },
+                         "static_mallbush":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_mallbush.glb"
+                                             },
+                         "static_mallbush_cube_001":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_mallbush_cube_001.glb"
+                                                      },
+                         "static_metalbeam":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_metalbeam.glb"
+                                              },
+                         "static_pack_ice_01":  {
+                                                    "scale":  100,
+                                                    "file":  "./asset-visuals/static_pack_ice_01.glb"
+                                                },
+                         "static_palm_00":  {
+                                                "scale":  100,
+                                                "file":  "./asset-visuals/static_palm_00.glb"
+                                            },
+                         "static_peony_temple_3x6":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_peony_temple_3x6.glb"
+                                                     },
+                         "static_peony_temple_4x5":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_peony_temple_4x5.glb"
+                                                     },
+                         "static_peony_temple_5x6_2_openings":  {
+                                                                    "scale":  100,
+                                                                    "file":  "./asset-visuals/static_peony_temple_5x6_2_openings.glb"
+                                                                },
+                         "static_peonytemple4x4_doors":  {
+                                                             "scale":  100,
+                                                             "file":  "./asset-visuals/static_peonytemple4x4_doors.glb"
+                                                         },
+                         "static_platform_plank_leg":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_platform_plank_leg.glb"
+                                                       },
+                         "static_reservoirbuildings_building1":  {
+                                                                     "scale":  100,
+                                                                     "file":  "./asset-visuals/static_reservoirbuildings_building1.glb"
+                                                                 },
+                         "static_reservoirbuildings_building2":  {
+                                                                     "scale":  100,
+                                                                     "file":  "./asset-visuals/static_reservoirbuildings_building2.glb"
+                                                                 },
+                         "static_reservoirbuildings_building3":  {
+                                                                     "scale":  100,
+                                                                     "file":  "./asset-visuals/static_reservoirbuildings_building3.glb"
+                                                                 },
+                         "static_rio_attach_door_01":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_rio_attach_door_01.glb"
+                                                       },
+                         "static_rio_attach_window_01":  {
+                                                             "scale":  100,
+                                                             "file":  "./asset-visuals/static_rio_attach_window_01.glb"
+                                                         },
+                         "static_rio_rock_01":  {
+                                                    "scale":  100,
+                                                    "file":  "./asset-visuals/static_rio_rock_01.glb"
+                                                },
+                         "static_rio_rock_02":  {
+                                                    "scale":  100,
+                                                    "file":  "./asset-visuals/static_rio_rock_02.glb"
+                                                },
+                         "static_rock":  {
+                                             "scale":  100,
+                                             "file":  "./asset-visuals/static_rock.glb"
+                                         },
+                         "static_rockformation_02":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_rockformation_02.glb"
+                                                     },
+                         "static_rockformation_04":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_rockformation_04.glb"
+                                                     },
+                         "static_rocksround_one":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_rocksround_one.glb"
+                                                   },
+                         "static_rocksround_three":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_rocksround_three.glb"
+                                                     },
+                         "static_sacredgroundstemple":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_sacredgroundstemple.glb"
+                                                        },
+                         "static_shippingcontainer":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_shippingcontainer.glb"
+                                                      },
+                         "static_sign_entertainment":  {
+                                                           "scale":  100,
+                                                           "file":  "./asset-visuals/static_sign_entertainment.glb"
+                                                       },
+                         "static_sign_hotel":  {
+                                                   "scale":  100,
+                                                   "file":  "./asset-visuals/static_sign_hotel.glb"
+                                               },
+                         "static_sign_restaurant":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_sign_restaurant.glb"
+                                                    },
+                         "static_single_brick_01":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_single_brick_01.glb"
+                                                    },
+                         "static_single_brick_02":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_single_brick_02.glb"
+                                                    },
+                         "static_single_brick_03":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_single_brick_03.glb"
+                                                    },
+                         "static_snow_01":  {
+                                                "scale":  100,
+                                                "file":  "./asset-visuals/static_snow_01.glb"
+                                            },
+                         "static_snow_chunksingle_00":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_snow_chunksingle_00.glb"
+                                                        },
+                         "static_snow_chunksingle_01":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_snow_chunksingle_01.glb"
+                                                        },
+                         "static_snow_chunksingle_02":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_snow_chunksingle_02.glb"
+                                                        },
+                         "static_snow_chunksingle_03":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_snow_chunksingle_03.glb"
+                                                        },
+                         "static_snow_chunksingle_04":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_snow_chunksingle_04.glb"
+                                                        },
+                         "static_snow_pile_01":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_snow_pile_01.glb"
+                                                 },
+                         "static_snow_pile_02":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_snow_pile_02.glb"
+                                                 },
+                         "static_snowman":  {
+                                                "scale":  100,
+                                                "file":  "./asset-visuals/static_snowman.glb"
+                                            },
+                         "static_sparringdummy":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_sparringdummy.glb"
+                                                  },
+                         "static_speakers_1x4_bent":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_speakers_1x4_bent.glb"
+                                                      },
+                         "static_specialplatform2x7_1":  {
+                                                             "scale":  100,
+                                                             "file":  "./asset-visuals/static_specialplatform2x7_1.glb"
+                                                         },
+                         "static_stage_1x1":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_stage_1x1.glb"
+                                              },
+                         "static_stage_2x2":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_stage_2x2.glb"
+                                              },
+                         "static_stage_2x3":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_stage_2x3.glb"
+                                              },
+                         "static_stage_3x3":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_stage_3x3.glb"
+                                              },
+                         "static_stage_acousticpanel_01":  {
+                                                               "scale":  100,
+                                                               "file":  "./asset-visuals/static_stage_acousticpanel_01.glb"
+                                                           },
+                         "static_stage_acousticpanel_02":  {
+                                                               "scale":  100,
+                                                               "file":  "./asset-visuals/static_stage_acousticpanel_02.glb"
+                                                           },
+                         "static_stage_acousticpanel_03":  {
+                                                               "scale":  100,
+                                                               "file":  "./asset-visuals/static_stage_acousticpanel_03.glb"
+                                                           },
+                         "static_stage_floor01":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_stage_floor01.glb"
+                                                  },
+                         "static_stage_speaker":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_stage_speaker.glb"
+                                                  },
+                         "static_stage_speaker01":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_stage_speaker01.glb"
+                                                    },
+                         "static_stage_spotlight":  {
+                                                        "scale":  100,
+                                                        "file":  "./asset-visuals/static_stage_spotlight.glb"
+                                                    },
+                         "static_stage_storage_box":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_stage_storage_box.glb"
+                                                      },
+                         "static_stageslope_filled":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_stageslope_filled.glb"
+                                                      },
+                         "static_stageslope_stair":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_stageslope_stair.glb"
+                                                     },
+                         "static_starparticle":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_starparticle.glb"
+                                                 },
+                         "static_statue_theman":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_statue_theman.glb"
+                                                  },
+                         "static_statueplatform":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_statueplatform.glb"
+                                                   },
+                         "static_stone_flower_bed_01":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_stone_flower_bed_01.glb"
+                                                        },
+                         "static_strut_1x4_wall":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_strut_1x4_wall.glb"
+                                                   },
+                         "static_strut_6x6":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_strut_6x6.glb"
+                                              },
+                         "static_sword_sweihander":  {
+                                                         "scale":  100,
+                                                         "file":  "./asset-visuals/static_sword_sweihander.glb"
+                                                     },
+                         "static_tarp_meshes_sm_tarp_01":  {
+                                                               "scale":  100,
+                                                               "file":  "./asset-visuals/static_tarp_meshes_sm_tarp_01.glb"
+                                                           },
+                         "static_tarp_meshes_sm_tarp_03":  {
+                                                               "scale":  100,
+                                                               "file":  "./asset-visuals/static_tarp_meshes_sm_tarp_03.glb"
+                                                           },
+                         "static_tarp_meshes_sm_tarp_04":  {
+                                                               "scale":  100,
+                                                               "file":  "./asset-visuals/static_tarp_meshes_sm_tarp_04.glb"
+                                                           },
+                         "static_tarp_meshes_sm_tarp_05":  {
+                                                               "scale":  100,
+                                                               "file":  "./asset-visuals/static_tarp_meshes_sm_tarp_05.glb"
+                                                           },
+                         "static_tarp_meshes_sm_tarp_06":  {
+                                                               "scale":  100,
+                                                               "file":  "./asset-visuals/static_tarp_meshes_sm_tarp_06.glb"
+                                                           },
+                         "static_temple_3x6_bottom_01":  {
+                                                             "scale":  100,
+                                                             "file":  "./asset-visuals/static_temple_3x6_bottom_01.glb"
+                                                         },
+                         "static_temple_bottom_4x4_01":  {
+                                                             "scale":  100,
+                                                             "file":  "./asset-visuals/static_temple_bottom_4x4_01.glb"
+                                                         },
+                         "static_temple_bottom_4x5":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_temple_bottom_4x5.glb"
+                                                      },
+                         "static_temple_tower_5x5_01":  {
+                                                            "scale":  100,
+                                                            "file":  "./asset-visuals/static_temple_tower_5x5_01.glb"
+                                                        },
+                         "static_torigate01":  {
+                                                   "scale":  100,
+                                                   "file":  "./asset-visuals/static_torigate01.glb"
+                                               },
+                         "static_toweredgecapdetail_1":  {
+                                                             "scale":  100,
+                                                             "file":  "./asset-visuals/static_toweredgecapdetail_1.glb"
+                                                         },
+                         "static_toweredgedetail_1":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/static_toweredgedetail_1.glb"
+                                                      },
+                         "static_towermidwalldetail_1":  {
+                                                             "scale":  100,
+                                                             "file":  "./asset-visuals/static_towermidwalldetail_1.glb"
+                                                         },
+                         "static_tree_02":  {
+                                                "scale":  100,
+                                                "file":  "./asset-visuals/static_tree_02.glb"
+                                            },
+                         "static_tree_fallen_01":  {
+                                                       "scale":  100,
+                                                       "file":  "./asset-visuals/static_tree_fallen_01.glb"
+                                                   },
+                         "static_tree_large_01":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_tree_large_01.glb"
+                                                  },
+                         "static_tree_large_02":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_tree_large_02.glb"
+                                                  },
+                         "static_tree_large_03":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_tree_large_03.glb"
+                                                  },
+                         "static_tree_large_04":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_tree_large_04.glb"
+                                                  },
+                         "static_tree_stump_01":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_tree_stump_01.glb"
+                                                  },
+                         "static_treebirch_01":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_treebirch_01.glb"
+                                                 },
+                         "static_treebirch_02":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_treebirch_02.glb"
+                                                 },
+                         "static_treebirch_03":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_treebirch_03.glb"
+                                                 },
+                         "static_treebirch_04":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_treebirch_04.glb"
+                                                 },
+                         "static_treebirch_05":  {
+                                                     "scale":  100,
+                                                     "file":  "./asset-visuals/static_treebirch_05.glb"
+                                                 },
+                         "static_vine01":  {
+                                               "scale":  100,
+                                               "file":  "./asset-visuals/static_vine01.glb"
+                                           },
+                         "static_vine02":  {
+                                               "scale":  100,
+                                               "file":  "./asset-visuals/static_vine02.glb"
+                                           },
+                         "static_vine05":  {
+                                               "scale":  100,
+                                               "file":  "./asset-visuals/static_vine05.glb"
+                                           },
+                         "static_vine06":  {
+                                               "scale":  100,
+                                               "file":  "./asset-visuals/static_vine06.glb"
+                                           },
+                         "static_vines_2m":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/static_vines_2m.glb"
+                                             },
+                         "static_willowtree_00":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_willowtree_00.glb"
+                                                  },
+                         "static_willowtree_02":  {
+                                                      "scale":  100,
+                                                      "file":  "./asset-visuals/static_willowtree_02.glb"
+                                                  },
+                         "static_woodenbox":  {
+                                                  "scale":  100,
+                                                  "file":  "./asset-visuals/static_woodenbox.glb"
+                                              },
+                         "static_woodenoctagonplatform":  {
+                                                              "scale":  100,
+                                                              "file":  "./asset-visuals/static_woodenoctagonplatform.glb"
+                                                          },
+                         "static_woodensquareplatform":  {
+                                                             "scale":  100,
+                                                             "file":  "./asset-visuals/static_woodensquareplatform.glb"
+                                                         },
+                         "static_x_sign":  {
+                                               "scale":  100,
+                                               "file":  "./asset-visuals/static_x_sign.glb"
+                                           },
+                         "statue_the_man":  {
+                                                "scale":  100,
+                                                "file":  "./asset-visuals/statue_the_man.glb"
+                                            },
+                         "swanboat":  {
+                                          "scale":  100,
+                                          "file":  "./asset-visuals/swanboat.glb"
+                                      },
+                         "swing_bar":  {
+                                           "scale":  100,
+                                           "file":  "./asset-visuals/swing_bar.glb"
+                                       },
+                         "torch_floor":  {
+                                             "scale":  100,
+                                             "file":  "./asset-visuals/torch_floor.glb"
+                                         },
+                         "torch_wall":  {
+                                            "scale":  100,
+                                            "file":  "./asset-visuals/torch_wall.glb"
+                                        },
+                         "tower_wall":  {
+                                            "scale":  100,
+                                            "file":  "./asset-visuals/tower_wall.glb"
+                                        },
+                         "wall_monitor":  {
+                                              "scale":  100,
+                                              "file":  "./asset-visuals/wall_monitor.glb"
+                                          },
+                         "wall_monitor_blimp_peony":  {
+                                                          "scale":  100,
+                                                          "file":  "./asset-visuals/wall_monitor_blimp_peony.glb"
+                                                      },
+                         "window_cleaner":  {
+                                                "scale":  100,
+                                                "file":  "./asset-visuals/window_cleaner.glb"
+                                            },
+                         "wooden_platform":  {
+                                                 "scale":  100,
+                                                 "file":  "./asset-visuals/wooden_platform.glb"
+                                             },
+                         "wooden_platform_2x2":  {
+                                                     "scale":  100,
+                                                     "files":  [
+                                                                   "./asset-visuals/wooden_platform_2x2__wooden_platform_2x2_bot.glb",
+                                                                   "./asset-visuals/wooden_platform_2x2__wooden_platform_2x2_top.glb"
+                                                               ]
+                                                 },
+                         "basekit_small_platform":  {
+                                                        "file":  "./asset-visuals/basekit_small_platform.glb",
+                                                        "scale":  100
+                                                    },
+                         "basekit_small_platform_alt_1":  {
+                                                              "file":  "./asset-visuals/basekit_small_platform_alt_1.glb",
+                                                              "scale":  100
+                                                          },
+                         "basekit_small_platform_alt_2":  {
+                                                              "file":  "./asset-visuals/basekit_small_platform_alt_2.glb",
+                                                              "scale":  100
+                                                          },
+                         "basekit_small_platform_alt_3":  {
+                                                              "file":  "./asset-visuals/basekit_small_platform_alt_3.glb",
+                                                              "scale":  100
+                                                          },
+                         "basekit_small_ramp":  {
+                                                    "file":  "./asset-visuals/basekit_small_ramp.glb",
+                                                    "scale":  100
+                                                },
+                         "sky_platform":  {
+                                                "files":  [
+                                                              "./asset-visuals/sky_platform_component_side.glb",
+                                                              "./asset-visuals/sky_platform_component_corner.glb"
+                                                          ],
+                                                "scale":  100
+                                            },
+                         "sky_platform_blue":  {
+                                                     "files":  [
+                                                                   "./asset-visuals/sky_platform_component_side.glb",
+                                                                   "./asset-visuals/sky_platform_component_corner.glb"
+                                                               ],
+                                                     "scale":  100
+                                                 },
+                         "sky_platform_gold":  {
+                                                     "files":  [
+                                                                   "./asset-visuals/sky_platform_component_side.glb",
+                                                                   "./asset-visuals/sky_platform_component_corner.glb"
+                                                               ],
+                                                     "scale":  100
+                                                 },
+                         "sky_platform_yellow":  {
+                                                       "files":  [
+                                                                     "./asset-visuals/sky_platform_component_side.glb",
+                                                                     "./asset-visuals/sky_platform_component_corner.glb"
+                                                                 ],
+                                                       "scale":  100
+                                                   }
+                     },
+    "environmentScenes":  {
+
+                          },
+    "skyboxVisuals":  {
+                          "Scenario_TheNightThatNeverSleeps":  "./skyboxes/Scenario_TheNightThatNeverSleeps.png"
+                      }
+}

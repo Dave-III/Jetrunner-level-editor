@@ -11,7 +11,9 @@ public class JETRUNNER : ModuleRules
             "Core",
             "CoreUObject",
             "Engine",
-            "GameplayTags"
+            "GameplayTags",
+            "AIModule",
+            "UMG"
         });
     }
 }

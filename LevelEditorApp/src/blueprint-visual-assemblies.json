@@ -1,0 +1,8604 @@
+{
+  "assemblies": {
+    "damage_box": {
+      "runtimeObjectName": "BP_DamageBox",
+      "boundsCm": {
+        "minCm": [
+          -50,
+          -50,
+          -50
+        ],
+        "maxCm": [
+          50,
+          50,
+          50
+        ],
+        "sizeCm": [
+          100,
+          100,
+          100
+        ]
+      },
+      "components": [
+        {
+          "primitive": "cube",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "swanboat": {
+      "runtimeObjectName": "BP_Swanboat",
+      "boundsCm": {
+        "minCm": [
+          -178.64633202552795,
+          -97.6448804140091,
+          -34.05925780534744
+        ],
+        "maxCm": [
+          181.85078501701355,
+          97.64488935470581,
+          288.2523536682129
+        ],
+        "sizeCm": [
+          360.4971170425415,
+          195.2897697687149,
+          322.31161147356033
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Swanboat_3cbdde9107.glb",
+          "matrix": [
+            0.75,
+            0,
+            0,
+            0,
+            0,
+            0.75,
+            0,
+            0,
+            0,
+            0,
+            0.75,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            0.75,
+            0.75,
+            0.75
+          ]
+        }
+      ]
+    },
+    "juan": {
+      "runtimeObjectName": "BP_Juan",
+      "boundsCm": {
+        "minCm": [
+          -47.69015312194824,
+          -137.41565942764282,
+          -2.5925228372216225
+        ],
+        "maxCm": [
+          47.69015312194824,
+          142.26678609848022,
+          116.54759645462036
+        ],
+        "sizeCm": [
+          95.38030624389648,
+          279.68244552612305,
+          119.14011929184198
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_JUAN_1fa5edb0cf.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "destructible_hard_virtual_fragile": {
+      "runtimeObjectName": "BP_DestructibleHard_Virtual_Fragile",
+      "boundsCm": {
+        "minCm": [
+          -50,
+          -49.66752529144287,
+          -50.00000596046448
+        ],
+        "maxCm": [
+          49.999988079071045,
+          50.00000596046448,
+          50.00002384185791
+        ],
+        "sizeCm": [
+          99.99998807907104,
+          99.66753125190735,
+          100.00002980232239
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_ConcreteCube_Cube_001_e99a93dace.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "kill_cloud": {
+      "runtimeObjectName": "BP_KillCloud",
+      "boundsCm": {
+        "minCm": [
+          -267.60690212249756,
+          -318.9006567001343,
+          -169.89299058914185
+        ],
+        "maxCm": [
+          264.44268226623535,
+          238.84198665618896,
+          168.04605722427368
+        ],
+        "sizeCm": [
+          532.0495843887329,
+          557.7426433563232,
+          337.9390478134155
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_CloudBody_5d8e4fd364.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "statue_the_man": {
+      "runtimeObjectName": "BP_Statue_TheMan",
+      "boundsCm": {
+        "minCm": [
+          -144.3846584582801,
+          -68.74205470085144,
+          -2.710786834359169
+        ],
+        "maxCm": [
+          144.34635627026606,
+          67.27567911148071,
+          384.4204419708252
+        ],
+        "sizeCm": [
+          288.73101472854614,
+          136.01773381233215,
+          387.1312288051844
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Statue_TheMan_4ceb327903.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -1.2164068e-7,
+            1.9252619e-7,
+            93.61,
+            1
+          ],
+          "positionCm": [
+            -1.2164068e-7,
+            -1.9252619e-7,
+            93.61
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_StatuePlatform_7e91c7528a.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "lars": {
+      "runtimeObjectName": "BP_Lars",
+      "boundsCm": {
+        "minCm": [
+          -50,
+          -50,
+          -0.01
+        ],
+        "maxCm": [
+          50,
+          50,
+          0.01
+        ],
+        "sizeCm": [
+          100,
+          100,
+          0.02
+        ]
+      },
+      "components": [
+        {
+          "primitive": "plane",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "health_pickup": {
+      "runtimeObjectName": "BP_HealthPickup",
+      "boundsCm": {
+        "minCm": [
+          -20,
+          -50,
+          -50
+        ],
+        "maxCm": [
+          20,
+          50,
+          50
+        ],
+        "sizeCm": [
+          40,
+          100,
+          100
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_HealthCross_3083691ea0.glb",
+          "matrix": [
+            0.2,
+            0,
+            0,
+            0,
+            0,
+            0.2,
+            0,
+            0,
+            0,
+            0,
+            0.2,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            0.2,
+            0.2,
+            0.2
+          ]
+        }
+      ]
+    },
+    "concrete_pillar": {
+      "runtimeObjectName": "BP_ConcretePillar",
+      "boundsCm": {
+        "minCm": [
+          -50,
+          -49.66752529144287,
+          -50.00000596046448
+        ],
+        "maxCm": [
+          49.999988079071045,
+          50.00000596046448,
+          50.00002384185791
+        ],
+        "sizeCm": [
+          99.99998807907104,
+          99.66753125190735,
+          100.00002980232239
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_ConcreteCube_Cube_001_e99a93dace.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "basekit_small_basewall": {
+      "runtimeObjectName": "BP_Basekit_Smol_Basewall",
+      "boundsCm": {
+        "minCm": [
+          -600,
+          -30.0001323223114,
+          -340.0000040730168
+        ],
+        "maxCm": [
+          430.0000011920929,
+          29.999998211860657,
+          460
+        ],
+        "sizeCm": [
+          1030.000001192093,
+          60.00013053417206,
+          800.0000040730167
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            400,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            600,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            600,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            400,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -600,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -600,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            600,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -600,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -600,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            600,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Pillar_01_3de8e3be14.glb",
+          "matrix": [
+            2,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            -400,
+            0,
+            -340,
+            1
+          ],
+          "positionCm": [
+            -400,
+            0,
+            -790
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            2,
+            -2,
+            2
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Pillar_01_3de8e3be14.glb",
+          "matrix": [
+            2,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            400,
+            0,
+            -340,
+            1
+          ],
+          "positionCm": [
+            400,
+            0,
+            -790
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            2,
+            -2,
+            2
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Wall_01_0263632ec7.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Wall_01_0263632ec7.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Wall_01_0263632ec7.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Wall_01_0263632ec7.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "basekit_small_hollow_cylinder": {
+      "runtimeObjectName": "BP_BasekitSmol_HollowCylinder",
+      "boundsCm": {
+        "minCm": [
+          -800,
+          -1200,
+          -0.00005311821951181628
+        ],
+        "maxCm": [
+          800.0000000000001,
+          400,
+          800
+        ],
+        "sizeCm": [
+          1600,
+          1600,
+          800.0000531182195
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallQuarterCylinder_01_e12d0f51d5.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallQuarterCylinder_01_e12d0f51d5.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            1,
+            0,
+            0,
+            -1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            -90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallQuarterCylinder_01_e12d0f51d5.glb",
+          "matrix": [
+            -1,
+            1.2246467991473532e-16,
+            0,
+            0,
+            -1.2246467991473532e-16,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.0000011141321,
+            800,
+            0,
+            1
+          ],
+          "positionCm": [
+            0.0000011141321,
+            -800,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            -180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallQuarterCylinder_01_e12d0f51d5.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            -1,
+            0,
+            0,
+            1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallQuarterCylinder_01_e12d0f51d5.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            -1,
+            0,
+            0,
+            1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            400,
+            400,
+            1
+          ],
+          "positionCm": [
+            -400,
+            -400,
+            400
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallQuarterCylinder_01_e12d0f51d5.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            400,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            400
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallQuarterCylinder_01_e12d0f51d5.glb",
+          "matrix": [
+            -1,
+            1.2246467991473532e-16,
+            0,
+            0,
+            -1.2246467991473532e-16,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.000001,
+            800,
+            400,
+            1
+          ],
+          "positionCm": [
+            0.000001,
+            -800,
+            400
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            -180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallQuarterCylinder_01_e12d0f51d5.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            1,
+            0,
+            0,
+            -1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            400,
+            400,
+            1
+          ],
+          "positionCm": [
+            400,
+            -400,
+            400
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            -90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "basekit_small_basewall_alt": {
+      "runtimeObjectName": "BP_Basekit_Smol_Basewall1",
+      "boundsCm": {
+        "minCm": [
+          -600,
+          -25,
+          -50
+        ],
+        "maxCm": [
+          400,
+          25.000065565109253,
+          449.9999995926983
+        ],
+        "sizeCm": [
+          1000,
+          50.00006556510925,
+          499.9999995926983
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            400,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            600,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            600,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            400,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -600,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -600,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            600,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -600,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -600,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            600,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            450,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            450
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Wall_01_0263632ec7.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Wall_01_0263632ec7.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Wall_01_0263632ec7.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Wall_01_0263632ec7.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "basekit_small_ramp": {
+      "runtimeObjectName": "BP_BasekitSmol_Ramp",
+      "boundsCm": {
+        "minCm": [
+          -225.00001788139343,
+          -200.0000238418579,
+          -250
+        ],
+        "maxCm": [
+          225.00011026859283,
+          200.00004404830918,
+          -0.8156443014740944
+        ],
+        "sizeCm": [
+          450.00012814998627,
+          400.0000678901671,
+          249.1843556985259
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_FlootSlope_01_eaf08ecbd1.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_FlootSlope_01_eaf08ecbd1.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_FlootSlope_01_eaf08ecbd1.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            -200,
+            -100,
+            1
+          ],
+          "positionCm": [
+            -200,
+            200,
+            -100
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_FlootSlope_01_eaf08ecbd1.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            -200,
+            -100,
+            1
+          ],
+          "positionCm": [
+            0,
+            200,
+            -100
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeSlope_01_29c3aa444c.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            -200,
+            -100,
+            1
+          ],
+          "positionCm": [
+            -400,
+            200,
+            150
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeSlope_01_29c3aa444c.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            0,
+            250
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeSlope_01_29c3aa444c.glb",
+          "matrix": [
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            -200,
+            -100,
+            1
+          ],
+          "positionCm": [
+            0,
+            200,
+            150
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            -1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeSlope_01_29c3aa444c.glb",
+          "matrix": [
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            250
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            -1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallShort1M_01_3a14233d44.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            -250,
+            1
+          ],
+          "positionCm": [
+            -400,
+            -200,
+            -150
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallShort1M_01_3a14233d44.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            0,
+            -250,
+            1
+          ],
+          "positionCm": [
+            0,
+            -200,
+            -150
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallSlantedShort_01_d6545e657e.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallSlantedShort_01_d6545e657e.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallSlantedShort_01_d6545e657e.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            -200,
+            -100,
+            1
+          ],
+          "positionCm": [
+            -200,
+            200,
+            -100
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_WallSlantedShort_01_d6545e657e.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            -200,
+            -100,
+            1
+          ],
+          "positionCm": [
+            200,
+            200,
+            -100
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "lcd_screen": {
+      "runtimeObjectName": "BP_LCDScreen",
+      "boundsCm": {
+        "minCm": [
+          -200,
+          -50.00004172325134,
+          -200
+        ],
+        "maxCm": [
+          200,
+          0.000032584134146418364,
+          200
+        ],
+        "sizeCm": [
+          400,
+          50.00007430738549,
+          400
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_LCD_Screen_8fb26a300f.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "basekit_small_cube_tower": {
+      "runtimeObjectName": "BP_Basekit_Smol_CubeTower",
+      "boundsCm": {
+        "minCm": [
+          -200,
+          -400.0000238418579,
+          -200
+        ],
+        "maxCm": [
+          200,
+          -4.0730170347558214e-7,
+          800.000032176834
+        ],
+        "sizeCm": [
+          400,
+          400.0000234345562,
+          1000.000032176834
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            400,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            400
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            400,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            400
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            200,
+            400,
+            1
+          ],
+          "positionCm": [
+            0,
+            -200,
+            400
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            600,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            600
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            600,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            600
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            200,
+            600,
+            1
+          ],
+          "positionCm": [
+            0,
+            -200,
+            600
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            200,
+            600,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -200,
+            600
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            800,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            800
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            200,
+            800,
+            1
+          ],
+          "positionCm": [
+            0,
+            -200,
+            800
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            200,
+            800,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -200,
+            800
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            800,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            800
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            200,
+            200,
+            1
+          ],
+          "positionCm": [
+            0,
+            -200,
+            200
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            200,
+            200,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -200,
+            200
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            200,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            200
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            200,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            200
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Cube_01_9ae60c6397.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            200,
+            400,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -200,
+            400
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "basekit_small_platform": {
+      "runtimeObjectName": "BP_BasekitSmol_BasePlatform",
+      "boundsCm": {
+        "minCm": [
+          -425,
+          -600,
+          -50
+        ],
+        "maxCm": [
+          425.0000000000003,
+          425.0000000000002,
+          0.000032176833997255017
+        ],
+        "sizeCm": [
+          850.0000000000002,
+          1025.0000000000002,
+          50.000032176834
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeCorner_01_22d7d276c8.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            399.99999399999984,
+            0,
+            1
+          ],
+          "positionCm": [
+            0.000006,
+            800,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            -90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeCorner_01_22d7d276c8.glb",
+          "matrix": [
+            1.2167961037392529e-8,
+            -0.9999999999999999,
+            0,
+            0,
+            0.9999999999999999,
+            1.2167961037392529e-8,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400.00000000000006,
+            399.9999940000002,
+            0,
+            1
+          ],
+          "positionCm": [
+            0.0000059999998,
+            -4.2632564e-14,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            -6.971728e-7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeCorner_01_22d7d276c8.glb",
+          "matrix": [
+            -1,
+            -4.440892098500626e-16,
+            0,
+            0,
+            4.440892098500626e-16,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400.0000000000003,
+            -400,
+            0,
+            1
+          ],
+          "positionCm": [
+            800,
+            -1.2079227e-13,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeCorner_01_22d7d276c8.glb",
+          "matrix": [
+            -3.4450928483976665e-16,
+            1,
+            0,
+            0,
+            -1,
+            -3.4450928483976665e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -399.9999999999998,
+            -400.0000000000002,
+            0,
+            1
+          ],
+          "positionCm": [
+            800,
+            800,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -2.220446049250313e-16,
+            1,
+            0,
+            0,
+            -1,
+            -2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400.00003,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400.00003,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            270
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -2.220446049250313e-16,
+            1,
+            0,
+            0,
+            -1,
+            -2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400.00003,
+            -200.000003,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400.00003,
+            0.000003,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            270
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -2.220446049250313e-16,
+            1,
+            0,
+            0,
+            -1,
+            -2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400.00003,
+            -400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400.00003,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            270
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            -1,
+            0,
+            0,
+            1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            -199.999994,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            -0.000006,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            -1,
+            0,
+            0,
+            1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            -1,
+            0,
+            0,
+            1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            -1,
+            0,
+            0,
+            1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -1,
+            -1.2246467991473532e-16,
+            0,
+            0,
+            1.2246467991473532e-16,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            -400,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -1,
+            -1.2246467991473532e-16,
+            0,
+            0,
+            1.2246467991473532e-16,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            -400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -1,
+            -1.2246467991473532e-16,
+            0,
+            0,
+            1.2246467991473532e-16,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            -400,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -1,
+            -1.2246467991473532e-16,
+            0,
+            0,
+            1.2246467991473532e-16,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            -400,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.000015707963,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -0.000015707963,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200.00002,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200.00002,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400.00003,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400.00003,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            199.99998,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            199.99998,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -2.220446049250313e-16,
+            1,
+            0,
+            0,
+            -1,
+            -2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400.00003,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400.00003,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            270
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "basekit_small_platform_alt_1": {
+      "runtimeObjectName": "BP_BasekitSmol_BasePlatform1",
+      "boundsCm": {
+        "minCm": [
+          -400.00003,
+          -600,
+          -50
+        ],
+        "maxCm": [
+          400,
+          400.000007738732,
+          0.000032176833997255017
+        ],
+        "sizeCm": [
+          800.0000299999999,
+          1000.0000077387319,
+          50.000032176834
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -1,
+            -1.2246467991473532e-16,
+            0,
+            0,
+            1.2246467991473532e-16,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            -400,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -1,
+            -1.2246467991473532e-16,
+            0,
+            0,
+            1.2246467991473532e-16,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            -400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -1,
+            -1.2246467991473532e-16,
+            0,
+            0,
+            1.2246467991473532e-16,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            -400,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -1,
+            -1.2246467991473532e-16,
+            0,
+            0,
+            1.2246467991473532e-16,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            -400,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.000015707963,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -0.000015707963,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200.00002,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200.00002,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400.00003,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400.00003,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            199.99998,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            199.99998,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "basekit_small_platform_alt_2": {
+      "runtimeObjectName": "BP_BasekitSmol_BasePlatform2",
+      "boundsCm": {
+        "minCm": [
+          -425,
+          -600,
+          -50
+        ],
+        "maxCm": [
+          400.000007738732,
+          400,
+          0.000032176833997255017
+        ],
+        "sizeCm": [
+          825.0000077387319,
+          1000,
+          50.000032176834
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeCorner_01_22d7d276c8.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            399.99999399999984,
+            0,
+            1
+          ],
+          "positionCm": [
+            0.000006,
+            800,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            -90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeCorner_01_22d7d276c8.glb",
+          "matrix": [
+            1.2167961037392529e-8,
+            -0.9999999999999999,
+            0,
+            0,
+            0.9999999999999999,
+            1.2167961037392529e-8,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400.00000000000006,
+            399.9999940000002,
+            0,
+            1
+          ],
+          "positionCm": [
+            0.0000059999998,
+            -4.2632564e-14,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            -6.971728e-7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -2.220446049250313e-16,
+            1,
+            0,
+            0,
+            -1,
+            -2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400.00003,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400.00003,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            270
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -2.220446049250313e-16,
+            1,
+            0,
+            0,
+            -1,
+            -2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400.00003,
+            -200.000003,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400.00003,
+            0.000003,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            270
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -2.220446049250313e-16,
+            1,
+            0,
+            0,
+            -1,
+            -2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400.00003,
+            -400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400.00003,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            270
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            -1,
+            0,
+            0,
+            1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            -199.999994,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            -0.000006,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            -1,
+            0,
+            0,
+            1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            -1,
+            0,
+            0,
+            1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            2.220446049250313e-16,
+            -1,
+            0,
+            0,
+            1,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            400,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            400,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            90
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.000015707963,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -0.000015707963,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200.00002,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200.00002,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400.00003,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400.00003,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            1,
+            2.4492935982947064e-16,
+            0,
+            0,
+            -2.4492935982947064e-16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            199.99998,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            199.99998,
+            -600,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            360
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_LedgeFloor_01_cd0caa6873.glb",
+          "matrix": [
+            -2.220446049250313e-16,
+            1,
+            0,
+            0,
+            -1,
+            -2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400.00003,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400.00003,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            270
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "basekit_small_platform_alt_3": {
+      "runtimeObjectName": "BP_BasekitSmol_BasePlatform3",
+      "boundsCm": {
+        "minCm": [
+          -400,
+          -600,
+          -50
+        ],
+        "maxCm": [
+          400,
+          199.9999995926983,
+          0.000032176833997255017
+        ],
+        "sizeCm": [
+          800,
+          799.9999995926983,
+          50.000032176834
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            -200,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -400,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -400,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            200,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -200,
+            200,
+            0,
+            1
+          ],
+          "positionCm": [
+            -200,
+            -200,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Baskit_Smol_Floor_01_d468a9dfde.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            400,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            -400,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "torch_floor": {
+      "runtimeObjectName": "BP_Torch_Floor",
+      "boundsCm": {
+        "minCm": [
+          -15.835691690444946,
+          -17.009087800979614,
+          -4.113306999206543
+        ],
+        "maxCm": [
+          21.484806537628174,
+          20.891454219818115,
+          60.793654918670654
+        ],
+        "sizeCm": [
+          37.32049822807312,
+          37.90054202079773,
+          64.9069619178772
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_FloorTorch_1a96c4150e.glb",
+          "matrix": [
+            0.2,
+            0,
+            0,
+            0,
+            0,
+            0.2,
+            0,
+            0,
+            0,
+            0,
+            0.2,
+            0,
+            0,
+            0,
+            35,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            35
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            0.2,
+            0.2,
+            0.2
+          ]
+        }
+      ]
+    },
+    "water_pipe": {
+      "runtimeObjectName": "BP_WaterPipe",
+      "boundsCm": {
+        "minCm": [
+          -100,
+          -125,
+          -1012.750108808279
+        ],
+        "maxCm": [
+          300,
+          125,
+          125
+        ],
+        "sizeCm": [
+          400,
+          250,
+          1137.750108808279
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Pipewater_Bend_7dc1794dce.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Pipewater_Tube_350d798b5d.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            9.1275,
+            0,
+            0,
+            0,
+            -100,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            -100
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            9.1275
+          ]
+        },
+        {
+          "primitive": "cylinder",
+          "matrix": [
+            5.551115123125783e-16,
+            0,
+            -2.5,
+            0,
+            0,
+            2.5,
+            0,
+            0,
+            0.5,
+            0,
+            1.1102230246251565e-16,
+            0,
+            120,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            120,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            90,
+            0
+          ],
+          "scale": [
+            2.5,
+            2.5,
+            0.5
+          ]
+        },
+        {
+          "primitive": "cylinder",
+          "matrix": [
+            4.884981308350689e-16,
+            0,
+            -2.2,
+            0,
+            0,
+            2.2,
+            0,
+            0,
+            2,
+            0,
+            4.440892098500626e-16,
+            0,
+            200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            90,
+            0
+          ],
+          "scale": [
+            2.2,
+            2.2,
+            2
+          ]
+        }
+      ]
+    },
+    "spotlight": {
+      "runtimeObjectName": "BP_Spotlight",
+      "boundsCm": {
+        "minCm": [
+          -50,
+          -201.369047164917,
+          -201.3690710067749
+        ],
+        "maxCm": [
+          393.8758373260498,
+          201.3690948486328,
+          201.3690710067749
+        ],
+        "sizeCm": [
+          443.8758373260498,
+          402.7381420135498,
+          402.7381420135498
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Spotlight_c0c9d6cec9.glb",
+          "matrix": [
+            0.5,
+            0,
+            0,
+            0,
+            0,
+            0.5,
+            0,
+            0,
+            0,
+            0,
+            0.5,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        }
+      ]
+    },
+    "water_pipe_etheral": {
+      "runtimeObjectName": "BP_WaterPipe_Etheral",
+      "boundsCm": {
+        "minCm": [
+          -100,
+          -125,
+          -1012.750108808279
+        ],
+        "maxCm": [
+          300,
+          125,
+          125
+        ],
+        "sizeCm": [
+          400,
+          250,
+          1137.750108808279
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Pipewater_Bend_7dc1794dce.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Pipewater_Tube_350d798b5d.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            9.1275,
+            0,
+            0,
+            0,
+            -100,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            -100
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            9.1275
+          ]
+        },
+        {
+          "primitive": "cylinder",
+          "matrix": [
+            5.551115123125783e-16,
+            0,
+            -2.5,
+            0,
+            0,
+            2.5,
+            0,
+            0,
+            0.5,
+            0,
+            1.1102230246251565e-16,
+            0,
+            120,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            120,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            90,
+            0
+          ],
+          "scale": [
+            2.5,
+            2.5,
+            0.5
+          ]
+        },
+        {
+          "primitive": "cylinder",
+          "matrix": [
+            4.884981308350689e-16,
+            0,
+            -2.2,
+            0,
+            0,
+            2.2,
+            0,
+            0,
+            2,
+            0,
+            4.440892098500626e-16,
+            0,
+            200,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            200,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            90,
+            0
+          ],
+          "scale": [
+            2.2,
+            2.2,
+            2
+          ]
+        }
+      ]
+    },
+    "rio_gallery_shard": {
+      "runtimeObjectName": "BP_RioGalleyShard",
+      "boundsCm": {
+        "minCm": [
+          -1887.4919891357422,
+          -4010.8192443847656,
+          -3237.000274658203
+        ],
+        "maxCm": [
+          2205.7687759399414,
+          4010.819625854492,
+          4989.532470703125
+        ],
+        "sizeCm": [
+          4093.2607650756836,
+          8021.638870239258,
+          8226.532745361328
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_RioStadium_GalleryShard_Audience_bd0fc269e0.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_BannersBuilding_Fix_c17e310683.glb",
+          "matrix": [
+            0.992546151641322,
+            0.12186934340514748,
+            0,
+            0,
+            -0.12186934340514748,
+            0.992546151641322,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -1130,
+            2800,
+            4890,
+            1
+          ],
+          "positionCm": [
+            -1130,
+            -2800,
+            4890
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            -7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_BannersBuilding_Fix_c17e310683.glb",
+          "matrix": [
+            0.992546151641322,
+            -0.12186934340514748,
+            0,
+            0,
+            0.12186934340514748,
+            0.992546151641322,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -1130,
+            -2800,
+            4890,
+            1
+          ],
+          "positionCm": [
+            -1130,
+            2800,
+            4890
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_BannersBuilding_Fix_c17e310683.glb",
+          "matrix": [
+            0.8,
+            0,
+            0,
+            0,
+            0,
+            0.8,
+            0,
+            0,
+            0,
+            0,
+            0.8,
+            0,
+            -891.3101,
+            1.7735147e-11,
+            4890,
+            1
+          ],
+          "positionCm": [
+            -891.3101,
+            -1.7735147e-11,
+            4890
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            0.8,
+            0.8,
+            0.8
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_BannersBuilding_Fix_c17e310683.glb",
+          "matrix": [
+            0.75,
+            0,
+            0,
+            0,
+            0,
+            0.75,
+            0,
+            0,
+            0,
+            0,
+            0.75,
+            0,
+            -1317.5872,
+            1097.6947,
+            1064.3845,
+            1
+          ],
+          "positionCm": [
+            -1317.5872,
+            -1097.6947,
+            1064.3845
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            0.75,
+            0.75,
+            0.75
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_BannersBuilding_Fix_c17e310683.glb",
+          "matrix": [
+            0.75,
+            0,
+            0,
+            0,
+            0,
+            0.75,
+            0,
+            0,
+            0,
+            0,
+            0.75,
+            0,
+            -1317.5872,
+            -1000,
+            1064.3845,
+            1
+          ],
+          "positionCm": [
+            -1317.5872,
+            1000,
+            1064.3845
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            0.75,
+            0.75,
+            0.75
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_RioStadium_GalleryShard_d0c119bb9a.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "peony_spectating_box": {
+      "runtimeObjectName": "BP_Peony_SpectatingBox",
+      "boundsCm": {
+        "minCm": [
+          -489.95275497436523,
+          -798.8791942596436,
+          -402.8043270111084
+        ],
+        "maxCm": [
+          499.3479251861572,
+          790.4218196868896,
+          813.0555152893066
+        ],
+        "sizeCm": [
+          989.3006801605225,
+          1589.3010139465332,
+          1215.859842300415
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/COL_SM_Peony_SpectatingBox_01_01_24ebca9059.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Peony_SpectatingBox_01_318966a741.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_Peony_SpectatingBox_Spawner_0231b02037.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "destructible_leaf_pile": {
+      "runtimeObjectName": "BP_LeafPile_Destructible",
+      "boundsCm": {
+        "minCm": [
+          -117.28935241699219,
+          -117.4065113067627,
+          -8.015522137284279
+        ],
+        "maxCm": [
+          115.92647731304169,
+          116.69084429740906,
+          78.63077580928802
+        ],
+        "sizeCm": [
+          233.21582973003387,
+          234.09735560417175,
+          86.6462979465723
+        ]
+      },
+      "components": [
+        {
+          "file": "./asset-visuals/blueprint-components/SM_LeafPile2_Flatt_f8fdba0c23.glb",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "file": "./asset-visuals/blueprint-components/SM_LeafPile2_High_2e5227230d.glb",
+          "matrix": [
+            1.5,
+            0,
+            0,
+            0,
+            0,
+            1.5,
+            0,
+            0,
+            0,
+            0,
+            1.8,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "positionCm": [
+            0,
+            0,
+            0
+          ],
+          "rotationDegrees": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.5,
+            1.5,
+            1.8
+          ]
+        }
+      ]
+    }
+  }
+}

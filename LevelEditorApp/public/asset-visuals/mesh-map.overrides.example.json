@@ -1,0 +1,11 @@
+{
+  "wooden_platform": {
+    "scale": 100,
+    "position": [0, 0, 0],
+    "rotationDegrees": [0, 0, 0]
+  },
+  "crane": {
+    "scale": 100,
+    "rotationDegrees": [0, 0, 180]
+  }
+}
