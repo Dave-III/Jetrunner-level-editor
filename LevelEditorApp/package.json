@@ -1,6 +1,6 @@
 {
   "name": "jetrunner-level-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "main": "electron/main.cjs",
   "scripts": {
@@ -67,7 +67,9 @@
       }
     ],
     "win": {
-      "target": ["nsis"],
+      "target": [
+        "nsis"
+      ],
       "icon": "build/juan.png",
       "artifactName": "JETRUNNER-Level-Editor-Setup-${version}.${ext}"
     },
@@ -79,12 +81,14 @@
       "shortcutName": "JETRUNNER Level Editor",
       "deleteAppDataOnUninstall": false
     },
-    "publish": [{
-      "provider": "github",
-      "owner": "Dave-III",
-      "repo": "Jetrunner-level-editor",
-      "releaseType": "release"
-    }],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Dave-III",
+        "repo": "Jetrunner-level-editor",
+        "releaseType": "release"
+      }
+    ],
     "fileAssociations": [
       {
         "ext": "jle",
