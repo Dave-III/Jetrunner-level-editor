@@ -48,6 +48,12 @@ declare global {
       }) => void) => () => void;
       beginNewProject: () => Promise<{ ready: boolean; error?: string }>;
       quitApp: () => Promise<{ quitting: boolean }>;
+      downloadEditorUpdate: () => Promise<{ started: boolean }>;
+      onEditorUpdateState: (callback: (state: {
+        status: 'available' | 'downloading' | 'downloaded' | 'current' | 'error';
+        version?: string;
+        percent?: number;
+      }) => void) => () => void;
       verificationSupportedAssetIds: string[];
       logEditor: (source: string, message: unknown) => void;
       onPipelineStatus: (callback: (status: { stage: string; message: string }) => void) => () => void;

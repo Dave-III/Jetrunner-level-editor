@@ -20,6 +20,12 @@ contextBridge.exposeInMainWorld('jetrunnerEditor', {
   },
   beginNewProject: () => ipcRenderer.invoke('project:new'),
   quitApp: () => ipcRenderer.invoke('app:quit'),
+  downloadEditorUpdate: () => ipcRenderer.invoke('update:download'),
+  onEditorUpdateState: (callback) => {
+    const listener = (_event, state) => callback(state);
+    ipcRenderer.on('update:state', listener);
+    return () => ipcRenderer.removeListener('update:state', listener);
+  },
   // This comes from the same module as the main-process verifier allowlist.
   verificationSupportedAssetIds: Array.isArray(verificationSupportedAssetIds)
     ? [...verificationSupportedAssetIds]

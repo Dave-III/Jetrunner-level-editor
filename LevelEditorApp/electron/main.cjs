@@ -22,10 +22,18 @@ let verificationInstalledPak = null;
 let verificationArtifacts = null;
 let sessionLogPath = null;
 let mainWindow = null;
+let availableEditorUpdate = null;
+let updaterConfigured = false;
 let pendingExternalProjectPath = process.argv.find((argument) => /\.jle$/i.test(argument)) || null;
+
+function sendEditorUpdateState(state) {
+  mainWindow?.webContents.send('update:state', state);
+}
 
 async function checkForEditorUpdates() {
   if (!app.isPackaged) return;
+  if (updaterConfigured) return;
+  updaterConfigured = true;
   autoUpdater.autoDownload = false;
   autoUpdater.autoInstallOnAppQuit = false;
   autoUpdater.allowPrerelease = false;
@@ -35,12 +43,18 @@ async function checkForEditorUpdates() {
     error: (message) => appendApplicationLog('updater-error', message),
     debug: (message) => appendApplicationLog('updater-debug', message),
   };
-  autoUpdater.on('error', (error) => appendApplicationLog('updater-error', error?.stack || error));
+  autoUpdater.on('error', (error) => {
+    mainWindow?.setProgressBar(-1);
+    sendEditorUpdateState({ status: 'error' });
+    appendApplicationLog('updater-error', error?.stack || error);
+  });
   autoUpdater.on('download-progress', ({ percent }) => {
     mainWindow?.setProgressBar(Math.max(0, Math.min(1, percent / 100)));
+    sendEditorUpdateState({ status: 'downloading', version: availableEditorUpdate?.version, percent });
   });
-  autoUpdater.on('update-downloaded', async () => {
+  autoUpdater.on('update-downloaded', async (info) => {
     mainWindow?.setProgressBar(-1);
+    sendEditorUpdateState({ status: 'downloaded', version: info?.version || availableEditorUpdate?.version });
     const answer = await dialog.showMessageBox(mainWindow, {
       type: 'info',
       title: 'Editor update ready',
@@ -55,21 +69,23 @@ async function checkForEditorUpdates() {
   try {
     const result = await autoUpdater.checkForUpdates();
     const available = result?.updateInfo?.version && result.updateInfo.version !== app.getVersion();
-    if (!available) return;
-    const answer = await dialog.showMessageBox(mainWindow, {
-      type: 'info',
-      title: 'Editor update available',
-      message: `JETRUNNER Level Editor ${result.updateInfo.version} is available.`,
-      detail: 'Download the update from the project’s verified GitHub Release?',
-      buttons: ['Download update', 'Not now'],
-      defaultId: 0,
-      cancelId: 1,
-    });
-    if (answer.response === 0) await autoUpdater.downloadUpdate();
+    availableEditorUpdate = available ? result.updateInfo : null;
+    sendEditorUpdateState(available
+      ? { status: 'available', version: result.updateInfo.version }
+      : { status: 'current' });
+    return;
   } catch (error) {
+    sendEditorUpdateState({ status: 'error' });
     appendApplicationLog('updater-error', error?.stack || error);
   }
 }
+
+ipcMain.handle('update:download', async () => {
+  if (!app.isPackaged || !availableEditorUpdate) return { started: false };
+  sendEditorUpdateState({ status: 'downloading', version: availableEditorUpdate.version, percent: 0 });
+  await autoUpdater.downloadUpdate();
+  return { started: true };
+});
 
 async function openExternalProject(filePath) {
   if (!filePath || !/\.jle$/i.test(filePath)) return;

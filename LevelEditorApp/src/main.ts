@@ -209,6 +209,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </section>
     <div class="designer-credit" aria-label="Designed by Dave">Designed by Dave</div>
     <section id="home-screen" class="home-screen">
+      <button id="home-update" class="home-update" type="button" hidden>New Version Available</button>
       <div class="home-card">
         <img src="${logoUrl}" alt="JETRUNNER" />
         <h1>Level Editor</h1>
@@ -256,6 +257,7 @@ const previewIndicator = document.querySelector<HTMLDivElement>('#preview-indica
 const undoButton = document.querySelector<HTMLButtonElement>('#undo-editor')!;
 const redoButton = document.querySelector<HTMLButtonElement>('#redo-editor')!;
 const homeScreen = document.querySelector<HTMLElement>('#home-screen')!;
+const homeUpdateButton = document.querySelector<HTMLButtonElement>('#home-update')!;
 const optionsScreen = document.querySelector<HTMLElement>('#options-screen')!;
 const advancedOptionsScreen = document.querySelector<HTMLElement>('#advanced-options-screen')!;
 const newLevelDialog = document.querySelector<HTMLElement>('#new-level-dialog')!;
@@ -333,6 +335,34 @@ document.querySelector<HTMLButtonElement>('#home-options')!.addEventListener('cl
 document.querySelector<HTMLButtonElement>('#options-back')!.addEventListener('click', closeKeybindOptions);
 document.querySelector<HTMLButtonElement>('#advanced-options-back')!.addEventListener('click', closeAdvancedOptions);
 document.querySelector<HTMLButtonElement>('#home-quit')!.addEventListener('click', () => { window.jetrunnerEditor?.quitApp(); });
+homeUpdateButton.addEventListener('click', async () => {
+  if (!window.jetrunnerEditor || homeUpdateButton.disabled) return;
+  homeUpdateButton.disabled = true;
+  homeUpdateButton.textContent = 'Starting Download...';
+  const result = await window.jetrunnerEditor.downloadEditorUpdate();
+  if (!result.started) {
+    homeUpdateButton.disabled = false;
+    homeUpdateButton.hidden = true;
+  }
+});
+window.jetrunnerEditor?.onEditorUpdateState((state) => {
+  if (state.status === 'current' || state.status === 'error') {
+    homeUpdateButton.hidden = true;
+    homeUpdateButton.disabled = false;
+    return;
+  }
+  homeUpdateButton.hidden = false;
+  if (state.status === 'available') {
+    homeUpdateButton.disabled = false;
+    homeUpdateButton.textContent = state.version ? `New Version ${state.version} Available` : 'New Version Available';
+  } else if (state.status === 'downloading') {
+    homeUpdateButton.disabled = true;
+    homeUpdateButton.textContent = `Downloading Update ${Math.round(state.percent || 0)}%`;
+  } else {
+    homeUpdateButton.disabled = true;
+    homeUpdateButton.textContent = 'Update Ready';
+  }
+});
 document.querySelector<HTMLButtonElement>('#reset-shortcuts')!.addEventListener('click', () => { restoreDefaultEditorShortcuts(); const settings = readProjectSettings(); writeProjectSettings({ ...settings, shortcuts: {} }); updateShortcutLabels(); renderOptions(); });
 document.querySelector<HTMLButtonElement>('#home-load')!.addEventListener('click', async () => { if (await loadEditorProject()) hideHome(); });
 async function createNewLevel() {
