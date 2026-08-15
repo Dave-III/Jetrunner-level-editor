@@ -55,6 +55,8 @@ UAssetPipeline/Tools/FModel/
 UAssetPipeline/Tools/FModel.zip
 UAssetPipeline/Tools/node/
 UAssetPipeline/Resources/
+!UAssetPipeline/Resources/
+!UAssetPipeline/Resources/**
 UAssetPipeline/TestOutput/
 
 # Large Unreal and packaged asset files
