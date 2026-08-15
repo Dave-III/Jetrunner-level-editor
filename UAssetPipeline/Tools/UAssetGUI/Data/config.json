@@ -1,0 +1,23 @@
+{
+  "Agent": "UAssetGUI v1.1.0 (4855f8c - 8b8687a)",
+  "PreferredVersion": "Unknown",
+  "PreferredMappings": "No mappings",
+  "Theme": "",
+  "MapStructTypeOverride": "",
+  "FavoriteThing": "",
+  "DataZoom": 0,
+  "ChangeValuesOnScroll": true,
+  "EnableDynamicTree": true,
+  "EnableDiscordRPC": true,
+  "DoubleClickToEdit": true,
+  "EnableBak": true,
+  "RestoreSize": true,
+  "EnableUpdateNotice": true,
+  "EnablePrettyBytecode": true,
+  "StartupWidth": 1000,
+  "StartupHeight": 700,
+  "CustomSerializationFlags": 0,
+  "EnableBakJson": false,
+  "AllowUntrustedScripts": false,
+  "RetocExtraCommands": ""
+}

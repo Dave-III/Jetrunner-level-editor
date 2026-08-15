@@ -23,6 +23,19 @@ jobs:
           cache: npm
           cache-dependency-path: LevelEditorApp/package-lock.json
       - run: npm ci
+      - name: Validate packaged compiler resources
+        working-directory: .
+        shell: pwsh
+        run: |
+          $required = @(
+            'UAssetPipeline/Framework/CustomLevelsV0.9.2.pak',
+            'UAssetPipeline/Tools/UAssetGUI/UAssetGUI.exe',
+            'UAssetPipeline/Tools/UAssetGUI/Data/Mappings/JETRUNNER.usmap',
+            'UAssetPipeline/Tools/repak/repak.exe',
+            'UAssetPipeline/Tools/repak/oo2core_9_win64.dll'
+          )
+          $missing = $required | Where-Object { -not (Test-Path -LiteralPath $_ -PathType Leaf) }
+          if ($missing) { throw "Release resources are missing: $($missing -join ', ')" }
       - name: Validate editor
         working-directory: .
         run: |

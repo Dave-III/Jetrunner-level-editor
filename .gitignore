@@ -44,8 +44,13 @@ Scripts/__pycache__/
 # Bundled third-party binaries are supplied separately
 UAssetPipeline/Tools/UAssetGUI/*
 !UAssetPipeline/Tools/UAssetGUI/.gitkeep
+!UAssetPipeline/Tools/UAssetGUI/UAssetGUI.exe
+!UAssetPipeline/Tools/UAssetGUI/Data/
+!UAssetPipeline/Tools/UAssetGUI/Data/**
 UAssetPipeline/Tools/repak/*
 !UAssetPipeline/Tools/repak/.gitkeep
+!UAssetPipeline/Tools/repak/repak.exe
+!UAssetPipeline/Tools/repak/oo2core_9_win64.dll
 UAssetPipeline/Tools/FModel/
 UAssetPipeline/Tools/FModel.zip
 UAssetPipeline/Tools/node/
