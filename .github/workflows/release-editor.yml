@@ -45,9 +45,42 @@ jobs:
           node Scripts/Audit-AssetSupport.mjs
           node Scripts/Validate-AssetSupportSerialization.mjs
           node Scripts/Validate-PreviewCollision.mjs
-      - name: Build NSIS installer and publish GitHub Release
-        run: npm run release:github
+      - name: Build NSIS installer and updater metadata
+        run: npm run package:win
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CSC_LINK: ${{ secrets.WINDOWS_CERTIFICATE }}
           CSC_KEY_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
+      - name: Validate updater artifacts
+        shell: pwsh
+        run: |
+          $version = (Get-Content -Raw package.json | ConvertFrom-Json).version
+          $required = @(
+            "release/JETRUNNER-Level-Editor-Setup-$version.exe",
+            "release/JETRUNNER-Level-Editor-Setup-$version.exe.blockmap",
+            'release/latest.yml'
+          )
+          $missing = $required | Where-Object { -not (Test-Path -LiteralPath $_ -PathType Leaf) }
+          if ($missing) { throw "Updater artifacts are missing: $($missing -join ', ')" }
+          if ((Get-Content -Raw release/latest.yml) -notmatch "(?m)^version: $([regex]::Escape($version))$") {
+            throw 'latest.yml does not match package.json.'
+          }
+      - name: Publish complete GitHub Release
+        shell: pwsh
+        run: |
+          if ('${{ github.ref_type }}' -ne 'tag') {
+            Write-Host 'Manual workflow run built and validated the installer; publishing requires a version tag.'
+            exit 0
+          }
+          $tag = '${{ github.ref_name }}'
+          $version = (Get-Content -Raw package.json | ConvertFrom-Json).version
+          gh release view $tag *> $null
+          if ($LASTEXITCODE -ne 0) {
+            gh release create $tag --title $version --generate-notes
+          }
+          gh release upload $tag `
+            "release/JETRUNNER-Level-Editor-Setup-$version.exe" `
+            "release/JETRUNNER-Level-Editor-Setup-$version.exe.blockmap" `
+            'release/latest.yml' `
+            --clobber
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
