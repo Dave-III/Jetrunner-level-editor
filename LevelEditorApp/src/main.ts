@@ -2894,26 +2894,29 @@ if (whiteQuarterPlatform) {
 }
 const polarityGlowOutline = assetDefinitions.light_rims;
 if (polarityGlowOutline) {
-  // FModel SM_LightStrip_2x2 bounds: 8.215 x 0.255 x 8.217 metres.
-  // Its four uncomplicated strips are more reliable as centralized geometry
-  // than an unrelated one-metre placeholder and keep scaling centred.
+  // Extracted BP_LightRims component bounds are 8.215 x 8.217 x 0.255 m.
+  // The outline lies flat in Unreal X/Y and sits just below its actor origin.
+  // Keeping that basis here makes X/Y resizing match the runtime footprint
+  // instead of presenting the frame edge-on as a tiny cube from above.
   polarityGlowOutline.geometry = () => {
-    const outer = 821.6;
+    const outerX = 821.5218;
+    const outerY = 821.7415;
     const rim = 31;
-    const depth = 25.5;
-    const inner = outer - rim * 2;
+    const depth = 25.4767;
+    const centerZ = -20.4807;
+    const innerY = outerY - rim * 2;
     const parts = [
-      new THREE.BoxGeometry(outer, depth, rim).translate(0, 0, outer / 2 - rim / 2),
-      new THREE.BoxGeometry(outer, depth, rim).translate(0, 0, -outer / 2 + rim / 2),
-      new THREE.BoxGeometry(rim, depth, inner).translate(outer / 2 - rim / 2, 0, 0),
-      new THREE.BoxGeometry(rim, depth, inner).translate(-outer / 2 + rim / 2, 0, 0),
+      new THREE.BoxGeometry(outerX, rim, depth).translate(0, outerY / 2 - rim / 2, centerZ),
+      new THREE.BoxGeometry(outerX, rim, depth).translate(0, -outerY / 2 + rim / 2, centerZ),
+      new THREE.BoxGeometry(rim, innerY, depth).translate(outerX / 2 - rim / 2, 0, centerZ),
+      new THREE.BoxGeometry(rim, innerY, depth).translate(-outerX / 2 + rim / 2, 0, centerZ),
     ];
     const geometry = mergeGeometries(parts, false)!;
     parts.forEach((part) => part.dispose());
     return geometry;
   };
-  polarityGlowOutline.baseDimensions = [821.6, 25.5, 821.7];
-  polarityGlowOutline.baseHeight = 410.85;
+  polarityGlowOutline.baseDimensions = [821.5218, 821.7415, 25.4767];
+  polarityGlowOutline.baseHeight = 33.219;
   polarityGlowOutline.color = 0x5de9ff;
   polarityGlowOutline.emissive = 0x5de9ff;
 }
@@ -4442,24 +4445,23 @@ function goalUniformScale(mesh: THREE.Mesh, preferredAxis: 'x' | 'y' | 'z' = 'x'
   );
 }
 
-function constrainAssetScale(mesh: THREE.Mesh, preferredAxis: 'x' | 'y' | 'z' = 'x') {
+function constrainAssetScale(
+  mesh: THREE.Mesh,
+  preferredAxis: 'x' | 'y' | 'z' = 'x',
+  activeAxisOnly = false,
+) {
   const definition = assetDefinitions[mesh.userData.assetId as AssetId];
   if (!definition) return;
-  if (mesh.userData.assetId === 'static_basekit_cube_01'
-    || mesh.userData.assetId === 'static_basekit_cylinder_01') {
-    const uniformScale = Math.max(0.001, Math.abs(Number.isFinite(mesh.scale.x) ? mesh.scale.x : 1));
-    mesh.scale.setScalar(uniformScale);
-    return;
-  }
-  if (mesh.userData.assetId === 'static_basekit_floor_01'
+  if (!activeAxisOnly && (mesh.userData.assetId === 'static_basekit_floor_01'
     || mesh.userData.assetId === 'static_basekit_floorcylinder_01'
-    || mesh.userData.assetId === 'static_basekit_floorquartercylinder_01') {
+    || mesh.userData.assetId === 'static_basekit_floorquartercylinder_01')) {
     const planarAxis = preferredAxis === 'y' ? 'y' : 'x';
     const planarScale = Math.max(0.001, Math.abs(Number.isFinite(mesh.scale[planarAxis]) ? mesh.scale[planarAxis] : 1));
     mesh.scale.x = planarScale;
     mesh.scale.y = planarScale;
   }
   for (const axis of ['x', 'y', 'z'] as const) {
+    if (activeAxisOnly && axis !== preferredAxis) continue;
     if (definition.resizeAxes && !definition.resizeAxes.includes(axis)) {
       mesh.scale[axis] = 1;
       continue;
@@ -5565,16 +5567,17 @@ function setTransformSnapping(enabled: boolean) {
 }
 
 const CANONICAL_GRID_CM = 100;
+const GRID_SQUARE_CENTER_CM = CANONICAL_GRID_CM / 2;
+function snapCoordinateToSquareCenter(value: number, step = CANONICAL_GRID_CM) {
+  const centerOffset = step === CANONICAL_GRID_CM ? GRID_SQUARE_CENTER_CM : step / 2;
+  return Math.round((value - centerOffset) / step) * step + centerOffset;
+}
 function snapMeshWorldPositionToFootprintGrid(mesh: THREE.Mesh) {
   const world = mesh.getWorldPosition(new THREE.Vector3());
   const bounds = canonicalWorldBounds(mesh);
-  const size = bounds.getSize(new THREE.Vector3());
   const center = bounds.getCenter(new THREE.Vector3());
   for (const axis of ['x', 'y'] as const) {
-    const cells = Math.max(1, Math.round(size[axis] / CANONICAL_GRID_CM));
-    const latticeOffset = cells % 2 === 1 ? CANONICAL_GRID_CM / 2 : 0;
-    const snappedCenter = Math.round((center[axis] - latticeOffset) / CANONICAL_GRID_CM)
-      * CANONICAL_GRID_CM + latticeOffset;
+    const snappedCenter = snapCoordinateToSquareCenter(center[axis]);
     world[axis] += snappedCenter - center[axis];
   }
   world.z = Math.round(world.z / CANONICAL_GRID_CM) * CANONICAL_GRID_CM;
@@ -5623,8 +5626,12 @@ function beginOneSidedScaleDrag(mesh: THREE.Mesh) {
   if (!mesh.geometry.boundingBox) mesh.geometry.computeBoundingBox();
   if (!mesh.geometry.boundingBox) return null;
 
-  const center = mesh.getWorldPosition(new THREE.Vector3());
-  const quaternion = mesh.getWorldQuaternion(new THREE.Quaternion());
+  // The resize control is attached to the centred pivot, not the asset's
+  // authored transform origin. Surface actors commonly place that origin on
+  // their top face, so anchoring from mesh.getWorldPosition() changes Z by
+  // half/full block heights as soon as a horizontal resize begins.
+  const center = singleSelectionPivot.getWorldPosition(new THREE.Vector3());
+  const quaternion = singleSelectionPivot.getWorldQuaternion(new THREE.Quaternion());
   const direction = new THREE.Vector3(
     axisName === 'x' ? 1 : 0,
     axisName === 'y' ? 1 : 0,
@@ -5638,40 +5645,61 @@ function beginOneSidedScaleDrag(mesh: THREE.Mesh) {
   );
   const pointerDirection = lastTransformPointer.clone().sub(new THREE.Vector2(projectedCenter.x, projectedCenter.y));
   const side: -1 | 1 = pointerDirection.dot(screenDirection) >= 0 ? 1 : -1;
+  const worldScale = mesh.getWorldScale(new THREE.Vector3());
+  worldScale.set(Math.abs(worldScale.x), Math.abs(worldScale.y), Math.abs(worldScale.z));
   return {
     axis: axisName,
     side,
     startWorldPosition: center,
     startWorldQuaternion: quaternion,
-    startScale: mesh.scale.clone(),
-    baseSize: mesh.geometry.boundingBox.getSize(new THREE.Vector3()),
+    startScale: singleSelectionPivot.scale.clone(),
+    baseSize: mesh.geometry.boundingBox.getSize(new THREE.Vector3()).multiply(worldScale),
   } satisfies ScaleDragAnchor;
 }
 
 function applyOneSidedScaleAnchor(mesh: THREE.Mesh) {
   if (!scaleDragAnchor) return;
   const { axis, side, startWorldPosition, startWorldQuaternion, startScale, baseSize } = scaleDragAnchor;
-  const sizeChange = baseSize[axis] * (Math.abs(mesh.scale[axis]) - Math.abs(startScale[axis]));
+  const scaleTarget = mesh.parent === singleSelectionPivot ? singleSelectionPivot : mesh;
+  const sizeChange = baseSize[axis] * (Math.abs(scaleTarget.scale[axis]) - Math.abs(startScale[axis]));
   const direction = new THREE.Vector3(
     axis === 'x' ? 1 : 0,
     axis === 'y' ? 1 : 0,
     axis === 'z' ? 1 : 0,
   ).applyQuaternion(startWorldQuaternion);
-  if (axis === 'z' && assetDefinitions[mesh.userData.assetId as AssetId].catalog === 'surface') {
-    // Surface geometry is authored downward from its transform origin. When
-    // the upper Z handle is dragged, move that origin by the complete height
-    // change so the bottom face remains stationary and the block grows up.
-    // The lower handle keeps the origin fixed and continues growing downward.
-    if (side > 0) {
-      const bottomAnchoredPosition = startWorldPosition.clone().addScaledVector(direction, sizeChange);
-      if (mesh.parent) mesh.position.copy(mesh.parent.worldToLocal(bottomAnchoredPosition));
-      else mesh.position.copy(bottomAnchoredPosition);
-    }
+  const anchoredWorldPosition = startWorldPosition.clone().addScaledVector(direction, side * sizeChange / 2);
+  if (mesh.parent === singleSelectionPivot) {
+    singleSelectionPivot.position.copy(anchoredWorldPosition);
+    singleSelectionPivot.updateMatrixWorld(true);
     return;
   }
-  const anchoredWorldPosition = startWorldPosition.clone().addScaledVector(direction, side * sizeChange / 2);
   if (mesh.parent) mesh.position.copy(mesh.parent.worldToLocal(anchoredWorldPosition));
   else mesh.position.copy(anchoredWorldPosition);
+}
+
+function snapSingleSelectionPivotDimensions(mesh: THREE.Mesh, activeAxis: 'x' | 'y' | 'z') {
+  if (!scaleDragAnchor || scaleDragAnchor.axis !== activeAxis) return;
+  const baseDimension = scaleDragAnchor.baseSize[activeAxis];
+  if (baseDimension <= 0.001) return;
+  const dimension = Math.max(
+    CANONICAL_GRID_CM,
+    Math.round((baseDimension * Math.abs(singleSelectionPivot.scale[activeAxis])) / CANONICAL_GRID_CM)
+      * CANONICAL_GRID_CM,
+  );
+  const childScale = Math.max(Math.abs(mesh.scale[activeAxis]), 0.0001);
+  const definition = assetDefinitions[mesh.userData.assetId as AssetId];
+  if (definition.resizeAxes && !definition.resizeAxes.includes(activeAxis)) {
+    singleSelectionPivot.scale[activeAxis] = 1;
+    return;
+  }
+  singleSelectionPivot.scale[activeAxis] = Math.max(1 / childScale, dimension / baseDimension);
+}
+
+function lockInactiveSingleSelectionScaleAxes(activeAxis: 'x' | 'y' | 'z') {
+  if (!scaleDragAnchor) return;
+  for (const axis of ['x', 'y', 'z'] as const) {
+    if (axis !== activeAxis) singleSelectionPivot.scale[axis] = scaleDragAnchor.startScale[axis];
+  }
 }
 
 renderer.domElement.addEventListener('pointerdown', (event) => {
@@ -5691,7 +5719,20 @@ transformControls.addEventListener('mouseDown', () => {
     : null;
 });
 transformControls.addEventListener('mouseUp', () => {
+  const completedSingleScale = Boolean(
+    selectedAsset
+    && selectedAsset.parent === singleSelectionPivot
+    && transformControls.getMode() === 'scale',
+  );
   if (selectedAsset?.parent === singleSelectionPivot) scene.attach(selectedAsset);
+  if (completedSingleScale && selectedAsset) {
+    const preferredScaleAxis = scaleDragAnchor?.axis ?? 'x';
+    goalUniformScale(selectedAsset, preferredScaleAxis);
+    constrainAssetScale(selectedAsset, preferredScaleAxis, true);
+    updateAllWoodenPlatformSupports();
+    syncSelectionHighlights([selectedAsset]);
+    updateReadout(selectedAsset);
+  }
   if (transformSnappingEnabled && transformControls.getMode() === 'translate') {
     const moved = multiSelectedAssets.length > 0 ? multiSelectedAssets : selectedAsset ? [selectedAsset] : [];
     moved.forEach(snapMeshWorldPositionToFootprintGrid);
@@ -5730,10 +5771,19 @@ transformControls.addEventListener('objectChange', () => {
     return;
   }
   if (!selectedAsset) return;
+  if (transformControls.getMode() === 'scale' && selectedAsset.parent === singleSelectionPivot) {
+    lockInactiveSingleSelectionScaleAxes(preferredScaleAxis);
+    if (transformSnappingEnabled) snapSingleSelectionPivotDimensions(selectedAsset, preferredScaleAxis);
+    applyOneSidedScaleAnchor(selectedAsset);
+  }
+  // A normal single selection is resized through singleSelectionPivot so the
+  // gizmo stays centred. Its world scale is committed and snapped in mouseUp
+  // after scene.attach() bakes the pivot transform onto the actual asset.
+  // Keep this path for any direct-attached legacy selection.
   if (transformControls.getMode() === 'scale' && selectedAsset.parent !== singleSelectionPivot) {
     if (transformSnappingEnabled) snapSelectedDimensions(selectedAsset, preferredScaleAxis);
     goalUniformScale(selectedAsset, preferredScaleAxis);
-    constrainAssetScale(selectedAsset, preferredScaleAxis);
+    constrainAssetScale(selectedAsset, preferredScaleAxis, true);
     applyOneSidedScaleAnchor(selectedAsset);
   }
   updateAllWoodenPlatformSupports();
@@ -5837,13 +5887,13 @@ function updatePlacementPreview(event: PointerEvent) {
       for (const axis of axes) {
         if (axis === normalAxis) continue;
         const localStep = 100 / Math.max(Math.abs(supportWorldScale[axis]), 0.0001);
-        localPlacementPoint[axis] = Math.round(localPlacementPoint[axis] / localStep) * localStep;
+        localPlacementPoint[axis] = snapCoordinateToSquareCenter(localPlacementPoint[axis], localStep);
       }
       assetHit.object.localToWorld(localPlacementPoint);
       placementPoint.copy(localPlacementPoint);
     } else if (transformSnappingEnabled) {
-      placementPoint.x = Math.round(placementPoint.x / 100) * 100;
-      placementPoint.y = Math.round(placementPoint.y / 100) * 100;
+      placementPoint.x = snapCoordinateToSquareCenter(placementPoint.x);
+      placementPoint.y = snapCoordinateToSquareCenter(placementPoint.y);
     }
   } else if (!raycaster.ray.intersectPlane(placementPlane, placementPoint)) {
     placementPreview.visible = false;
@@ -5851,8 +5901,8 @@ function updatePlacementPreview(event: PointerEvent) {
   } else {
     placementNormal.set(0, 0, 1);
     if (transformSnappingEnabled) {
-      placementPoint.x = Math.round(placementPoint.x / 100) * 100;
-      placementPoint.y = Math.round(placementPoint.y / 100) * 100;
+      placementPoint.x = snapCoordinateToSquareCenter(placementPoint.x);
+      placementPoint.y = snapCoordinateToSquareCenter(placementPoint.y);
     }
   }
 

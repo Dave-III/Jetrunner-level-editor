@@ -2,7 +2,7 @@ JETRUNNER LEVEL EDITOR 0.9.3 - PORTABLE WINDOWS BUILD
 ================================================
 
 1. Keep this entire folder together. Do not move only the EXE.
-2. Run "JETRUNNER Level Editor.exe".
+2. Run "JLE.exe".
    The Runtime folder contains the application and packaging tools used by
    this launcher; keep that folder beside the EXE.
 3. Create a level containing one Player Start, one Finish Goal, and at least

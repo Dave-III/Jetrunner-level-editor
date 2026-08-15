@@ -19,18 +19,17 @@ for (const assetId of ['ability_jetfreeze', 'ability_jethook', 'ability_jetjelly
   requireText(main, `${assetId}: { radius: 200, center: [0, 0, 0], source: 'BP_ItemOrb.Collider SphereRadius' }`, `${assetId} interaction range`);
 }
 requireText(main, 'CANONICAL_GRID_CM = 100', 'full-grid constant');
-requireText(main, 'snapMeshWorldPositionToFootprintGrid', 'footprint-aware serialized world-position snapping');
-for (const [cells, sourceCenter] of [[1, 18], [2, 18], [3, 122], [4, 122]]) {
-  const offset = cells % 2 === 1 ? 50 : 0;
-  const center = Math.round((sourceCenter - offset) / 100) * 100 + offset;
-  const min = center - cells * 50;
-  const max = center + cells * 50;
-  if (Math.abs(min % 100) > Number.EPSILON || Math.abs(max % 100) > Number.EPSILON) {
-    throw new Error(`Footprint-aware snap did not align ${cells}-cell edges: ${min}..${max}`);
+requireText(main, 'GRID_SQUARE_CENTER_CM = CANONICAL_GRID_CM / 2', 'visible-square centre offset');
+requireText(main, 'function snapCoordinateToSquareCenter(value: number', 'shared square-centre snap rule');
+requireText(main, 'snapMeshWorldPositionToFootprintGrid', 'square-centred serialized world-position snapping');
+for (const sourceCenter of [0, 18, 99, 122, -1, -122]) {
+  const center = Math.round((sourceCenter - 50) / 100) * 100 + 50;
+  if (Math.abs((center - 50) % 100) > Number.EPSILON) {
+    throw new Error(`Square-centred snap did not land inside a cell: ${center}`);
   }
 }
-requireText(main, 'moved.forEach(snapMeshWorldPositionToFootprintGrid)', 'post-gizmo footprint-aware grid commit');
-requireText(main, "const latticeOffset = cells % 2 === 1 ? CANONICAL_GRID_CM / 2 : 0", 'odd-cell centre offset');
+requireText(main, 'moved.forEach(snapMeshWorldPositionToFootprintGrid)', 'post-gizmo square-centred grid commit');
+requireText(main, 'placementPoint.x = snapCoordinateToSquareCenter(placementPoint.x)', 'square-centred placement snapping');
 for (const feature of ['previewVerticalVelocity', 'previewGrounded', 'previewHorizontalBlocked', 'previewGroundAt']) {
   requireText(main, feature, `Preview traversal ${feature}`);
 }
@@ -40,7 +39,9 @@ requireText(main, "singleSelectionPivot.name = 'JLE_SingleSelectionPivot'", 'cen
 requireText(main, 'canonicalWorldBounds(mesh).getCenter(new THREE.Vector3())', 'canonical gizmo centre calculation');
 requireText(main, 'singleSelectionPivot.attach(mesh)', 'centre-pivot transform attachment');
 requireText(main, "const polarityGlowOutline = assetDefinitions.light_rims", 'polarity glow outline definition');
-requireText(main, 'polarityGlowOutline.baseDimensions = [821.6, 25.5, 821.7]', 'FModel polarity glow dimensions');
+requireText(main, 'polarityGlowOutline.baseDimensions = [821.5218, 821.7415, 25.4767]', 'runtime polarity glow dimensions');
+requireText(main, 'new THREE.BoxGeometry(outerX, rim, depth)', 'flat X/Y polarity glow geometry');
+requireText(main, 'polarityGlowOutline.baseHeight = 33.219', 'runtime polarity glow origin offset');
 requireText(main, "currentWorldStartingPolarity() === 1 ? 0x5de9ff : 0xff4ca5", 'world polarity glow colour');
 requireText(main, "assetId === 'basekit_small_ramp'", 'Ramp material routing');
 if (main.includes('componentRoot.matrix.elements[12] -= 200')) {
