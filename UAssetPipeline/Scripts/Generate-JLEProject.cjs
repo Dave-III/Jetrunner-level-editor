@@ -289,6 +289,14 @@ const exampleMap = readJson(args['example-map']);
 // Unicode, and later renames never change the map path or leaderboard identity.
 const identity = safeName(level.levelId || level.levelName || level.displayName);
 const displayName = String(level.displayName || level.levelName || 'Unnamed Level').trim() || 'Unnamed Level';
+const permanentLevelCode = (levelId) => {
+  let hash = 2166136261;
+  for (const character of String(levelId || identity)) {
+    hash ^= character.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return `JLE-${(hash >>> 0).toString(36).toUpperCase().padStart(7, '0')}`;
+};
 
 replaceToken(mapTemplate, 'MAPNAME', identity);
 replaceToken(levelDefTemplate, 'MAPNAME', identity);
@@ -297,14 +305,20 @@ const levelDefExport = levelDefTemplate.Exports.find((item) => item.ObjectName =
   || levelDefTemplate.Exports[0];
 const generatedLevelId =
   String(level.worldSettings?.leaderboardId || level.levelId || `JLE_${identity}`);
+// LevelId remains the stable leaderboard identity. ExperienceId is the
+// shorter, player-facing permanent code shown by the game UI.
+const generatedExperienceId = permanentLevelCode(level.levelId);
 property(levelDefExport.Data, 'LevelId').Value = generatedLevelId;
-property(levelDefExport.Data, 'ExperienceId').Value = generatedLevelId;
+property(levelDefExport.Data, 'ExperienceId').Value = generatedExperienceId;
 property(levelDefExport.Data, 'ExperienceName').CultureInvariantString = displayName;
 property(levelDefExport.Data, 'bHasArcadeToken').Value = (level.objects || []).some((object) => (
   object.assetId === 'arcade_token' || object.assetId === 'arcade_token_rainbow'
 ));
 if (!levelDefTemplate.NameMap.includes(generatedLevelId)) {
   levelDefTemplate.NameMap.push(generatedLevelId);
+}
+if (!levelDefTemplate.NameMap.includes(generatedExperienceId)) {
+  levelDefTemplate.NameMap.push(generatedExperienceId);
 }
 
 function ensureMedalImport(name) {
@@ -356,10 +370,11 @@ if (level.medalTimes?.authorTime > 0) {
   ];
 }
 
-for (const identityProperty of ['LevelId', 'ExperienceId']) {
-  if (property(levelDefExport.Data, identityProperty)?.Value !== generatedLevelId) {
-    throw new Error(`Generated LevelDef ${identityProperty} did not match ${generatedLevelId}.`);
-  }
+if (property(levelDefExport.Data, 'LevelId')?.Value !== generatedLevelId) {
+  throw new Error(`Generated LevelDef LevelId did not match ${generatedLevelId}.`);
+}
+if (property(levelDefExport.Data, 'ExperienceId')?.Value !== generatedExperienceId) {
+  throw new Error(`Generated LevelDef ExperienceId did not match ${generatedExperienceId}.`);
 }
 
 const examplePlacer = exampleMap.Exports.find((item) => item.ObjectName?.startsWith('JLE_ObjectPlacer'));

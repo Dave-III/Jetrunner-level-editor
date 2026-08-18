@@ -2,7 +2,6 @@ const { app, BrowserWindow, dialog, ipcMain, shell } = require('electron');
 const path = require('node:path');
 const fs = require('node:fs/promises');
 const { spawn } = require('node:child_process');
-const { createHash } = require('node:crypto');
 const { autoUpdater } = require('electron-updater');
 const {
   surfaceAssetIds: verifiedSurfaceAssetIds,
@@ -716,68 +715,6 @@ async function assertReadableFile(filePath, label, minimumBytes = 1) {
   }
 }
 
-async function inspectCustomLevelsConflicts(gamePaksDirectory) {
-  const jleDirectory = path.join(gamePaksDirectory, 'JLE');
-  let entries = [];
-  try {
-    entries = await fs.readdir(jleDirectory, { withFileTypes: true });
-  } catch (error) {
-    if (error?.code !== 'ENOENT') throw error;
-  }
-  const bundledFramework = path.join(runtimeRoot, 'UAssetPipeline', 'Framework', 'CustomLevelsV1.0.pak');
-  await assertReadableFile(bundledFramework, 'Bundled CustomLevels framework', 1024);
-  await fs.mkdir(jleDirectory, { recursive: true });
-  const installedFramework = path.join(jleDirectory, 'CustomLevelsV1.0.pak');
-  const legacyFramework = path.join(jleDirectory, 'CustomLevelsV0.9.2.pak');
-  const digest = async (filePath) => createHash('sha256').update(await fs.readFile(filePath)).digest('hex');
-  let needsFrameworkUpdate = true;
-  try {
-    needsFrameworkUpdate = await digest(installedFramework) !== await digest(bundledFramework);
-  } catch (error) {
-    if (error?.code !== 'ENOENT') throw error;
-  }
-  if (needsFrameworkUpdate) {
-    const temporaryFramework = `${installedFramework}.jle-installing`;
-    const previousFramework = `${installedFramework}.jle-previous`;
-    await fs.rm(temporaryFramework, { force: true });
-    await fs.rm(previousFramework, { force: true });
-    await fs.copyFile(bundledFramework, temporaryFramework);
-    if (await digest(temporaryFramework) !== await digest(bundledFramework)) {
-      await fs.rm(temporaryFramework, { force: true });
-      throw new Error('Temporary CustomLevels framework failed SHA-256 verification.');
-    }
-    try {
-      if (await assertReadableFile(installedFramework, 'Existing CustomLevels framework', 1024).then(() => true).catch(() => false)) {
-        await fs.rename(installedFramework, previousFramework);
-      }
-      await fs.rename(temporaryFramework, installedFramework);
-      if (await digest(installedFramework) !== await digest(bundledFramework)) {
-        throw new Error('Installed CustomLevels framework failed SHA-256 verification.');
-      }
-      // The V1.0 framework supersedes this exact previously shipped file.
-      // Remove only that known legacy filename after the replacement succeeds,
-      // so the game never mounts both framework generations together.
-      await fs.rm(legacyFramework, { force: true });
-      await fs.rm(previousFramework, { force: true });
-    } catch (error) {
-      await fs.rm(installedFramework, { force: true }).catch(() => {});
-      await fs.rename(previousFramework, installedFramework).catch(() => {});
-      await fs.rm(temporaryFramework, { force: true }).catch(() => {});
-      throw error;
-    }
-  }
-  const conflictingFrameworks = entries.filter((entry) => entry.isFile()
-    && /^customlevels.*\.pak$/i.test(entry.name)
-    && entry.name.toLowerCase() !== 'customlevelsv1.0.pak');
-  if (conflictingFrameworks.length > 0) {
-    throw new Error(
-      `Conflicting CustomLevels framework paks were found in ${jleDirectory}: `
-      + `${conflictingFrameworks.map((entry) => entry.name).join(', ')}. `
-      + 'Move the older copies out of the JLE folder so only CustomLevelsV1.0.pak remains.',
-    );
-  }
-}
-
 async function findJetSaveFiles() {
   const localAppData = process.env.LOCALAPPDATA
     || path.join(app.getPath('home'), 'AppData', 'Local');
@@ -952,9 +889,6 @@ async function exportAndCompile(event, levelData, options = {}) {
     // Both normal export/install and verification use this shared path. Do
     // not let the packager replace an installed pak while the game owns it.
     await ensureJETRUNNERIsClosed(gamePaks, status, consoleLine);
-    status('preflight', "Checking for Dweeb's CustomLevels mod in Content\\Paks\\JLE...");
-    await inspectCustomLevelsConflicts(gamePaks);
-
     status('compile', 'Writing the UAssetAPI map and LevelDef JSON...');
     const powerShell = path.join(
       process.env.SystemRoot || 'C:\\Windows',

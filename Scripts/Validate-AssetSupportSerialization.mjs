@@ -69,6 +69,13 @@ try {
   ], { stdio: 'inherit' });
   const mapJson = path.join(tempRoot, 'project', 'JETRUNNER', 'Content', 'Mods', 'CustomLevels', 'Map_JLE_AssetSupportAudit.json');
   if (!fs.existsSync(mapJson)) throw new Error('The generator did not create the audit map JSON.');
+  const levelDefJson = path.join(tempRoot, 'project', 'JETRUNNER', 'Content', 'Mods', 'CustomLevels', 'LevelDef_JLE_AssetSupportAudit.json');
+  const levelDef = JSON.parse(fs.readFileSync(levelDefJson, 'utf8'));
+  const levelDefData = levelDef.Exports[0]?.Data || [];
+  const experienceId = levelDefData.find((property) => property.Name === 'ExperienceId')?.Value;
+  if (!/^JLE-[0-9A-Z]{7}$/.test(experienceId)) {
+    throw new Error(`Generated LevelDef must have a short permanent ExperienceId, received: ${experienceId}`);
+  }
   const projectContent = path.dirname(mapJson);
   const resourceDirectory = path.join(
     workspace,
@@ -87,6 +94,11 @@ try {
     'fromjson', mapJson, mapOutput, 'JETRUNNER',
   ], { stdio: 'inherit' });
   if (!fs.existsSync(mapOutput)) throw new Error('UAssetGUI did not create the audit map asset.');
+  const levelDefOutput = path.join(tempRoot, 'LevelDef_JLE_AssetSupportAudit.uasset');
+  execFileSync(path.join(workspace, 'UAssetPipeline', 'Tools', 'UAssetGUI', 'UAssetGUI.exe'), [
+    'fromjson', levelDefJson, levelDefOutput, 'JETRUNNER',
+  ], { stdio: 'inherit' });
+  if (!fs.existsSync(levelDefOutput)) throw new Error('UAssetGUI did not create the audit LevelDef asset.');
   console.log(`Serialized and converted ${objects.length} verifier-supported placeable assets using the canonical PlacedObject schema.`);
 } finally {
   fs.rmSync(tempRoot, { recursive: true, force: true });

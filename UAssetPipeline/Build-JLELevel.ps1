@@ -37,7 +37,7 @@ function Assert-ChildPath([string]$Child, [string]$Parent, [string]$Label) {
     return $childFull
 }
 
-function Invoke-Tool([string]$File, [string[]]$Arguments, [string]$Label) {
+function Invoke-Tool([string]$File, [string[]]$Arguments, [string]$Label, [string]$WorkingDirectory) {
     Write-Host $Label
     $quoted = foreach ($argument in $Arguments) {
         if ($argument -match '[\s"]') { '"' + ($argument -replace '"', '\"') + '"' } else { $argument }
@@ -49,7 +49,14 @@ function Invoke-Tool([string]$File, [string[]]$Arguments, [string]$Label) {
     $startInfo = [System.Diagnostics.ProcessStartInfo]::new()
     $startInfo.FileName = $File
     $startInfo.Arguments = ($quoted -join ' ')
-    $startInfo.WorkingDirectory = Split-Path -Parent $File
+    # The installed editor lives in Program Files, which standard users cannot
+    # write to. UAssetGUI can create transient files in its working directory,
+    # so run it from the generated project workspace instead of beside its EXE.
+    $startInfo.WorkingDirectory = if ([string]::IsNullOrWhiteSpace($WorkingDirectory)) {
+        Split-Path -Parent $File
+    } else {
+        $WorkingDirectory
+    }
     $startInfo.UseShellExecute = $false
     $startInfo.CreateNoWindow = $true
     $startInfo.RedirectStandardOutput = $true
@@ -193,7 +200,7 @@ try {
     $levelDefOutput = Join-Path $stageContent "$levelDefName.uasset"
     $tail = if ([string]::IsNullOrWhiteSpace($ConverterTailArgument)) { @() } else { @($ConverterTailArgument) }
 
-    Invoke-Tool $converter (@('fromjson', $mapJson, $mapOutput) + $tail) "Converting $mapName.json..."
+    Invoke-Tool $converter (@('fromjson', $mapJson, $mapOutput) + $tail) "Converting $mapName.json..." $projectContent
     if (-not (Test-Path -LiteralPath $mapOutput -PathType Leaf)) {
         throw @"
 The converter produced no map asset. Verify that JLE_ObjectPlacer.uasset/.uexp
@@ -203,7 +210,7 @@ Converter: $converter
 "@
     }
     Assert-GeneratedAssetPair $mapOutput ([System.IO.Path]::ChangeExtension($mapOutput, '.uexp')) 'Generated map'
-    Invoke-Tool $converter (@('fromjson', $levelDefJson, $levelDefOutput) + $tail) "Converting $levelDefName.json..."
+    Invoke-Tool $converter (@('fromjson', $levelDefJson, $levelDefOutput) + $tail) "Converting $levelDefName.json..." $projectContent
     if (-not (Test-Path -LiteralPath $levelDefOutput -PathType Leaf)) {
         throw "The converter produced no LevelDef asset. Check the bundled mappings and template files."
     }

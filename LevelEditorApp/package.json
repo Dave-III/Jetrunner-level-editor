@@ -1,6 +1,6 @@
 {
   "name": "jetrunner-level-editor",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "main": "electron/main.cjs",
   "scripts": {
@@ -60,7 +60,6 @@
           "Scripts/Generate-JLEProject.cjs",
           "Scripts/new-object-catalog.json",
           "Resources/**/*",
-          "Framework/CustomLevelsV1.0.pak",
           "Tools/UAssetGUI/**/*",
           "Tools/repak/**/*"
         ]

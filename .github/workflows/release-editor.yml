@@ -29,7 +29,6 @@ jobs:
         run: |
           $required = @(
             'LevelEditorApp/Scripts/prune-release-assets.mjs',
-            'UAssetPipeline/Framework/CustomLevelsV1.0.pak',
             'UAssetPipeline/Resources/JETRUNNER/Content/Mods/CustomLevels/JLE_ObjectPlacer.uasset',
             'UAssetPipeline/Tools/UAssetGUI/UAssetGUI.exe',
             'UAssetPipeline/Tools/UAssetGUI/Data/Mappings/JETRUNNER.usmap',
