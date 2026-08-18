@@ -92,13 +92,15 @@ async function openExternalProject(filePath) {
   try {
     const contents = await fs.readFile(filePath, 'utf8');
     const parsed = JSON.parse(contents);
-    if (/\.jle$/i.test(filePath) && (parsed?.format !== 'JLE' || parsed?.version !== 1)) {
+    const isCurrentJle = parsed?.format === 'JLE' && parsed?.version === 1;
+    const isLegacyJle = parsed?.format === 'jle-level' && parsed?.formatVersion === 1;
+    if (/\.jle$/i.test(filePath) && !isCurrentJle && !isLegacyJle) {
       throw new Error('This .JLE file has a malformed or unsupported format/version.');
     }
-    if (parsed?.format !== 'JLE' || parsed?.version !== 1 || !parsed.editableLevelData) {
+    if ((!isCurrentJle && !isLegacyJle) || !parsed.editableLevelData) {
       throw new Error('This is not a supported JLE level file.');
     }
-    if (parsed.levelId !== parsed.editableLevelData.levelId || parsed.displayName !== parsed.editableLevelData.displayName) {
+    if (isCurrentJle && (parsed.levelId !== parsed.editableLevelData.levelId || parsed.displayName !== parsed.editableLevelData.displayName)) {
       throw new Error('The JLE metadata does not match its editable level data.');
     }
     if (parsed.editableLevelData.projectFormat !== 'jle-editor-project-v1'
@@ -461,7 +463,9 @@ ipcMain.handle('project:load', async (event) => {
     const contents = await fs.readFile(filePath, 'utf8');
     appendApplicationLog('load', '[LOAD] File read');
     const parsed = JSON.parse(contents);
-    if (/\.jle$/i.test(filePath) && (parsed?.format !== 'JLE' || parsed?.version !== 1)) {
+    const isCurrentJle = parsed?.format === 'JLE' && parsed?.version === 1;
+    const isLegacyJle = parsed?.format === 'jle-level' && parsed?.formatVersion === 1;
+    if (/\.jle$/i.test(filePath) && !isCurrentJle && !isLegacyJle) {
       throw new Error('This .JLE file has a malformed or unsupported format/version.');
     }
     const projectData = parsed?.format === 'JLE' && parsed?.version === 1
@@ -884,7 +888,7 @@ async function exportAndCompile(event, levelData, options = {}) {
       [/^Packaging the V11 pak/i, 'Packaging the finished level'],
       [/^Installing JLE output/i, 'Installing the level into JETRUNNER'],
       [/unsupported AssetId/i, 'An object in this level is not supported by the installed CustomLevels framework'],
-      [/being used by another process|access.*denied/i, 'A required file is locked. Close JETRUNNER and retry'],
+      [/being used by another process|access.*denied|is locked or unavailable/i, 'A JLE build-workspace file is locked. Close any other JLE packaging attempt, wait a moment, then retry'],
       [/timed out/i, 'A packaging tool stopped responding. Check antivirus/security prompts, then retry'],
       [/could not start|is not recognized as an internal or external command/i, 'A bundled packaging tool could not be started'],
       [/produced no map asset/i, 'The converter did not create the map asset'],

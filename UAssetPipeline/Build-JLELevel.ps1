@@ -78,6 +78,29 @@ function Assert-GeneratedAssetPair([string]$Primary, [string]$Sidecar, [string]$
     if ((Get-Item -LiteralPath $sidecarFile).Length -lt 64) { throw "$Label sidecar file is unexpectedly small." }
 }
 
+function Initialize-WorkspaceDirectory([string]$Target, [string]$Label) {
+    # UAssetGUI and real-time antivirus can retain a handle for a moment after
+    # a previous build exits. These directories are generated build workspace
+    # only, so retry their normal clean-and-create operation before reporting
+    # a useful, actionable failure to the player.
+    $lastError = $null
+    for ($attempt = 1; $attempt -le 8; $attempt++) {
+        try {
+            if (Test-Path -LiteralPath $Target) {
+                Remove-Item -LiteralPath $Target -Recurse -Force -ErrorAction Stop
+            }
+            New-Item -ItemType Directory -Force -Path $Target -ErrorAction Stop | Out-Null
+            return
+        } catch {
+            $lastError = $_
+            if ($attempt -lt 8) {
+                Start-Sleep -Milliseconds 500
+            }
+        }
+    }
+    throw "$Label is locked or unavailable: $Target. Close any other JLE packaging attempt, wait a moment, then retry. $($lastError.Exception.Message)"
+}
+
 $levelDataPath = Resolve-RequiredFile $LevelData 'Editor level JSON'
 if (-not $ConverterPath) {
     $ConverterPath = Join-Path $PSScriptRoot 'Tools\UAssetGUI\UAssetGUI.exe'
@@ -119,8 +142,7 @@ $project = Assert-ChildPath (Join-Path $projectsRoot $identity) $projectsRoot 'P
 $stage = Assert-ChildPath (Join-Path $packagingRoot $identity) $packagingRoot 'Packaging stage'
 
 foreach ($target in @($project, $stage)) {
-    if (Test-Path -LiteralPath $target) { Remove-Item -LiteralPath $target -Recurse -Force }
-    New-Item -ItemType Directory -Force -Path $target | Out-Null
+    Initialize-WorkspaceDirectory $target 'JLE build workspace'
 }
 
 try {

@@ -19,8 +19,20 @@ for (const required of [
   'const gamePaks = result.gamePaksDirectory || null',
   'findRunningJETRUNNERProcesses(gamePaks, { requireInstallPath: false })',
   "' (path unavailable)'",
+  'A JLE build-workspace file is locked',
+  "const isLegacyJle = parsed?.format === 'jle-level' && parsed?.formatVersion === 1;",
+  '&& !isCurrentJle && !isLegacyJle',
 ]) {
   if (!electron.includes(required)) throw new Error(`Missing friendly pipeline output contract: ${required}`);
+}
+const pipeline = fs.readFileSync(path.join(root, 'UAssetPipeline', 'Build-JLELevel.ps1'), 'utf8');
+for (const required of [
+  'function Initialize-WorkspaceDirectory',
+  'for ($attempt = 1; $attempt -le 8; $attempt++)',
+  'Start-Sleep -Milliseconds 500',
+  "Initialize-WorkspaceDirectory $target 'JLE build workspace'",
+]) {
+  if (!pipeline.includes(required)) throw new Error(`Missing resilient build-workspace contract: ${required}`);
 }
 if (electron.includes("path.resolve(path.dirname(result.installedPak), '..')")) {
   throw new Error('Verification must not derive Content/Paks from the nested installed verification pak.');
