@@ -822,26 +822,28 @@ async function exportAndCompile(event, levelData, options = {}) {
     const message = String(rawMessage || '').trim();
     if (!message) return null;
     if (/^\{.*"Success"\s*:\s*true.*\}$/i.test(message)) return null;
-    if (/^\s*at\s+\S+|FullyQualifiedErrorId|CategoryInfo\s*:/i.test(message)) return null;
+    if (/^\s*at\s+\S+|FullyQualifiedErrorId|CategoryInfo\s*:|^\s*(?:\+\s|~{3,}|\d+\s+\|)/i.test(message)) return null;
     const replacements = [
       [/^Creating the tokenized/i, 'Preparing the level data'],
       [/^Converting (.+?)\.json/i, 'Converting $1 into a JETRUNNER asset'],
       [/^Packaging the V11 pak/i, 'Packaging the finished level'],
       [/^Installing JLE output/i, 'Installing the level into JETRUNNER'],
-      [/unsupported AssetId/i, 'An object in this level is not supported by the installed CustomLevels framework'],
-      [/is locked or unavailable/i, 'A JLE build-workspace file is locked. Close any other JLE packaging attempt, wait a moment, then retry'],
-      [/being used by another process/i, 'A required file is temporarily in use. Close JETRUNNER and any other JLE packaging attempt, then retry'],
-      [/access.*denied|access to the path.*is denied/i, 'Windows denied access to a required location. Check folder permissions or antivirus protection'],
-      [/timed out/i, 'A packaging tool stopped responding. Check antivirus/security prompts, then retry'],
-      [/could not start|is not recognized as an internal or external command/i, 'A bundled packaging tool could not be started'],
-      [/produced no map asset/i, 'The converter did not create the map asset'],
-      [/produced no LevelDef asset/i, 'The converter did not create the level definition'],
-      [/Dweeb's CustomLevels mod was not found/i, "Dweeb's latest CustomLevels mod must be installed in Content\\Paks\\JLE"],
+      [/unsupported AssetId/i, 'An object in this level is not supported by the installed CustomLevels framework. Fix: remove or replace that object, or install the matching CustomLevels framework manually.'],
+      [/JLE build workspace.*(?:Program Files|access.*denied)|Program Files.*UAssetPipeline.*(?:Projects|Packaging)/i, 'JLE cannot write to the old Program Files build workspace. Fix: install the latest JLE update. Temporary workaround: right-click JLE and choose Run as administrator.'],
+      [/is locked or unavailable/i, 'The JLE build workspace is temporarily locked. Fix: close any other JLE packaging attempt, wait a moment, then retry.'],
+      [/being used by another process/i, 'A required file is temporarily in use. Fix: close JETRUNNER and any other JLE packaging attempt, then retry.'],
+      [/access.*denied|access to the path.*is denied/i, 'Windows denied access to a required location. Fix: check folder permissions and antivirus protection; for an old Program Files installation, run JLE as administrator or update it.'],
+      [/timed out/i, 'A packaging tool stopped responding. Fix: check for antivirus/security prompts, close them if present, then retry.'],
+      [/could not start|is not recognized as an internal or external command/i, 'A bundled packaging tool could not be started. Fix: reinstall or update JLE, then retry.'],
+      [/produced no map asset/i, 'The converter did not create the map asset. Fix: update or reinstall JLE; if this continues, share the pipeline log with the level author.'],
+      [/produced no LevelDef asset/i, 'The converter did not create the level definition. Fix: update or reinstall JLE; if this continues, share the pipeline log with the level author.'],
+      [/JETRUNNER did not finish its clean shutdown|running JETRUNNER process/i, 'JETRUNNER is still closing or running. Fix: close JETRUNNER completely, wait a moment for it to finish, then retry.'],
+      [/Dweeb's CustomLevels mod was not found/i, "The required CustomLevels framework is missing. Fix: manually install it in JETRUNNER\\Content\\Paks\\JLE, then retry."],
     ];
     let friendly = message;
     for (const [pattern, replacement] of replacements) {
       if (pattern.test(message)) {
-        friendly = message.replace(pattern, replacement);
+        friendly = replacement.includes('$') ? message.replace(pattern, replacement) : replacement;
         break;
       }
     }

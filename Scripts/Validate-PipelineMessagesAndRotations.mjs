@@ -19,7 +19,11 @@ for (const required of [
   'const gamePaks = result.gamePaksDirectory || null',
   'findRunningJETRUNNERProcesses(gamePaks, { requireInstallPath: false })',
   "' (path unavailable)'",
-  'A JLE build-workspace file is locked',
+  'The JLE build workspace is temporarily locked.',
+  'Temporary workaround: right-click JLE and choose Run as administrator.',
+  'Fix: close JETRUNNER and any other JLE packaging attempt, then retry.',
+  'Fix: update or reinstall JLE; if this continues, share the pipeline log with the level author.',
+  'Fix: manually install it in JETRUNNER\\\\Content\\\\Paks\\\\JLE, then retry.',
   "const isLegacyJle = parsed?.format === 'jle-level' && parsed?.formatVersion === 1;",
   '&& !isCurrentJle && !isLegacyJle',
 ]) {
