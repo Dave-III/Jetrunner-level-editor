@@ -153,7 +153,7 @@ try {
     # UAssetAPI automatically extracts missing unversioned schemas from
     # referenced Blueprint/struct assets when it can resolve them beside the
     # source JSON. Keep the framework's exact class assets in Projects for
-    # conversion only. CustomLevelsV0.9.2.pak supplies these classes at
+    # conversion only. CustomLevelsV1.0.pak supplies these classes at
     # runtime; embedding a second copy in every level pak creates a mount-order
     # collision and can make the placed-object array deserialize as empty.
     Get-ChildItem -LiteralPath $runtimeResources -File |

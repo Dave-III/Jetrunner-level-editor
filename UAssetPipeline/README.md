@@ -46,7 +46,7 @@ It no longer launches Unreal Editor, cooks an Unreal project, or overwrites
 8. Runs `repak pack --version=V11`.
 9. Deletes the staging folder and installs `JLE-<level name>_P.pak` in
    `JETRUNNER\Content\Paks\JLE`.
-10. Installs and hash-verifies the supplied `CustomLevelsV0.9.2.pak` framework beside the level.
+10. Installs and hash-verifies the supplied `CustomLevelsV1.0.pak` framework beside the level.
 
 ## Run
 

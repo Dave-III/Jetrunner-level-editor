@@ -716,10 +716,11 @@ async function inspectCustomLevelsConflicts(gamePaksDirectory) {
   } catch (error) {
     if (error?.code !== 'ENOENT') throw error;
   }
-  const bundledFramework = path.join(runtimeRoot, 'UAssetPipeline', 'Framework', 'CustomLevelsV0.9.2.pak');
+  const bundledFramework = path.join(runtimeRoot, 'UAssetPipeline', 'Framework', 'CustomLevelsV1.0.pak');
   await assertReadableFile(bundledFramework, 'Bundled CustomLevels framework', 1024);
   await fs.mkdir(jleDirectory, { recursive: true });
-  const installedFramework = path.join(jleDirectory, 'CustomLevelsV0.9.2.pak');
+  const installedFramework = path.join(jleDirectory, 'CustomLevelsV1.0.pak');
+  const legacyFramework = path.join(jleDirectory, 'CustomLevelsV0.9.2.pak');
   const digest = async (filePath) => createHash('sha256').update(await fs.readFile(filePath)).digest('hex');
   let needsFrameworkUpdate = true;
   try {
@@ -745,6 +746,10 @@ async function inspectCustomLevelsConflicts(gamePaksDirectory) {
       if (await digest(installedFramework) !== await digest(bundledFramework)) {
         throw new Error('Installed CustomLevels framework failed SHA-256 verification.');
       }
+      // The V1.0 framework supersedes this exact previously shipped file.
+      // Remove only that known legacy filename after the replacement succeeds,
+      // so the game never mounts both framework generations together.
+      await fs.rm(legacyFramework, { force: true });
       await fs.rm(previousFramework, { force: true });
     } catch (error) {
       await fs.rm(installedFramework, { force: true }).catch(() => {});
@@ -755,12 +760,12 @@ async function inspectCustomLevelsConflicts(gamePaksDirectory) {
   }
   const conflictingFrameworks = entries.filter((entry) => entry.isFile()
     && /^customlevels.*\.pak$/i.test(entry.name)
-    && entry.name.toLowerCase() !== 'customlevelsv0.9.2.pak');
+    && entry.name.toLowerCase() !== 'customlevelsv1.0.pak');
   if (conflictingFrameworks.length > 0) {
     throw new Error(
       `Conflicting CustomLevels framework paks were found in ${jleDirectory}: `
       + `${conflictingFrameworks.map((entry) => entry.name).join(', ')}. `
-      + 'Move the older copies out of the JLE folder so only CustomLevelsV0.9.2.pak remains.',
+      + 'Move the older copies out of the JLE folder so only CustomLevelsV1.0.pak remains.',
     );
   }
 }
