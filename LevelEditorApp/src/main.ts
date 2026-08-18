@@ -2835,6 +2835,13 @@ for (const [assetId, definition] of Object.entries(assetDefinitions)) {
 // repaired. Apply this after layout metadata, which otherwise re-enables it.
 assetDefinitions.crane.hiddenInPalette = true;
 assetDefinitions.arcade_token_rainbow.runtimeObjectName = 'BP_ArcadeToken';
+// This legacy catalogue entry has an extracted editor visual but no verified
+// JLE_ObjectPlacer handler. Keep its metadata for loading old projects while
+// preventing both new placement and export.
+assetDefinitions.digital_platform_red.runtimeMappingStatus = 'unresolved';
+assetDefinitions.digital_platform_red.runtimeObjectName = undefined;
+assetDefinitions.digital_platform_red.hiddenInPalette = true;
+assetDefinitions.digital_platform_red.description = 'Unavailable: no verified in-game mapping.';
 
 // Explicit platform contracts supplied for the editor. Do not infer these
 // from a raw FModel mesh: every other surface keeps its stock extracted size.
@@ -4623,6 +4630,7 @@ interface VerificationRecord {
   platinumTime: number;
   goldTime: number;
   silverTime: number;
+  bronzeTime: number;
   contentFingerprint: string;
   verifiedAt: string;
 }
@@ -4710,16 +4718,34 @@ function createVerificationRecord(authorTime: number, fingerprint: string): Veri
     platinumTime: roundedMedalTime(authorTime * 1.5, step),
     goldTime: roundedMedalTime(authorTime * 2, step),
     silverTime: roundedMedalTime(authorTime * 2.5, step),
+    bronzeTime: roundedMedalTime(authorTime * 3, step),
     contentFingerprint: fingerprint,
     verifiedAt: new Date().toISOString(),
   };
 }
 
-function medalOrderError(record: Pick<VerificationRecord, 'authorTime' | 'platinumTime' | 'goldTime' | 'silverTime'>) {
+function medalOrderError(record: Pick<VerificationRecord, 'authorTime' | 'platinumTime' | 'goldTime' | 'silverTime' | 'bronzeTime'>) {
   if (record.platinumTime < record.authorTime) return 'Diamond time cannot be faster than the Author time.';
   if (record.goldTime < record.platinumTime) return 'Gold time cannot be faster than the Diamond time.';
   if (record.silverTime < record.goldTime) return 'Silver time cannot be faster than the Gold time.';
+  if (record.bronzeTime < record.silverTime) return 'Bronze time cannot be faster than the Silver time.';
   return null;
+}
+
+function normalizedVerificationRecord(record: Partial<VerificationRecord>): VerificationRecord | undefined {
+  const authorTime = Number(record.authorTime);
+  if (!Number.isFinite(authorTime) || authorTime <= 0) return undefined;
+  // Old saves predate a configurable Bronze target. Preserve their authored
+  // times and deterministically add the slowest valid Bronze threshold.
+  const platinumTime = Math.max(authorTime, Number(record.platinumTime) || authorTime);
+  const goldTime = Math.max(platinumTime, Number(record.goldTime) || platinumTime);
+  const silverTime = Math.max(goldTime, Number(record.silverTime) || goldTime);
+  const bronzeTime = Math.max(silverTime, Number(record.bronzeTime) || silverTime);
+  return {
+    authorTime, platinumTime, goldTime, silverTime, bronzeTime,
+    contentFingerprint: String(record.contentFingerprint || ''),
+    verifiedAt: String(record.verifiedAt || ''),
+  };
 }
 
 function updateVerificationDisplay() {
@@ -4743,11 +4769,12 @@ function updateVerificationDisplay() {
     <span>Diamond <b>${formatTime(record.platinumTime)}</b></span>
     <span>Gold <b>${formatTime(record.goldTime)}</b></span>
     <span>Silver <b>${formatTime(record.silverTime)}</b></span>
+    <span>Bronze <b>${formatTime(record.bronzeTime)}</b></span>
   `;
   medalTargets.hidden = false;
   medalTargets.replaceChildren();
   Object.values(medalPropertyDefinitions).forEach((definition) => {
-    const medalKey = definition.key as 'platinumTime' | 'goldTime' | 'silverTime';
+    const medalKey = definition.key as 'platinumTime' | 'goldTime' | 'silverTime' | 'bronzeTime';
     const row = document.createElement('label');
     row.className = 'entity-field';
     const label = document.createElement('span');
@@ -4766,7 +4793,7 @@ function updateVerificationDisplay() {
         showEditorNotice(orderError, 'error');
         return;
       }
-      verification = candidate;
+      verification = normalizedVerificationRecord(candidate);
       updateVerificationDisplay();
       scheduleAutosave();
     };
@@ -4824,7 +4851,65 @@ function scheduleAutosave() {
 function parseProjectFile(value: unknown): EditorProjectFile {
   editorLog('load', '[LOAD] Validating project schema');
   if (!value || typeof value !== 'object') throw new Error('[LOAD:SCHEMA] The save file is empty.');
-  const project = value as Partial<EditorProjectFile>;
+  const rawProject = value as Record<string, unknown>;
+  let migratedValue: unknown = value;
+  if (rawProject.frameworkVersion === 'jle-uasset-v1' && Array.isArray(rawProject.objects)) {
+    const worldSettings = rawProject.worldSettings && typeof rawProject.worldSettings === 'object'
+      ? rawProject.worldSettings as Record<string, unknown> : {};
+    const legacyTransform = (record: unknown) => {
+      const source = record && typeof record === 'object' ? record as Record<string, unknown> : {};
+      return {
+        position: source.position && typeof source.position === 'object'
+          ? source.position : { x: 0, y: 0, z: 0 },
+        rotation: source.rotation && typeof source.rotation === 'object'
+          ? source.rotation : { pitch: 0, yaw: 0, roll: 0 },
+        scale: source.scale && typeof source.scale === 'object'
+          ? source.scale : { x: 1, y: 1, z: 1 },
+      };
+    };
+    const legacyAssets: AssetSnapshot[] = (rawProject.objects as Record<string, unknown>[]).map((item) => ({
+      assetId: String(item.assetId || item.runtimeObjectName || item.assetLabel || 'unknown_legacy_asset'),
+      id: typeof item.id === 'string' && item.id ? item.id : crypto.randomUUID(),
+      entityData: (item.entityData && typeof item.entityData === 'object' ? item.entityData : {}) as Record<string, string | number | boolean>,
+      transform: legacyTransform(item) as AssetSnapshot['transform'],
+    }));
+    if (rawProject.playerStart && typeof rawProject.playerStart === 'object') {
+      legacyAssets.unshift({
+        assetId: 'player_start',
+        id: crypto.randomUUID(),
+        entityData: {},
+        transform: legacyTransform(rawProject.playerStart) as AssetSnapshot['transform'],
+      });
+    }
+    const rawGoals = Array.isArray(rawProject.timeTrialGoals) && rawProject.timeTrialGoals.length > 0
+      ? rawProject.timeTrialGoals : rawProject.timeTrialGoal ? [rawProject.timeTrialGoal] : [];
+    rawGoals.forEach((goal) => legacyAssets.push({
+      assetId: 'time_trial_goal',
+      id: crypto.randomUUID(),
+      entityData: {},
+      transform: legacyTransform(goal) as AssetSnapshot['transform'],
+    }));
+    const medals = rawProject.medalTimes && typeof rawProject.medalTimes === 'object'
+      ? rawProject.medalTimes as Partial<VerificationRecord> : undefined;
+    migratedValue = {
+      projectFormat: 'jle-editor-project-v1',
+      savedAt: new Date().toISOString(),
+      levelId: String(rawProject.levelId || crypto.randomUUID()),
+      displayName: String(rawProject.displayName || rawProject.levelName || 'Unnamed Level'),
+      environment: String(worldSettings.environment || rawProject.environment || 'Environment_CentralPark'),
+      timeOfDay: String(worldSettings.timeOfDay || worldSettings.skybox || rawProject.timeOfDay || 'Scenario_YankeyDoodleMorning'),
+      subwayLayout: worldSettings.subwayLayout === 'two-layer' ? 'two-layer' : 'roof',
+      worldStartingPolarity: Number(worldSettings.worldStartingPolarity ?? rawProject.worldStartingPolarity ?? 1),
+      assets: legacyAssets,
+      camera: {
+        position: { x: 700, y: 700, z: 700 },
+        target: { x: 0, y: 0, z: 0 },
+      },
+      verification: medals ? normalizedVerificationRecord(medals) : undefined,
+    } satisfies EditorProjectFile;
+    editorLog('load', `[LOAD] Migrated legacy compiler JSON with ${legacyAssets.length} editor objects.`);
+  }
+  const project = migratedValue as Partial<EditorProjectFile>;
   if (project.projectFormat !== 'jle-editor-project-v1') {
     throw new Error(`[LOAD:SCHEMA] Unsupported saved-level format: ${String(project.projectFormat || 'missing')}.`);
   }
@@ -4940,7 +5025,7 @@ async function loadEditorProject(preloadedResult?: ProjectLoadResult) {
       autosaveTimer = null;
     }
     currentLevelId = project.levelId;
-    verification = project.verification;
+    verification = project.verification ? normalizedVerificationRecord(project.verification) : undefined;
     sessionStorage.setItem('jle-current-level-id', currentLevelId);
     levelNameInput.value = project.displayName || 'Unnamed Level';
     localStorage.setItem('jle-level-name', levelNameInput.value);
@@ -5230,6 +5315,7 @@ function buildLevelData(options: { verification?: boolean } = {}) {
         platinumTime: 0.001,
         goldTime: 0.001,
         silverTime: 0.001,
+        bronzeTime: 0.001,
       } : currentVerification(),
     },
   };
@@ -6243,7 +6329,9 @@ document.querySelector('#entity-save')!.addEventListener('click', () => {
   try {
     recordHistory();
     const transform = serializeTransform(contextAsset);
+    const originalTransform = structuredClone(transform);
     const data: Record<string, string | number | boolean> = { ...(contextAsset.userData.entityData || {}) };
+    const editedScaleAxes: Array<'x' | 'y' | 'z'> = [];
     const propertyDefinitions = new Map(
       gameplayPropertiesForAsset(contextAsset.userData.assetId as AssetId).map((definition) => [definition.key, definition]),
     );
@@ -6258,32 +6346,43 @@ document.querySelector('#entity-save')!.addEventListener('click', () => {
         if (!definition) return;
         data[key] = validateGameplayProperty(definition, value);
       }
-      else (transform as unknown as Record<string, Record<string, number>>)[section][key] = Number(value);
+      else {
+        (transform as unknown as Record<string, Record<string, number>>)[section][key] = Number(value);
+        if (section === 'scale'
+          && ['x', 'y', 'z'].includes(key)
+          && Number(value) !== originalTransform.scale[key as 'x' | 'y' | 'z']) {
+          editedScaleAxes.push(key as 'x' | 'y' | 'z');
+        }
+      }
     });
-    if (contextAsset.userData.assetId === 'time_trial_goal') {
+    const transformChanged = JSON.stringify(transform) !== JSON.stringify(originalTransform);
+    if (transformChanged && contextAsset.userData.assetId === 'time_trial_goal') {
       transform.scale.y = transform.scale.x;
       transform.scale.z = transform.scale.x;
     }
-    // Inspector values are Unreal coordinates; the viewport uses Three.js.
-    contextAsset.position.set(
-      transform.position.x,
-      -transform.position.y,
-      transform.position.z,
-    );
-    contextAsset.rotation.set(
-      THREE.MathUtils.degToRad(transform.rotation.roll),
-      THREE.MathUtils.degToRad(-transform.rotation.pitch),
-      THREE.MathUtils.degToRad(-transform.rotation.yaw),
-      'ZYX',
-    );
-    contextAsset.scale.set(transform.scale.x, transform.scale.y, transform.scale.z);
-    goalUniformScale(contextAsset);
-    constrainAssetScale(contextAsset);
-    updateAllWoodenPlatformSupports();
+    // Selection uses a temporary centred gizmo parent. Typed values are
+    // canonical actor/world transforms, so detach before assigning them;
+    // otherwise position and scale are incorrectly interpreted as pivot-local.
     contextAsset.userData.entityData = data;
     refreshAssetPresentation(contextAsset);
-    selectionHelper.setFromObject(contextAsset);
-    updateReadout(contextAsset);
+    if (transformChanged) {
+      // Property-only edits must never round-trip through the selection pivot.
+      // Apply canonical transforms only when a transform field actually changed.
+      if (contextAsset.parent !== scene) scene.attach(contextAsset);
+      contextAsset.position.set(transform.position.x, -transform.position.y, transform.position.z);
+      contextAsset.rotation.set(
+        THREE.MathUtils.degToRad(transform.rotation.roll),
+        THREE.MathUtils.degToRad(-transform.rotation.pitch),
+        THREE.MathUtils.degToRad(-transform.rotation.yaw),
+        'ZYX',
+      );
+      contextAsset.scale.set(transform.scale.x, transform.scale.y, transform.scale.z);
+      const preferredScaleAxis = editedScaleAxes.at(-1) ?? 'x';
+      goalUniformScale(contextAsset, preferredScaleAxis);
+      constrainAssetScale(contextAsset, preferredScaleAxis);
+      updateAllWoodenPlatformSupports();
+    }
+    selectPlacedAsset(contextAsset);
     closeEntityInspector();
     showEditorNotice('Entity data updated.', 'success');
     scheduleAutosave();
@@ -6634,8 +6733,30 @@ const previewPlatformCollision: Partial<Record<AssetId, PreviewCollisionProxy>> 
   static_stage_floor01: { shape: 'box', size: [300, 300, 25] },
   static_specialplatform2x7_1: { shape: 'box', size: [200, 700, 50] },
 };
-function previewCollisionMeshes() {
-  return placedAssets.filter((mesh) => assetDefinitions[mesh.userData.assetId as AssetId]?.catalog === 'surface');
+const previewPhysicalPropAssets = new Set<AssetId>([
+  'static_tree_stump_01', 'static_treebirch_03', 'static_treebirch_04',
+  'static_rocksround_three', 'static_rocksround_one',
+  'static_icicles_01', 'static_icicles_02', 'static_pack_ice_01',
+  'static_building5', 'static_building6', 'static_lottetower',
+  'static_peony_temple_3x6', 'static_rio_attach_door_01',
+  'static_rio_attach_window_01', 'static_heart', 'static_cloudbody',
+]);
+const previewWalkablePropAssets = new Set<AssetId>([
+  'static_tree_stump_01', 'static_rocksround_three', 'static_rocksround_one',
+  'static_pack_ice_01', 'static_building5', 'static_building6',
+  'static_lottetower', 'static_peony_temple_3x6', 'static_cloudbody',
+]);
+function previewPhysicalCollisionMeshes() {
+  return placedAssets.filter((mesh) => {
+    const assetId = mesh.userData.assetId as AssetId;
+    return assetDefinitions[assetId]?.catalog === 'surface' || previewPhysicalPropAssets.has(assetId);
+  });
+}
+function previewGroundCollisionMeshes() {
+  return previewPhysicalCollisionMeshes().filter((mesh) => {
+    const assetId = mesh.userData.assetId as AssetId;
+    return assetDefinitions[assetId]?.catalog === 'surface' || previewWalkablePropAssets.has(assetId);
+  });
 }
 function previewProxyContains(proxy: PreviewCollisionProxy, x: number, y: number) {
   const [width, depth] = proxy.size;
@@ -6668,7 +6789,8 @@ function previewProxyGroundAt(mesh: THREE.Mesh, proxy: PreviewCollisionProxy, x:
   return { distance: startZ - point.z, point, object: mesh } as THREE.Intersection;
 }
 function previewGroundAt(x: number, y: number, startZ: number) {
-  const proxyHits = previewCollisionMeshes().flatMap((mesh) => {
+  const collisionMeshes = previewGroundCollisionMeshes();
+  const proxyHits = collisionMeshes.flatMap((mesh) => {
     const proxy = previewPlatformCollision[mesh.userData.assetId as AssetId];
     const hit = proxy ? previewProxyGroundAt(mesh, proxy, x, y, startZ) : null;
     return hit ? [hit] : [];
@@ -6676,7 +6798,7 @@ function previewGroundAt(x: number, y: number, startZ: number) {
   previewCollisionRaycaster.set(new THREE.Vector3(x, y, startZ), new THREE.Vector3(0, 0, -1));
   previewCollisionRaycaster.near = 0;
   previewCollisionRaycaster.far = 10000;
-  const ordinaryMeshes = previewCollisionMeshes().filter(
+  const ordinaryMeshes = collisionMeshes.filter(
     (mesh) => !previewPlatformCollision[mesh.userData.assetId as AssetId],
   );
   return [...proxyHits, ...previewCollisionRaycaster.intersectObjects(ordinaryMeshes, false)]
@@ -6684,7 +6806,27 @@ function previewGroundAt(x: number, y: number, startZ: number) {
 }
 function previewCollisionBounds(object: THREE.Mesh) {
   const proxy = previewPlatformCollision[object.userData.assetId as AssetId];
-  if (!proxy) return canonicalWorldBounds(object);
+  if (!proxy) {
+    const bounds = canonicalWorldBounds(object);
+    const assetId = object.userData.assetId as AssetId;
+    if (assetId === 'static_treebirch_03' || assetId === 'static_treebirch_04') {
+      // Runtime tree collision is trunk-sized; decorative canopy bounds must
+      // not become an invisible wall in Preview.
+      const center = bounds.getCenter(new THREE.Vector3());
+      const size = bounds.getSize(new THREE.Vector3());
+      const trunkWidth = Math.max(80, Math.min(180, Math.min(size.x, size.y) * 0.2));
+      bounds.min.x = center.x - trunkWidth / 2;
+      bounds.max.x = center.x + trunkWidth / 2;
+      bounds.min.y = center.y - trunkWidth / 2;
+      bounds.max.y = center.y + trunkWidth / 2;
+    } else if (assetId === 'static_cloudbody') {
+      // The extracted cloud silhouette is airy and under-reports the mass
+      // users perceive. Expand its neutral physical proxy without inheriting
+      // Kill Cloud damage behaviour.
+      bounds.expandByVector(bounds.getSize(new THREE.Vector3()).multiplyScalar(0.125));
+    }
+    return bounds;
+  }
   const [width, depth, thickness] = proxy.size;
   const centerX = proxy.center?.[0] ?? 0;
   const centerY = proxy.center?.[1] ?? 0;
@@ -6694,7 +6836,7 @@ function previewCollisionBounds(object: THREE.Mesh) {
   ).applyMatrix4(object.matrixWorld);
 }
 function previewHorizontalBlocked(position: THREE.Vector3, currentFeetZ: number) {
-  for (const object of previewCollisionMeshes()) {
+  for (const object of previewPhysicalCollisionMeshes()) {
     const bounds = previewCollisionBounds(object);
     if (bounds.max.z <= currentFeetZ + PREVIEW_STEP_HEIGHT) continue;
     if (bounds.min.z >= position.z - 8) continue;

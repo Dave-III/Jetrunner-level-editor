@@ -92,7 +92,6 @@ RUNTIME_SPAWN_TABLE = {
         "BP_RealVirtualPlatform_Ice.BP_RealVirtualPlatform_Ice"
     ),
     "digital_platform": "/Game/Maps/DigitalRealm/Assets/BP_DigitalPlatform.BP_DigitalPlatform",
-    "digital_platform_red": "/Game/Maps/DigitalRealm/Assets/BP_DigitalPlatform_Red.BP_DigitalPlatform_Red",
     "virtual_platform_dark": "/Game/Maps/DigitalRealm/Assets/BP_RealVirtualPlatform_Dark.BP_RealVirtualPlatform_Dark",
     "virtual_platform_orange": "/Game/Maps/DigitalRealm/Assets/BP_RealVirtualPlatform_Orange.BP_RealVirtualPlatform_Orange",
     "virtual_platform_purple": "/Game/Maps/DigitalRealm/Assets/BP_RealVirtualPlatform_Purple.BP_RealVirtualPlatform_Purple",

@@ -70,7 +70,6 @@ const assetObjects = {
   tower_wall: 'BP_TowerWall',
   ice_platform_4x4: 'BP_RealVirtualPlatform_Ice',
   digital_platform: 'BP_DigitalPlatform',
-  digital_platform_red: 'BP_DigitalPlatform_Red',
   virtual_platform_dark: 'BP_RealVirtualPlatform_Dark',
   virtual_platform_orange: 'BP_RealVirtualPlatform_Orange',
   virtual_platform_purple: 'BP_RealVirtualPlatform_Purple',
@@ -343,6 +342,8 @@ if (level.medalTimes?.authorTime > 0) {
     return entry;
   };
   clear.Name = '0';
+  property(clear.Value, 'bAnyTime').Value = false;
+  property(clear.Value, 'Time').Value = Number(level.medalTimes.bronzeTime ?? level.medalTimes.silverTime);
   property(clear.Value, 'Medal').Value = ensureMedalImport('Bronze');
   medalTimes.Value = [
     clear,

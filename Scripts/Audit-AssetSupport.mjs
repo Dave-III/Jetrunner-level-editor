@@ -19,6 +19,7 @@ const {
   verificationSpecialAssetIds,
   verificationSupportedAssetIds,
 } = require(path.join(app, 'electron', 'verification-assets.cjs'));
+const { runtimeAssetStatus } = require(path.join(app, 'electron', 'runtime-asset-status.cjs'));
 
 const runtimeResources = path.join(
   workspace, 'UAssetPipeline', 'Resources', 'JETRUNNER', 'Content', 'Mods', 'CustomLevels',
@@ -88,7 +89,7 @@ const unexposedVerifierAssets = verifierNotExposed.map((assetId) => {
     return { assetId, disposition: 'legacy_gameplay_variant', notes: 'No approved current target entry exists in the editor catalogue.' };
   }
   if (assetId === 'digital_platform_red') {
-    return { assetId, disposition: 'legacy_surface_variant', notes: 'Not included in the current approved editor category layout.' };
+    return { assetId, disposition: 'unsupported_legacy_asset', notes: 'No verified JLE_ObjectPlacer runtime mapping; retained only for legacy project diagnostics.' };
   }
   return { assetId, disposition: 'legacy_prefab', notes: 'Legacy prefab retained for old level compatibility; current explicit static catalogue is used instead.' };
 });
@@ -102,6 +103,10 @@ const assets = catalogueEntries.map((entry) => {
   const verifierSupported = verifierSet.has(entry.assetId);
   const deliberatelyRemoved = intentionallyRemoved.has(entry.assetId);
   const visual = visualManifest.assetVisuals?.[entry.assetId];
+  const runtimeQa = runtimeAssetStatus[entry.assetId] ?? {
+    runtimeSpawnStatus: 'untested', manualTestStatus: 'untested',
+    reason: 'No in-game spawn result has been recorded.',
+  };
   return {
     name: entry.label,
     assetId: entry.assetId,
@@ -118,15 +123,24 @@ const assets = catalogueEntries.map((entry) => {
     isSurface: surfaceAssetIds.includes(entry.assetId),
     catalogRuntimeObjectName: entry.objectName || null,
     editorVisualKind: visual ? 'glb' : profileIds.has(entry.assetId) ? 'profile' : 'flat-colour-fallback',
+    editorVisualStatus: visual || profileIds.has(entry.assetId) ? 'available' : 'fallback',
+    editorCollisionStatus: editorSource.includes(`'${entry.assetId}'`) ? 'metadata-present-or-visual-bounds' : 'untested',
+    verificationStatus: verifierSupported ? 'supported' : 'unsupported',
+    runtimeSpawnStatus: runtimeQa.runtimeSpawnStatus,
+    manualTestStatus: runtimeQa.manualTestStatus,
     placeable: !deliberatelyRemoved && verifierSupported && Boolean(entry.objectName),
-    status: deliberatelyRemoved
-      ? 'intentionally_hidden'
-      : verifierSupported && entry.objectName ? 'verified_supported' : 'blocked_missing_verification_or_runtime_mapping',
-    notes: deliberatelyRemoved
-      ? 'Intentionally removed from the palette; retained for backward-compatible loading.'
+    status: entry.assetId === 'digital_platform_red'
+      ? 'blocked_missing_verification_or_runtime_mapping'
+      : deliberatelyRemoved
+        ? 'intentionally_hidden'
+        : verifierSupported && entry.objectName ? 'verification_supported_runtime_unconfirmed' : 'blocked_missing_verification_or_runtime_mapping',
+    notes: entry.assetId === 'digital_platform_red'
+      ? 'Unsupported legacy asset; no authoritative JLE_ObjectPlacer mapping is available.'
+      : deliberatelyRemoved
+        ? 'Intentionally removed from the palette; retained for backward-compatible loading.'
       : Object.hasOwn(genericStaticMeshMappings, entry.assetId)
-        ? 'Canonical static ObjectName verified against the approved static catalogue.'
-        : verifierSupported ? 'Existing verifier mapping.' : 'No verified dummy mapping.',
+        ? `Canonical static ObjectName matches the approved catalogue. ${runtimeQa.reason}`
+        : verifierSupported ? `Existing verifier mapping. ${runtimeQa.reason}` : runtimeQa.reason,
   };
 });
 const count = (predicate) => assets.filter(predicate).length;

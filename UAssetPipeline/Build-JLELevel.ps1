@@ -3,7 +3,7 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$LevelData,
 
-    [string]$GamePaksDirectory = 'C:\Program Files (x86)\Steam\steamapps\common\JETRUNNER\JETRUNNER\Content\Paks',
+    [string]$GamePaksDirectory,
     [string]$ConverterPath,
     [string]$ConverterTailArgument = 'JETRUNNER',
     [string]$RepakPath,
@@ -211,14 +211,37 @@ Converter: $converter
         $jleDirectory = Join-Path $GamePaksDirectory 'JLE'
         New-Item -ItemType Directory -Force -Path $jleDirectory | Out-Null
         $installedPak = Join-Path $jleDirectory $pakName
+        $temporaryInstalledPak = "$installedPak.jle-installing"
+        $previousInstalledPak = "$installedPak.jle-previous"
         $legacyInstalledPak = Join-Path $jleDirectory "JLE-$identity`_P.pak"
         if (Test-Path -LiteralPath $legacyInstalledPak -PathType Leaf) {
             Remove-Item -LiteralPath $legacyInstalledPak -Force
         }
-        Copy-Item -LiteralPath $outputPak -Destination $installedPak -Force
+        Remove-Item -LiteralPath $temporaryInstalledPak -Force -ErrorAction SilentlyContinue
+        Remove-Item -LiteralPath $previousInstalledPak -Force -ErrorAction SilentlyContinue
+        Copy-Item -LiteralPath $outputPak -Destination $temporaryInstalledPak -Force
         if ((Get-FileHash $outputPak -Algorithm SHA256).Hash -ne
-            (Get-FileHash $installedPak -Algorithm SHA256).Hash) {
-            throw 'Installed pak failed SHA-256 verification.'
+            (Get-FileHash $temporaryInstalledPak -Algorithm SHA256).Hash) {
+            Remove-Item -LiteralPath $temporaryInstalledPak -Force -ErrorAction SilentlyContinue
+            throw 'Temporary installed pak failed SHA-256 verification.'
+        }
+        try {
+            if (Test-Path -LiteralPath $installedPak -PathType Leaf) {
+                Move-Item -LiteralPath $installedPak -Destination $previousInstalledPak -Force
+            }
+            Move-Item -LiteralPath $temporaryInstalledPak -Destination $installedPak -Force
+            if ((Get-FileHash $outputPak -Algorithm SHA256).Hash -ne
+                (Get-FileHash $installedPak -Algorithm SHA256).Hash) {
+                throw 'Installed pak failed SHA-256 verification.'
+            }
+            Remove-Item -LiteralPath $previousInstalledPak -Force -ErrorAction SilentlyContinue
+        } catch {
+            Remove-Item -LiteralPath $installedPak -Force -ErrorAction SilentlyContinue
+            if (Test-Path -LiteralPath $previousInstalledPak -PathType Leaf) {
+                Move-Item -LiteralPath $previousInstalledPak -Destination $installedPak -Force
+            }
+            Remove-Item -LiteralPath $temporaryInstalledPak -Force -ErrorAction SilentlyContinue
+            throw
         }
     }
 

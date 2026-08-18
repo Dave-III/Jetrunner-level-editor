@@ -13,7 +13,7 @@ const surfaceAssetIds = [
   'skypiercer_edge_detail', 'skypiercer_midwall_detail',
   'skypiercer_special_1x1', 'skypiercer_special_2x2',
   'skypiercer_special_2x3', 'tower_wall',
-  'ice_platform_4x4', 'digital_platform', 'digital_platform_red',
+  'ice_platform_4x4', 'digital_platform',
   'virtual_platform_dark', 'virtual_platform_orange', 'virtual_platform_purple',
   'virtual_platform_purple_orange', 'virtual_platform_white',
   'virtual_platform_white_blue', 'virtual_platform_white_gold',
@@ -39,8 +39,12 @@ const surfaceAssetIds = [
 // Importing the single approved catalogue keeps each AssetId paired with its
 // canonical runtime ObjectName rather than treating an ID allowlist as proof.
 const approvedStaticCatalogue = require('../src/new-object-catalog.json');
+const { runtimeFailedAssetIds } = require('./runtime-asset-status.cjs');
+const runtimeFailedSet = new Set(runtimeFailedAssetIds);
 const genericStaticMeshMappings = Object.freeze(Object.fromEntries(
-  approvedStaticCatalogue.map(({ assetId, objectName }) => [assetId, objectName]),
+  approvedStaticCatalogue
+    .filter(({ assetId }) => !runtimeFailedSet.has(assetId))
+    .map(({ assetId, objectName }) => [assetId, objectName]),
 ));
 
 const verificationObjectAssetIds = [

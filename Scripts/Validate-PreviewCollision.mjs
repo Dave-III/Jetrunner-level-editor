@@ -41,5 +41,8 @@ const removals = source.match(/const editorAssetRemovals: AssetId\[\] = \[([^\]]
 if (!removals.includes("'digital_platform_red'")) {
   throw new Error('Digital Platform Red remains exposed in the placement palette.');
 }
+if (source.includes("digital_platform_red: 'BP_DigitalPlatform_Red'")) {
+  throw new Error('Digital Platform Red retains an unverified runtime mapping.');
+}
 
 console.log(`Preview collision validation passed for ${required.length} mandatory platforms.`);

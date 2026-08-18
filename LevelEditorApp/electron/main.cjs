@@ -351,7 +351,7 @@ function validateWorkingLevelContract(levelData) {
     if (surfaceAssetIds.has(object.assetId)) platformCount += 1;
     assertFiniteTransform(`Object ${index + 1}`, object);
   });
-  if (platformCount === 0) throw new Error('At least one ice platform is required for traversable collision.');
+  if (platformCount === 0) throw new Error('At least one supported collision platform is required for gameplay.');
 }
 
 function runCommand(file, args, onLine) {
@@ -424,13 +424,15 @@ ipcMain.handle('project:save', async (_event, projectData) => {
       currentProjectDisplayName = projectData.displayName;
       appendApplicationLog('project', `Renamed project file: ${previousPath} -> ${currentProjectPath}`);
     }
-    const shareableFile = {
-      format: 'JLE',
-      version: 1,
-      levelId: projectData.levelId,
-      displayName: projectData.displayName,
-      editableLevelData: projectData,
-    };
+    const shareableFile = /\.json$/i.test(currentProjectPath)
+      ? projectData
+      : {
+        format: 'JLE',
+        version: 1,
+        levelId: projectData.levelId,
+        displayName: projectData.displayName,
+        editableLevelData: projectData,
+      };
     await fs.writeFile(
       currentProjectPath,
       `${JSON.stringify(shareableFile, null, 2)}\n`,
@@ -467,7 +469,10 @@ ipcMain.handle('project:load', async (event) => {
       : parsed?.format === 'jle-level' && parsed?.formatVersion === 1
         ? parsed.editableLevelData : parsed;
     appendApplicationLog('load', `[LOAD] JSON parsed; schema=${projectData?.projectFormat || 'missing'}; objects=${Array.isArray(projectData?.assets) ? projectData.assets.length : 'invalid'}`);
-    if (!projectData || projectData.projectFormat !== 'jle-editor-project-v1') {
+    const isLegacyCompilerJson = projectData?.frameworkVersion === 'jle-uasset-v1'
+      && Array.isArray(projectData?.objects)
+      && projectData?.playerStart;
+    if (!projectData || (projectData.projectFormat !== 'jle-editor-project-v1' && !isLegacyCompilerJson)) {
       throw new Error('This is not a supported JETRUNNER editor save.');
     }
     currentProjectPath = filePath;
@@ -491,7 +496,10 @@ ipcMain.handle('project:load-recent', async (_event, filePath) => {
       : parsed?.format === 'jle-level' && parsed?.formatVersion === 1
         ? parsed.editableLevelData : parsed;
     appendApplicationLog('load', `[LOAD] JSON parsed; schema=${projectData?.projectFormat || 'missing'}; objects=${Array.isArray(projectData?.assets) ? projectData.assets.length : 'invalid'}`);
-    if (!projectData || projectData.projectFormat !== 'jle-editor-project-v1') {
+    const isLegacyCompilerJson = projectData?.frameworkVersion === 'jle-uasset-v1'
+      && Array.isArray(projectData?.objects)
+      && projectData?.playerStart;
+    if (!projectData || (projectData.projectFormat !== 'jle-editor-project-v1' && !isLegacyCompilerJson)) {
       throw new Error('This is not a supported JETRUNNER editor save.');
     }
     currentProjectPath = filePath;
@@ -519,35 +527,77 @@ async function directoryExists(candidate) {
   }
 }
 
+const jetrunnerRelativePaks = path.join('JETRUNNER', 'Content', 'Paks');
+const jetrunnerRelativeExecutable = path.join('JETRUNNER', 'Binaries', 'Win64', 'JetrunnerGame.exe');
+
+async function validateJETRUNNERPaks(candidate) {
+  if (!candidate) return null;
+  const resolved = path.resolve(candidate);
+  const possiblePaks = [
+    resolved,
+    path.join(resolved, jetrunnerRelativePaks),
+  ];
+  for (const gamePaksDirectory of possiblePaks) {
+    if (!await directoryExists(gamePaksDirectory)) continue;
+    const gameRoot = gameInstallRootFromPaks(gamePaksDirectory);
+    try {
+      const executable = await fs.stat(path.join(gameRoot, jetrunnerRelativeExecutable));
+      if (executable.isFile() && executable.size > 1024) return gamePaksDirectory;
+    } catch {
+      // A folder named JETRUNNER is not sufficient; keep checking candidates.
+    }
+  }
+  return null;
+}
+
+async function steamInstallRoots() {
+  const roots = new Set([
+    path.join(process.env['ProgramFiles(x86)'] || 'C:\\Program Files (x86)', 'Steam'),
+    path.join(process.env.ProgramFiles || 'C:\\Program Files', 'Steam'),
+  ]);
+  const powerShell = path.join(
+    process.env.SystemRoot || 'C:\\Windows',
+    'System32', 'WindowsPowerShell', 'v1.0', 'powershell.exe',
+  );
+  try {
+    const registry = await runCommand(powerShell, [
+      '-NoProfile', '-NonInteractive', '-Command',
+      "(Get-ItemProperty -LiteralPath 'HKCU:\\Software\\Valve\\Steam' -ErrorAction SilentlyContinue).SteamPath",
+    ], () => {});
+    const registryRoot = String(registry.stdout || '').trim();
+    if (registryRoot) roots.add(registryRoot.replace(/\//g, '\\'));
+  } catch {
+    // Steam can be absent or its registry key unavailable.
+  }
+  for (const steamRoot of [...roots]) {
+    try {
+      const libraryVdf = await fs.readFile(path.join(steamRoot, 'steamapps', 'libraryfolders.vdf'), 'utf8');
+      for (const match of libraryVdf.matchAll(/"path"\s+"([^"]+)"/g)) {
+        roots.add(match[1].replace(/\\\\/g, '\\'));
+      }
+    } catch {
+      // Not every candidate is a Steam root.
+    }
+  }
+  return [...roots];
+}
+
 async function findJETRUNNERPaks() {
   const settingsPath = path.join(app.getPath('userData'), 'settings.json');
   try {
     const settings = JSON.parse(await fs.readFile(settingsPath, 'utf8'));
-    if (await directoryExists(settings.gamePaksDirectory)) return settings.gamePaksDirectory;
+    const remembered = await validateJETRUNNERPaks(settings.gamePaksDirectory);
+    if (remembered) return remembered;
   } catch {
     // First launch or an outdated setting; continue with Steam discovery.
   }
 
-  const steamRoots = new Set([
-    path.join(process.env['ProgramFiles(x86)'] || 'C:\\Program Files (x86)', 'Steam'),
-    path.join(process.env.ProgramFiles || 'C:\\Program Files', 'Steam'),
-  ]);
-  for (const steamRoot of [...steamRoots]) {
-    try {
-      const libraryVdf = await fs.readFile(path.join(steamRoot, 'steamapps', 'libraryfolders.vdf'), 'utf8');
-      for (const match of libraryVdf.matchAll(/"path"\s+"([^"]+)"/g)) {
-        steamRoots.add(match[1].replace(/\\\\/g, '\\'));
-      }
-    } catch {
-      // Steam may not be installed in this location.
-    }
-  }
-
-  for (const steamRoot of steamRoots) {
+  for (const steamRoot of await steamInstallRoots()) {
     const candidate = path.join(
       steamRoot, 'steamapps', 'common', 'JETRUNNER', 'JETRUNNER', 'Content', 'Paks',
     );
-    if (await directoryExists(candidate)) return candidate;
+    const validated = await validateJETRUNNERPaks(candidate);
+    if (validated) return validated;
   }
   return null;
 }
@@ -555,7 +605,10 @@ async function findJETRUNNERPaks() {
 async function rememberJETRUNNERPaks(gamePaksDirectory) {
   const settingsPath = path.join(app.getPath('userData'), 'settings.json');
   await fs.mkdir(path.dirname(settingsPath), { recursive: true });
-  await fs.writeFile(settingsPath, `${JSON.stringify({ gamePaksDirectory }, null, 2)}\n`, 'utf8');
+  let settings = {};
+  try { settings = JSON.parse(await fs.readFile(settingsPath, 'utf8')); } catch {}
+  settings.gamePaksDirectory = gamePaksDirectory;
+  await fs.writeFile(settingsPath, `${JSON.stringify(settings, null, 2)}\n`, 'utf8');
 }
 
 // Only these executable names, inside the JETRUNNER installation selected by
@@ -675,9 +728,29 @@ async function inspectCustomLevelsConflicts(gamePaksDirectory) {
     if (error?.code !== 'ENOENT') throw error;
   }
   if (needsFrameworkUpdate) {
-    await fs.copyFile(bundledFramework, installedFramework);
-    if (await digest(installedFramework) !== await digest(bundledFramework)) {
-      throw new Error('Installed CustomLevels framework failed SHA-256 verification.');
+    const temporaryFramework = `${installedFramework}.jle-installing`;
+    const previousFramework = `${installedFramework}.jle-previous`;
+    await fs.rm(temporaryFramework, { force: true });
+    await fs.rm(previousFramework, { force: true });
+    await fs.copyFile(bundledFramework, temporaryFramework);
+    if (await digest(temporaryFramework) !== await digest(bundledFramework)) {
+      await fs.rm(temporaryFramework, { force: true });
+      throw new Error('Temporary CustomLevels framework failed SHA-256 verification.');
+    }
+    try {
+      if (await assertReadableFile(installedFramework, 'Existing CustomLevels framework', 1024).then(() => true).catch(() => false)) {
+        await fs.rename(installedFramework, previousFramework);
+      }
+      await fs.rename(temporaryFramework, installedFramework);
+      if (await digest(installedFramework) !== await digest(bundledFramework)) {
+        throw new Error('Installed CustomLevels framework failed SHA-256 verification.');
+      }
+      await fs.rm(previousFramework, { force: true });
+    } catch (error) {
+      await fs.rm(installedFramework, { force: true }).catch(() => {});
+      await fs.rename(previousFramework, installedFramework).catch(() => {});
+      await fs.rm(temporaryFramework, { force: true }).catch(() => {});
+      throw error;
     }
   }
   const conflictingFrameworks = entries.filter((entry) => entry.isFile()
@@ -848,13 +921,16 @@ async function exportAndCompile(event, levelData, options = {}) {
     if (!gamePaks) {
       const owner = BrowserWindow.fromWebContents(event.sender);
       const selection = await dialog.showOpenDialog(owner, {
-        title: 'Select the JETRUNNER Content\\Paks folder',
+        title: 'Select the JETRUNNER game folder or Content\\Paks folder',
         properties: ['openDirectory'],
       });
       if (selection.canceled || selection.filePaths.length === 0) {
         return { canceled: true, filePath: exportPath };
       }
-      gamePaks = selection.filePaths[0];
+      gamePaks = await validateJETRUNNERPaks(selection.filePaths[0]);
+      if (!gamePaks) {
+        throw new Error('The selected folder is not a valid JETRUNNER installation. Select the Steam JETRUNNER folder or its JETRUNNER\\Content\\Paks folder.');
+      }
     }
     await rememberJETRUNNERPaks(gamePaks);
 
@@ -1133,10 +1209,11 @@ app.on('second-instance', (_event, argv) => {
 app.whenReady().then(async () => {
   // A forced close during verification can leave only this reserved temporary
   // pak behind. It is never a user level, so remove it before a new session.
-  const staleVerificationPaks = ['JLE-VERIFICATIONLEVEL.pak', 'JLE-Verification.pak'].map((fileName) => path.join(
-    process.env['ProgramFiles(x86)'] || 'C:\\Program Files (x86)',
-    'Steam', 'steamapps', 'common', 'JETRUNNER', 'JETRUNNER', 'Content', 'Paks', 'JLE', fileName,
-  ));
+  const discoveredPaks = await findJETRUNNERPaks();
+  const staleVerificationPaks = discoveredPaks
+    ? ['JLE-VERIFICATIONLEVEL.pak', 'JLE-Verification.pak'].map(
+      (fileName) => path.join(discoveredPaks, 'JLE', fileName),
+    ) : [];
   await Promise.all(staleVerificationPaks.map((filePath) => fs.rm(filePath, { force: true }).catch(() => {})));
   await retainNewestLogs(logsDirectory(), 5);
   const directory = logsDirectory('Editor');
