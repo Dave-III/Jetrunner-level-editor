@@ -30,8 +30,12 @@ requirePattern(renderer, /!currentVerification\(\) && !checkVerificationButton\.
 if (renderer.includes('class="controls-card"')) {
   throw new Error('Obsolete sidebar controls explanation must remain removed.');
 }
-requirePattern(pipeline, /\$outputDirectory = Join-Path \$PSScriptRoot 'Output'/,
-  'Generated paks must preserve the established Output directory contract.');
+requirePattern(main, /'-WorkspaceRoot', pipelineWorkspaceDirectory\(\)/,
+  'Packaged builds must place generated pipeline files in the writable per-user workspace.');
+requirePattern(pipeline, /\$outputDirectory = Join-Path \$workspaceRootPath 'Output'/,
+  'Generated paks must use the configured writable workspace Output directory.');
+requirePattern(pipeline, /\$projectsRoot = Join-Path \$workspaceRootPath 'Projects'/,
+  'Generated UAsset projects must use the configured writable workspace.');
 requirePattern(main, /'JetrunnerGame\.exe'/,
   'Process handling must include the executable name used by the current Steam build.');
 requirePattern(pipeline, /Get-FileHash \$outputPak[\s\S]*Get-FileHash \$installedPak/,

@@ -154,6 +154,10 @@ function levelOutputDirectory() {
   return path.join(app.getPath('documents'), 'Jetrunner Level Editor', 'Output');
 }
 
+function pipelineWorkspaceDirectory() {
+  return path.join(app.getPath('userData'), 'PipelineWorkspace');
+}
+
 async function retainNewestLogs(directory, maximum = 5) {
   await fs.mkdir(directory, { recursive: true });
   const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -888,7 +892,9 @@ async function exportAndCompile(event, levelData, options = {}) {
       [/^Packaging the V11 pak/i, 'Packaging the finished level'],
       [/^Installing JLE output/i, 'Installing the level into JETRUNNER'],
       [/unsupported AssetId/i, 'An object in this level is not supported by the installed CustomLevels framework'],
-      [/being used by another process|access.*denied|is locked or unavailable/i, 'A JLE build-workspace file is locked. Close any other JLE packaging attempt, wait a moment, then retry'],
+      [/is locked or unavailable/i, 'A JLE build-workspace file is locked. Close any other JLE packaging attempt, wait a moment, then retry'],
+      [/being used by another process/i, 'A required file is temporarily in use. Close JETRUNNER and any other JLE packaging attempt, then retry'],
+      [/access.*denied|access to the path.*is denied/i, 'Windows denied access to a required location. Check folder permissions or antivirus protection'],
       [/timed out/i, 'A packaging tool stopped responding. Check antivirus/security prompts, then retry'],
       [/could not start|is not recognized as an internal or external command/i, 'A bundled packaging tool could not be started'],
       [/produced no map asset/i, 'The converter did not create the map asset'],
@@ -961,6 +967,7 @@ async function exportAndCompile(event, levelData, options = {}) {
       '-File', uassetPipeline,
       '-LevelData', exportPath,
       '-GamePaksDirectory', gamePaks,
+      '-WorkspaceRoot', pipelineWorkspaceDirectory(),
       '-NodePath', process.execPath,
       '-NodeIsElectron',
     ], consoleLine);
@@ -1032,6 +1039,7 @@ async function removeVerificationArtifacts() {
   const removableFiles = [verificationInstalledPak, artifacts.installedPak, artifacts.outputPak, artifacts.filePath]
     .filter(Boolean);
   const allowedFileRoots = [
+    path.join(pipelineWorkspaceDirectory(), 'Output'),
     path.join(runtimeRoot, 'UAssetPipeline', 'Output'),
     path.join(app.getPath('documents'), 'JETRUNNER Level Editor', 'Levels'),
   ];
@@ -1053,7 +1061,7 @@ async function removeVerificationArtifacts() {
       errors.push(`${target}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
-  const projectDirectory = path.join(runtimeRoot, 'UAssetPipeline', 'Projects', 'Verification');
+  const projectDirectory = path.join(pipelineWorkspaceDirectory(), 'Projects', 'VERIFICATIONLEVEL');
   try {
     await fs.rm(projectDirectory, { recursive: true, force: true });
   } catch (error) {

@@ -342,8 +342,10 @@ if (level.medalTimes?.authorTime > 0) {
     return entry;
   };
   clear.Name = '0';
-  property(clear.Value, 'bAnyTime').Value = false;
-  property(clear.Value, 'Time').Value = Number(level.medalTimes.bronzeTime ?? level.medalTimes.silverTime);
+  // Bronze is the completion medal. It is awarded for any finished run and
+  // therefore must not carry an authored time threshold.
+  property(clear.Value, 'bAnyTime').Value = true;
+  property(clear.Value, 'Time').Value = 0;
   property(clear.Value, 'Medal').Value = ensureMedalImport('Bronze');
   medalTimes.Value = [
     clear,

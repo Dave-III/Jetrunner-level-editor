@@ -106,7 +106,6 @@ export const medalPropertyDefinitions = {
   platinumTime: numberProperty('platinumTime', 'Diamond target', 0, 0, 36000, 0.001),
   goldTime: numberProperty('goldTime', 'Gold target', 0, 0, 36000, 0.001),
   silverTime: numberProperty('silverTime', 'Silver target', 0, 0, 36000, 0.001),
-  bronzeTime: numberProperty('bronzeTime', 'Bronze target', 0, 0, 36000, 0.001),
 } as const;
 
 export const worldPropertyDefinitions = {

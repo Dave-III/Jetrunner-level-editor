@@ -4630,7 +4630,6 @@ interface VerificationRecord {
   platinumTime: number;
   goldTime: number;
   silverTime: number;
-  bronzeTime: number;
   contentFingerprint: string;
   verifiedAt: string;
 }
@@ -4700,6 +4699,10 @@ function formatTime(seconds: number) {
   return `${minutes}:${(seconds % 60).toFixed(3).padStart(6, '0')}`;
 }
 
+function formatMedalTarget(seconds: number) {
+  return seconds.toFixed(3);
+}
+
 function medalRoundingStep(authorTime: number) {
   if (authorTime < 30) return 0.1;
   if (authorTime < 60) return 0.2;
@@ -4718,31 +4721,28 @@ function createVerificationRecord(authorTime: number, fingerprint: string): Veri
     platinumTime: roundedMedalTime(authorTime * 1.5, step),
     goldTime: roundedMedalTime(authorTime * 2, step),
     silverTime: roundedMedalTime(authorTime * 2.5, step),
-    bronzeTime: roundedMedalTime(authorTime * 3, step),
     contentFingerprint: fingerprint,
     verifiedAt: new Date().toISOString(),
   };
 }
 
-function medalOrderError(record: Pick<VerificationRecord, 'authorTime' | 'platinumTime' | 'goldTime' | 'silverTime' | 'bronzeTime'>) {
+function medalOrderError(record: Pick<VerificationRecord, 'authorTime' | 'platinumTime' | 'goldTime' | 'silverTime'>) {
   if (record.platinumTime < record.authorTime) return 'Diamond time cannot be faster than the Author time.';
   if (record.goldTime < record.platinumTime) return 'Gold time cannot be faster than the Diamond time.';
   if (record.silverTime < record.goldTime) return 'Silver time cannot be faster than the Gold time.';
-  if (record.bronzeTime < record.silverTime) return 'Bronze time cannot be faster than the Silver time.';
   return null;
 }
 
 function normalizedVerificationRecord(record: Partial<VerificationRecord>): VerificationRecord | undefined {
   const authorTime = Number(record.authorTime);
   if (!Number.isFinite(authorTime) || authorTime <= 0) return undefined;
-  // Old saves predate a configurable Bronze target. Preserve their authored
-  // times and deterministically add the slowest valid Bronze threshold.
+  // Old saves may contain bronzeTime. It is intentionally ignored because
+  // Bronze is awarded for any completed run and has no time threshold.
   const platinumTime = Math.max(authorTime, Number(record.platinumTime) || authorTime);
   const goldTime = Math.max(platinumTime, Number(record.goldTime) || platinumTime);
   const silverTime = Math.max(goldTime, Number(record.silverTime) || goldTime);
-  const bronzeTime = Math.max(silverTime, Number(record.bronzeTime) || silverTime);
   return {
-    authorTime, platinumTime, goldTime, silverTime, bronzeTime,
+    authorTime, platinumTime, goldTime, silverTime,
     contentFingerprint: String(record.contentFingerprint || ''),
     verifiedAt: String(record.verifiedAt || ''),
   };
@@ -4769,12 +4769,11 @@ function updateVerificationDisplay() {
     <span>Diamond <b>${formatTime(record.platinumTime)}</b></span>
     <span>Gold <b>${formatTime(record.goldTime)}</b></span>
     <span>Silver <b>${formatTime(record.silverTime)}</b></span>
-    <span>Bronze <b>${formatTime(record.bronzeTime)}</b></span>
   `;
   medalTargets.hidden = false;
   medalTargets.replaceChildren();
   Object.values(medalPropertyDefinitions).forEach((definition) => {
-    const medalKey = definition.key as 'platinumTime' | 'goldTime' | 'silverTime' | 'bronzeTime';
+    const medalKey = definition.key as 'platinumTime' | 'goldTime' | 'silverTime';
     const row = document.createElement('label');
     row.className = 'entity-field';
     const label = document.createElement('span');
@@ -4783,13 +4782,13 @@ function updateVerificationDisplay() {
     input.type = 'number';
     input.step = String(definition.step ?? 0.1);
     input.min = String(definition.min ?? 0);
-    input.value = String(record[medalKey]);
+    input.value = formatMedalTarget(record[medalKey]);
     const commit = () => {
       const value = validateGameplayProperty(definition, Number(input.value));
       const candidate = { ...record, [medalKey]: Number(value) };
       const orderError = medalOrderError(candidate);
       if (orderError) {
-        input.value = String(record[medalKey]);
+        input.value = formatMedalTarget(record[medalKey]);
         showEditorNotice(orderError, 'error');
         return;
       }
@@ -5315,7 +5314,6 @@ function buildLevelData(options: { verification?: boolean } = {}) {
         platinumTime: 0.001,
         goldTime: 0.001,
         silverTime: 0.001,
-        bronzeTime: 0.001,
       } : currentVerification(),
     },
   };

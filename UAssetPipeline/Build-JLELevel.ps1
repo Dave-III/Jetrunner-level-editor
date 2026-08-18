@@ -8,6 +8,7 @@ param(
     [string]$ConverterTailArgument = 'JETRUNNER',
     [string]$RepakPath,
     [string]$NodePath,
+    [string]$WorkspaceRoot,
     [switch]$NodeIsElectron,
     [ValidateRange(10, 1800)]
     [int]$ToolTimeoutSeconds = 180,
@@ -136,8 +137,13 @@ $displayFileName = ($rawDisplayName -replace '[^A-Za-z0-9 _-]', '') -replace '\s
 $displayFileName = $displayFileName.Trim('_')
 if (-not $displayFileName) { $displayFileName = 'Unnamed_Level' }
 
-$projectsRoot = Join-Path $PSScriptRoot 'Projects'
-$packagingRoot = Join-Path $PSScriptRoot 'Packaging'
+$workspaceRootPath = if ([string]::IsNullOrWhiteSpace($WorkspaceRoot)) {
+    $PSScriptRoot
+} else {
+    [System.IO.Path]::GetFullPath($WorkspaceRoot)
+}
+$projectsRoot = Join-Path $workspaceRootPath 'Projects'
+$packagingRoot = Join-Path $workspaceRootPath 'Packaging'
 $project = Assert-ChildPath (Join-Path $projectsRoot $identity) $projectsRoot 'Project directory'
 $stage = Assert-ChildPath (Join-Path $packagingRoot $identity) $packagingRoot 'Packaging stage'
 
@@ -214,7 +220,7 @@ Converter: $converter
 
     # Preserve the established output contract used by the Electron workflow
     # and existing external tooling. The installed destination remains Paks\JLE.
-    $outputDirectory = Join-Path $PSScriptRoot 'Output'
+    $outputDirectory = Join-Path $workspaceRootPath 'Output'
     New-Item -ItemType Directory -Force -Path $outputDirectory | Out-Null
     $pakName = if ($isVerificationLevel) { 'JLE-VERIFICATIONLEVEL.pak' } else { "JLE-$displayFileName.pak" }
     $outputPak = Join-Path $outputDirectory $pakName
