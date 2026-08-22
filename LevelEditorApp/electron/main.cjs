@@ -45,11 +45,11 @@ function releaseNotesText(value) {
 }
 
 async function checkForEditorUpdates() {
-  if (!app.isPackaged) return;
-  if (updaterConfigured) return;
+  if (!app.isPackaged) return { available: false };
+  if (updaterConfigured) return { available: Boolean(modularUpdateOffer || availableEditorUpdate) };
   updaterConfigured = true;
   try {
-    const releaseResponse = await fetch('https://api.github.com/repos/Dave-III/Jetrunner-level-editor/releases/latest', { headers: { Accept: 'application/vnd.github+json', 'User-Agent': `JLE/${app.getVersion()}` } });
+    const releaseResponse = await fetch('https://api.github.com/repos/Dave-III/Jetrunner-level-editor/releases/latest', { headers: { Accept: 'application/vnd.github+json', 'User-Agent': `JLE/${app.getVersion()}` }, signal: AbortSignal.timeout(8000) });
     if (releaseResponse.ok) {
       const release = await releaseResponse.json();
       const descriptorAsset = release.assets?.find((asset) => asset.name === 'payload-release.json');
@@ -64,7 +64,7 @@ async function checkForEditorUpdates() {
             modularUpdateOffer = { version: descriptor.version, manifest: await manifestResponse.json(), release };
             availableEditorUpdate = null;
             sendEditorUpdateState({ status: 'available', version: descriptor.version, updateType: 'payload', notes: releaseNotesText(release.body) });
-            return;
+            return { available: true };
           }
         }
         // A payload release is authoritative for this launcher. Once its
@@ -76,7 +76,7 @@ async function checkForEditorUpdates() {
           // Keep the current release's notes available after a restart so the
           // renderer can present them once to someone who has just updated.
           sendEditorUpdateState({ status: 'current', version: descriptor.version, notes: releaseNotesText(release.body) });
-          return;
+          return { available: false };
         }
       }
     }
@@ -127,12 +127,15 @@ async function checkForEditorUpdates() {
     sendEditorUpdateState(available
       ? { status: 'available', version: result.updateInfo.version, notes: releaseNotesText(result.updateInfo.releaseNotes) }
       : { status: 'current', version: app.getVersion(), notes: releaseNotesText(result?.updateInfo?.releaseNotes) });
-    return;
+    return { available: Boolean(available) };
   } catch (error) {
     sendEditorUpdateState({ status: 'error' });
     appendApplicationLog('updater-error', error?.stack || error);
   }
+  return { available: false };
 }
+
+ipcMain.handle('update:check-now', async () => checkForEditorUpdates());
 
 ipcMain.handle('update:download', async () => {
   if (app.isPackaged && modularUpdateOffer) {

@@ -218,7 +218,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </section>
     <div class="designer-credit" aria-label="Designed by Dave">Designed by Dave</div>
     <section id="home-screen" class="home-screen">
-      <button id="home-update" class="home-update" type="button" hidden>New Version Available</button>
+      <aside id="home-update-banner" class="home-update-banner" hidden><span id="home-update-banner-text">JLE version is now available</span><button id="home-update-banner-close" type="button" aria-label="Dismiss update notice">×</button></aside>
+      <div id="home-update-actions" class="home-update-actions" hidden><button id="home-update-notes" type="button">What’s New</button><button id="home-update" class="home-update" type="button">Update JLE</button></div>
       <div class="home-card">
         <img src="${logoUrl}" alt="JETRUNNER" />
         <h1>Level Editor</h1>
@@ -268,6 +269,10 @@ const undoButton = document.querySelector<HTMLButtonElement>('#undo-editor')!;
 const redoButton = document.querySelector<HTMLButtonElement>('#redo-editor')!;
 const homeScreen = document.querySelector<HTMLElement>('#home-screen')!;
 const homeUpdateButton = document.querySelector<HTMLButtonElement>('#home-update')!;
+const homeUpdateActions = document.querySelector<HTMLElement>('#home-update-actions')!;
+const homeUpdateNotesButton = document.querySelector<HTMLButtonElement>('#home-update-notes')!;
+const homeUpdateBanner = document.querySelector<HTMLElement>('#home-update-banner')!;
+const homeUpdateBannerText = document.querySelector<HTMLElement>('#home-update-banner-text')!;
 const optionsScreen = document.querySelector<HTMLElement>('#options-screen')!;
 const advancedOptionsScreen = document.querySelector<HTMLElement>('#advanced-options-screen')!;
 const newLevelDialog = document.querySelector<HTMLElement>('#new-level-dialog')!;
@@ -325,7 +330,7 @@ function renderRecentLevels() {
       if (!window.jetrunnerEditor) return;
       const result = await window.jetrunnerEditor.loadRecentProject(entry.filePath);
       if (result.missing) { const settings = readProjectSettings(); writeProjectSettings({ ...settings, recent: (settings.recent || []).filter((item) => item.filePath !== entry.filePath) }); renderRecentLevels(); showEditorNotice('That recent save no longer exists.', 'error'); return; }
-      if (await loadEditorProject(result)) hideHome();
+      if (await checkForUpdatesBeforeEnteringLevel() && await loadEditorProject(result)) hideHome();
     });
     recentLevels.append(button);
   });
@@ -356,12 +361,31 @@ document.querySelector<HTMLSelectElement>('#game-launcher')!.addEventListener('c
 document.querySelector<HTMLButtonElement>('#home-quit')!.addEventListener('click', () => { window.jetrunnerEditor?.quitApp(); });
 const RELEASE_NOTES_SEEN_KEY = 'jle-release-notes-seen-version';
 let pendingUpdate: { version?: string; notes?: string; canDownload: boolean } | null = null;
+function updateDismissalKey(version?: string) { return `jle-update-dismissed-${version || 'unknown'}`; }
+function showUpdateActions() { homeUpdateBanner.hidden = true; homeUpdateActions.hidden = false; }
 function closeUpdateNotes() { updateNotesDialog.hidden = true; }
+function renderReleaseNotes(markdown: string) {
+  const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]!));
+  const inline = (value: string) => escapeHtml(value).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  const output: string[] = [];
+  let listOpen = false;
+  for (const sourceLine of markdown.split(/\r?\n/)) {
+    const line = sourceLine.trim();
+    if (!line) { if (listOpen) { output.push('</ul>'); listOpen = false; } continue; }
+    const heading = /^(#{1,3})\s+(.+)$/.exec(line);
+    const item = /^[-*]\s+(.+)$/.exec(line);
+    if (heading) { if (listOpen) { output.push('</ul>'); listOpen = false; } output.push(`<h${heading[1].length}>${inline(heading[2])}</h${heading[1].length}>`); }
+    else if (item) { if (!listOpen) { output.push('<ul>'); listOpen = true; } output.push(`<li>${inline(item[1])}</li>`); }
+    else { if (listOpen) { output.push('</ul>'); listOpen = false; } output.push(`<p>${inline(line)}</p>`); }
+  }
+  if (listOpen) output.push('</ul>');
+  updateNotesBody.innerHTML = output.join('') || '<p>This update contains the latest confirmed fixes and improvements.</p>';
+}
 function openUpdateNotes() {
   if (!pendingUpdate) return;
   updateNotesTitle.textContent = pendingUpdate.version ? `JLE ${pendingUpdate.version}` : 'New version available';
   updateNotesVersion.textContent = 'What’s new';
-  updateNotesBody.textContent = pendingUpdate.notes?.trim() || 'This update contains the latest confirmed fixes and improvements.';
+  renderReleaseNotes(pendingUpdate.notes?.trim() || 'This update contains the latest confirmed fixes and improvements.');
   updateNotesDownload.hidden = !pendingUpdate.canDownload;
   updateNotesDownload.disabled = false;
   updateNotesDialog.hidden = false;
@@ -379,12 +403,19 @@ async function downloadPendingUpdate() {
   }
   closeUpdateNotes();
 }
-homeUpdateButton.addEventListener('click', openUpdateNotes);
+homeUpdateButton.addEventListener('click', () => { void downloadPendingUpdate(); });
+homeUpdateNotesButton.addEventListener('click', openUpdateNotes);
+document.querySelector<HTMLButtonElement>('#home-update-banner-close')!.addEventListener('click', () => {
+  if (pendingUpdate?.version) localStorage.setItem(updateDismissalKey(pendingUpdate.version), '1');
+  showUpdateActions();
+});
 updateNotesDownload.addEventListener('click', () => { void downloadPendingUpdate(); });
 document.querySelector<HTMLButtonElement>('#update-notes-close')!.addEventListener('click', closeUpdateNotes);
 window.jetrunnerEditor?.onEditorUpdateState((state) => {
   if (state.status === 'error') {
     homeUpdateButton.hidden = true;
+    homeUpdateActions.hidden = true;
+    homeUpdateBanner.hidden = true;
     homeUpdateButton.disabled = false;
     pendingUpdate = null;
     closeUpdateNotes();
@@ -392,6 +423,8 @@ window.jetrunnerEditor?.onEditorUpdateState((state) => {
   }
   if (state.status === 'current') {
     homeUpdateButton.hidden = true;
+    homeUpdateActions.hidden = true;
+    homeUpdateBanner.hidden = true;
     homeUpdateButton.disabled = false;
     pendingUpdate = state.version ? { version: state.version, notes: state.notes, canDownload: false } : null;
     if (pendingUpdate && localStorage.getItem(RELEASE_NOTES_SEEN_KEY) !== pendingUpdate.version) {
@@ -400,23 +433,40 @@ window.jetrunnerEditor?.onEditorUpdateState((state) => {
     }
     return;
   }
-  homeUpdateButton.hidden = false;
   if (state.status === 'available') {
     pendingUpdate = { version: state.version, notes: state.notes, canDownload: true };
     homeUpdateButton.disabled = false;
-    homeUpdateButton.textContent = state.version ? `New Version ${state.version} Available` : 'New Version Available';
+    homeUpdateButton.hidden = false;
+    homeUpdateButton.textContent = 'Update JLE';
+    homeUpdateNotesButton.disabled = false;
+    homeUpdateBannerText.textContent = state.version ? `JLE version ${state.version} is now available` : 'A new JLE version is now available';
+    if (localStorage.getItem(updateDismissalKey(state.version)) === '1') showUpdateActions();
+    else { homeUpdateActions.hidden = true; homeUpdateBanner.hidden = false; }
   } else if (state.status === 'downloading') {
+    homeUpdateButton.hidden = false;
+    homeUpdateActions.hidden = false;
+    homeUpdateBanner.hidden = true;
     homeUpdateButton.disabled = true;
     homeUpdateButton.textContent = `Downloading Update ${Math.round(state.percent || 0)}%`;
   } else if (state.status === 'downloaded') {
     homeUpdateButton.hidden = true;
+    homeUpdateActions.hidden = true;
+    homeUpdateBanner.hidden = true;
     homeUpdateButton.disabled = false;
     pendingUpdate = null;
     closeUpdateNotes();
   }
 });
 document.querySelector<HTMLButtonElement>('#reset-shortcuts')!.addEventListener('click', () => { restoreDefaultEditorShortcuts(); const settings = readProjectSettings(); writeProjectSettings({ ...settings, shortcuts: {} }); updateShortcutLabels(); renderOptions(); });
-document.querySelector<HTMLButtonElement>('#home-load')!.addEventListener('click', async () => { if (await loadEditorProject()) hideHome(); });
+async function checkForUpdatesBeforeEnteringLevel() {
+  const result = await window.jetrunnerEditor?.checkForEditorUpdate();
+  if (result?.available) {
+    showEditorNotice('A JLE update is available. Review it from the home screen before opening a level.', 'working');
+    return false;
+  }
+  return true;
+}
+document.querySelector<HTMLButtonElement>('#home-load')!.addEventListener('click', async () => { if (await checkForUpdatesBeforeEnteringLevel() && await loadEditorProject()) hideHome(); });
 async function createNewLevel() {
   const name = newLevelNameInput.value.trim();
   if (!name) {
@@ -452,7 +502,8 @@ async function createNewLevel() {
     showEditorNotice(`Could not create level: ${message}`, 'error');
   }
 }
-document.querySelector<HTMLButtonElement>('#home-new')!.addEventListener('click', () => {
+document.querySelector<HTMLButtonElement>('#home-new')!.addEventListener('click', async () => {
+  if (!await checkForUpdatesBeforeEnteringLevel()) return;
   newLevelNameInput.value = 'Unnamed Level';
   newLevelError.hidden = true;
   newLevelDialog.hidden = false;

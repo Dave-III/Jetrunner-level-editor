@@ -20,6 +20,7 @@ contextBridge.exposeInMainWorld('jetrunnerEditor', {
   },
   beginNewProject: () => ipcRenderer.invoke('project:new'),
   quitApp: () => ipcRenderer.invoke('app:quit'),
+  checkForEditorUpdate: () => ipcRenderer.invoke('update:check-now'),
   downloadEditorUpdate: () => ipcRenderer.invoke('update:download'),
   onEditorUpdateState: (callback) => {
     const listener = (_event, state) => callback(state);
