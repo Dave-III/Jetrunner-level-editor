@@ -24,6 +24,7 @@ let sessionLogPath = null;
 let mainWindow = null;
 let availableEditorUpdate = null;
 let updaterConfigured = false;
+let updateCheckPromise = null;
 let modularUpdater = null;
 let modularUpdateOffer = null;
 let activePayloadPath = null;
@@ -44,10 +45,27 @@ function releaseNotesText(value) {
   return '';
 }
 
-async function checkForEditorUpdates() {
-  if (!app.isPackaged) return { available: false };
-  if (updaterConfigured) return { available: Boolean(modularUpdateOffer || availableEditorUpdate) };
+function currentUpdateCheckResult() {
+  const fullUpdate = availableEditorUpdate;
+  return {
+    available: Boolean(modularUpdateOffer || fullUpdate),
+    version: modularUpdateOffer?.version || fullUpdate?.version,
+    notes: fullUpdate ? releaseNotesText(fullUpdate.releaseNotes) : undefined,
+  };
+}
+
+function checkForEditorUpdates() {
+  if (!app.isPackaged) return Promise.resolve({ available: false });
+  // A level-open request must wait for an automatic check already in flight,
+  // rather than treating the temporary "checking" state as "no update".
+  if (updateCheckPromise) return updateCheckPromise;
+  if (updaterConfigured) return Promise.resolve(currentUpdateCheckResult());
   updaterConfigured = true;
+  updateCheckPromise = performEditorUpdateCheck().finally(() => { updateCheckPromise = null; });
+  return updateCheckPromise;
+}
+
+async function performEditorUpdateCheck() {
   try {
     const releaseResponse = await fetch('https://api.github.com/repos/Dave-III/Jetrunner-level-editor/releases/latest', { headers: { Accept: 'application/vnd.github+json', 'User-Agent': `JLE/${app.getVersion()}` }, signal: AbortSignal.timeout(8000) });
     if (releaseResponse.ok) {
@@ -57,26 +75,27 @@ async function checkForEditorUpdates() {
         const descriptorResponse = await fetch(descriptorAsset.browser_download_url);
         const descriptor = descriptorResponse.ok ? await descriptorResponse.json() : null;
         const currentPayloadVersion = (await modularUpdater.readState()).active || app.getVersion();
-        if (descriptor?.updateType === 'payload' && compareVersions(descriptor.version, currentPayloadVersion) > 0) {
+        const descriptorIsNewer = descriptor?.version && compareVersions(descriptor.version, currentPayloadVersion) > 0;
+        if (descriptor?.updateType === 'payload' && descriptorIsNewer) {
           const manifestAsset = release.assets?.find((asset) => asset.name === descriptor.manifestAsset);
           const manifestResponse = manifestAsset && await fetch(manifestAsset.browser_download_url);
           if (manifestResponse?.ok) {
             modularUpdateOffer = { version: descriptor.version, manifest: await manifestResponse.json(), release };
             availableEditorUpdate = null;
             sendEditorUpdateState({ status: 'available', version: descriptor.version, updateType: 'payload', notes: releaseNotesText(release.body) });
-            return { available: true };
+            return { available: true, version: descriptor.version, notes: releaseNotesText(release.body) };
           }
         }
-        // A payload release is authoritative for this launcher. Once its
-        // active payload is current, do not fall through to electron-updater:
-        // it compares the release against the deliberately stable launcher
-        // version and would offer the already-installed payload again.
-        if (descriptor?.updateType === 'payload') {
+        // The release descriptor is authoritative for this launcher. Once
+        // the installed payload/launcher version is current, never fall
+        // through to electron-updater: its separate feed can retain a stale
+        // version and re-offer an update which is already installed.
+        if (descriptor?.version && !descriptorIsNewer) {
           availableEditorUpdate = null;
           // Keep the current release's notes available after a restart so the
           // renderer can present them once to someone who has just updated.
           sendEditorUpdateState({ status: 'current', version: descriptor.version, notes: releaseNotesText(release.body) });
-          return { available: false };
+          return { available: false, version: currentPayloadVersion, notes: releaseNotesText(release.body) };
         }
       }
     }
@@ -122,12 +141,16 @@ async function checkForEditorUpdates() {
   });
   try {
     const result = await autoUpdater.checkForUpdates();
-    const available = result?.updateInfo?.version && result.updateInfo.version !== app.getVersion();
+    const available = result?.updateInfo?.version && compareVersions(result.updateInfo.version, app.getVersion()) > 0;
     availableEditorUpdate = available ? result.updateInfo : null;
     sendEditorUpdateState(available
       ? { status: 'available', version: result.updateInfo.version, notes: releaseNotesText(result.updateInfo.releaseNotes) }
       : { status: 'current', version: app.getVersion(), notes: releaseNotesText(result?.updateInfo?.releaseNotes) });
-    return { available: Boolean(available) };
+    return {
+      available: Boolean(available),
+      version: available ? result.updateInfo.version : undefined,
+      notes: releaseNotesText(result?.updateInfo?.releaseNotes),
+    };
   } catch (error) {
     sendEditorUpdateState({ status: 'error' });
     appendApplicationLog('updater-error', error?.stack || error);

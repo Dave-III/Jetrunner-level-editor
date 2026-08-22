@@ -104,11 +104,11 @@ jobs:
           gh release view $tag *> $null
           if ($LASTEXITCODE -ne 0) {
             Invoke-GitHubReleaseCommand 'Creating GitHub release' {
-              gh release create $tag --title "JLE v$version" --notes-file ../RELEASE_NOTES.md
+              gh release create $tag --title "JLE v$version" --notes-file ../UPDATE.md
             }
           }
           Invoke-GitHubReleaseCommand 'Updating GitHub release notes' {
-            gh release edit $tag --title "JLE v$version" --notes-file ../RELEASE_NOTES.md
+            gh release edit $tag --title "JLE v$version" --notes-file ../UPDATE.md
           }
           # A payload can contain hundreds of content-addressed files. Uploading
           # the entire glob in one gh invocation can trigger GitHub's secondary

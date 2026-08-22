@@ -48,7 +48,7 @@ declare global {
       }) => void) => () => void;
       beginNewProject: () => Promise<{ ready: boolean; error?: string }>;
       quitApp: () => Promise<{ quitting: boolean }>;
-      checkForEditorUpdate: () => Promise<{ available: boolean }>;
+      checkForEditorUpdate: () => Promise<{ available: boolean; version?: string; notes?: string }>;
       downloadEditorUpdate: () => Promise<{ started: boolean }>;
       payloadReady: () => void;
       getRecoveryStatus: () => Promise<{ active: string | null; previous: string | null; knownGood: string | null; pending: string | null; root: string }>;

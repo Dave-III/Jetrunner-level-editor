@@ -364,12 +364,28 @@ let pendingUpdate: { version?: string; notes?: string; canDownload: boolean } | 
 function updateDismissalKey(version?: string) { return `jle-update-dismissed-${version || 'unknown'}`; }
 function showUpdateActions() { homeUpdateBanner.hidden = true; homeUpdateActions.hidden = false; }
 function closeUpdateNotes() { updateNotesDialog.hidden = true; }
+function normalizeReleaseNotes(source: string) {
+  // electron-updater supplies GitHub release notes as HTML, whereas the
+  // payload updater supplies Markdown. Convert the former to the latter
+  // before the shared, escaped Markdown renderer handles it.
+  if (!/<\/?(?:h[1-6]|p|ul|ol|li|br|code|strong|em)\b/i.test(source)) return source;
+  const document = new DOMParser().parseFromString(source, 'text/html');
+  const lines: string[] = [];
+  for (const element of document.body.querySelectorAll('h1, h2, h3, p, li')) {
+    const text = element.textContent?.replace(/\s+/g, ' ').trim();
+    if (!text) continue;
+    if (/^H[1-3]$/.test(element.tagName)) lines.push(`${'#'.repeat(Number(element.tagName[1]))} ${text}`);
+    else if (element.tagName === 'LI') lines.push(`- ${text}`);
+    else lines.push(text);
+  }
+  return lines.join('\n\n') || document.body.textContent?.trim() || source;
+}
 function renderReleaseNotes(markdown: string) {
   const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]!));
   const inline = (value: string) => escapeHtml(value).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   const output: string[] = [];
   let listOpen = false;
-  for (const sourceLine of markdown.split(/\r?\n/)) {
+  for (const sourceLine of normalizeReleaseNotes(markdown).split(/\r?\n/)) {
     const line = sourceLine.trim();
     if (!line) { if (listOpen) { output.push('</ul>'); listOpen = false; } continue; }
     const heading = /^(#{1,3})\s+(.+)$/.exec(line);
@@ -461,7 +477,13 @@ document.querySelector<HTMLButtonElement>('#reset-shortcuts')!.addEventListener(
 async function checkForUpdatesBeforeEnteringLevel() {
   const result = await window.jetrunnerEditor?.checkForEditorUpdate();
   if (result?.available) {
-    showEditorNotice('A JLE update is available. Review it from the home screen before opening a level.', 'working');
+    // The update IPC event is sent before this result resolves. Yield once so
+    // its home-screen state is applied, then show the same update modal the
+    // player can open from the home screen.
+    await new Promise<void>((resolve) => window.setTimeout(resolve, 0));
+    if (!pendingUpdate && result.version) pendingUpdate = { version: result.version, notes: result.notes, canDownload: true };
+    if (pendingUpdate) openUpdateNotes();
+    else showEditorNotice('A JLE update is available. Review it from the home screen before opening a level.', 'working');
     return false;
   }
   return true;
