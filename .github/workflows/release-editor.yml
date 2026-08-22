@@ -107,6 +107,9 @@ jobs:
               gh release create $tag --title "JLE v$version" --notes-file ../RELEASE_NOTES.md
             }
           }
+          Invoke-GitHubReleaseCommand 'Updating GitHub release notes' {
+            gh release edit $tag --title "JLE v$version" --notes-file ../RELEASE_NOTES.md
+          }
           # A payload can contain hundreds of content-addressed files. Uploading
           # the entire glob in one gh invocation can trigger GitHub's secondary
           # rate limit, and reruns must resume rather than start over.
