@@ -104,7 +104,7 @@ jobs:
           gh release view $tag *> $null
           if ($LASTEXITCODE -ne 0) {
             Invoke-GitHubReleaseCommand 'Creating GitHub release' {
-              gh release create $tag --title "JLE v$version" --notes-file RELEASE_NOTES.md
+              gh release create $tag --title "JLE v$version" --notes-file ../RELEASE_NOTES.md
             }
           }
           # A payload can contain hundreds of content-addressed files. Uploading
