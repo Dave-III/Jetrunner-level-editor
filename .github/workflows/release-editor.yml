@@ -79,17 +79,69 @@ jobs:
           }
           $tag = '${{ github.ref_name }}'
           $version = (Get-Content -Raw package.json | ConvertFrom-Json).version
+          function Invoke-GitHubReleaseCommand {
+            param(
+              [string] $Label,
+              [scriptblock] $Command
+            )
+
+            $delays = @(30, 60, 120, 180)
+            for ($attempt = 0; $attempt -le $delays.Count; $attempt++) {
+              & $Command
+              if ($LASTEXITCODE -eq 0) {
+                return
+              }
+
+              if ($attempt -eq $delays.Count) {
+                throw "$Label failed after $($attempt + 1) attempts."
+              }
+
+              $delay = $delays[$attempt]
+              Write-Warning "$Label failed (attempt $($attempt + 1)). Retrying in $delay seconds to allow GitHub's release API rate limit to clear."
+              Start-Sleep -Seconds $delay
+            }
+          }
           gh release view $tag *> $null
           if ($LASTEXITCODE -ne 0) {
-            gh release create $tag --title $version --generate-notes
+            Invoke-GitHubReleaseCommand 'Creating GitHub release' {
+              gh release create $tag --title "JLE v$version" --notes-file RELEASE_NOTES.md
+            }
           }
-          gh release upload $tag `
-            "release/JETRUNNER-Level-Editor-Setup-$version.exe" `
-            "release/JETRUNNER-Level-Editor-Setup-$version.exe.blockmap" `
-            'release/latest.yml' `
-            'release/payload/payload-release.json' `
-            'release/payload/payload-manifest.json' `
-            'release/payload/blobs/*' `
-            --clobber
+          # A payload can contain hundreds of content-addressed files. Uploading
+          # the entire glob in one gh invocation can trigger GitHub's secondary
+          # rate limit, and reruns must resume rather than start over.
+          $remoteAssetNames = @(
+            gh release view $tag --json assets --jq '.assets[].name'
+          )
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Could not read the existing GitHub release asset list.'
+          }
+          $remoteAssetSet = [System.Collections.Generic.HashSet[string]]::new(
+            [string[]] $remoteAssetNames,
+            [System.StringComparer]::OrdinalIgnoreCase
+          )
+          $releaseAssets = @(
+            Get-Item -LiteralPath "release/JETRUNNER-Level-Editor-Setup-$version.exe"
+            Get-Item -LiteralPath "release/JETRUNNER-Level-Editor-Setup-$version.exe.blockmap"
+            Get-Item -LiteralPath 'release/latest.yml'
+            Get-Item -LiteralPath 'release/payload/payload-release.json'
+            Get-Item -LiteralPath 'release/payload/payload-manifest.json'
+            Get-ChildItem -LiteralPath 'release/payload/blobs' -Filter '*.bin' -File | Sort-Object Name
+          )
+          $pendingAssets = @($releaseAssets | Where-Object { -not $remoteAssetSet.Contains($_.Name) })
+          Write-Host "Release assets already present: $($releaseAssets.Count - $pendingAssets.Count). Remaining: $($pendingAssets.Count)."
+
+          $batchSize = 25
+          for ($offset = 0; $offset -lt $pendingAssets.Count; $offset += $batchSize) {
+            $last = [Math]::Min($offset + $batchSize - 1, $pendingAssets.Count - 1)
+            $batch = @($pendingAssets[$offset..$last] | ForEach-Object FullName)
+            Invoke-GitHubReleaseCommand "Uploading release asset batch $([int]($offset / $batchSize) + 1)" {
+              gh release upload $tag @batch --clobber
+            }
+            if ($last -lt ($pendingAssets.Count - 1)) {
+              # Keep release API traffic below GitHub's secondary-rate threshold.
+              Start-Sleep -Seconds 20
+            }
+          }
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
