@@ -354,17 +354,20 @@ document.querySelector<HTMLButtonElement>('#update-rollback')!.addEventListener(
 document.querySelector<HTMLButtonElement>('#update-open-recovery')!.addEventListener('click', () => { void window.jetrunnerEditor?.openRecoveryFolder(); });
 document.querySelector<HTMLSelectElement>('#game-launcher')!.addEventListener('change', (event) => { void window.jetrunnerEditor?.setGameLauncher((event.target as HTMLSelectElement).value as 'steam' | 'epic'); });
 document.querySelector<HTMLButtonElement>('#home-quit')!.addEventListener('click', () => { window.jetrunnerEditor?.quitApp(); });
-let pendingUpdate: { version?: string; notes?: string } | null = null;
+const RELEASE_NOTES_SEEN_KEY = 'jle-release-notes-seen-version';
+let pendingUpdate: { version?: string; notes?: string; canDownload: boolean } | null = null;
 function closeUpdateNotes() { updateNotesDialog.hidden = true; }
 function openUpdateNotes() {
   if (!pendingUpdate) return;
   updateNotesTitle.textContent = pendingUpdate.version ? `JLE ${pendingUpdate.version}` : 'New version available';
   updateNotesVersion.textContent = 'What’s new';
   updateNotesBody.textContent = pendingUpdate.notes?.trim() || 'This update contains the latest confirmed fixes and improvements.';
+  updateNotesDownload.hidden = !pendingUpdate.canDownload;
+  updateNotesDownload.disabled = false;
   updateNotesDialog.hidden = false;
 }
 async function downloadPendingUpdate() {
-  if (!window.jetrunnerEditor || homeUpdateButton.disabled) return;
+  if (!window.jetrunnerEditor || homeUpdateButton.disabled || !pendingUpdate?.canDownload) return;
   homeUpdateButton.disabled = true;
   homeUpdateButton.textContent = 'Starting Download...';
   updateNotesDownload.disabled = true;
@@ -380,16 +383,26 @@ homeUpdateButton.addEventListener('click', openUpdateNotes);
 updateNotesDownload.addEventListener('click', () => { void downloadPendingUpdate(); });
 document.querySelector<HTMLButtonElement>('#update-notes-close')!.addEventListener('click', closeUpdateNotes);
 window.jetrunnerEditor?.onEditorUpdateState((state) => {
-  if (state.status === 'current' || state.status === 'error') {
+  if (state.status === 'error') {
     homeUpdateButton.hidden = true;
     homeUpdateButton.disabled = false;
     pendingUpdate = null;
     closeUpdateNotes();
     return;
   }
+  if (state.status === 'current') {
+    homeUpdateButton.hidden = true;
+    homeUpdateButton.disabled = false;
+    pendingUpdate = state.version ? { version: state.version, notes: state.notes, canDownload: false } : null;
+    if (pendingUpdate && localStorage.getItem(RELEASE_NOTES_SEEN_KEY) !== pendingUpdate.version) {
+      localStorage.setItem(RELEASE_NOTES_SEEN_KEY, pendingUpdate.version!);
+      openUpdateNotes();
+    }
+    return;
+  }
   homeUpdateButton.hidden = false;
   if (state.status === 'available') {
-    pendingUpdate = { version: state.version, notes: state.notes };
+    pendingUpdate = { version: state.version, notes: state.notes, canDownload: true };
     homeUpdateButton.disabled = false;
     homeUpdateButton.textContent = state.version ? `New Version ${state.version} Available` : 'New Version Available';
   } else if (state.status === 'downloading') {

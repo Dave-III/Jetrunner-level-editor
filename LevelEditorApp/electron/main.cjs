@@ -73,7 +73,9 @@ async function checkForEditorUpdates() {
         // version and would offer the already-installed payload again.
         if (descriptor?.updateType === 'payload') {
           availableEditorUpdate = null;
-          sendEditorUpdateState({ status: 'current' });
+          // Keep the current release's notes available after a restart so the
+          // renderer can present them once to someone who has just updated.
+          sendEditorUpdateState({ status: 'current', version: descriptor.version, notes: releaseNotesText(release.body) });
           return;
         }
       }
@@ -84,6 +86,11 @@ async function checkForEditorUpdates() {
   autoUpdater.autoDownload = false;
   autoUpdater.autoInstallOnAppQuit = false;
   autoUpdater.allowPrerelease = false;
+  // GitHub release assets can stall indefinitely when electron-updater builds
+  // an NSIS differential plan from many byte-range requests. A full installer
+  // transfer is less bandwidth-efficient, but reliably reports progress and
+  // is the safe fallback for every supported JLE installation.
+  autoUpdater.disableDifferentialDownload = true;
   autoUpdater.logger = {
     info: (message) => appendApplicationLog('updater', message),
     warn: (message) => appendApplicationLog('updater-warning', message),
@@ -119,7 +126,7 @@ async function checkForEditorUpdates() {
     availableEditorUpdate = available ? result.updateInfo : null;
     sendEditorUpdateState(available
       ? { status: 'available', version: result.updateInfo.version, notes: releaseNotesText(result.updateInfo.releaseNotes) }
-      : { status: 'current' });
+      : { status: 'current', version: app.getVersion(), notes: releaseNotesText(result?.updateInfo?.releaseNotes) });
     return;
   } catch (error) {
     sendEditorUpdateState({ status: 'error' });
