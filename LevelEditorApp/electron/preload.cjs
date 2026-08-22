@@ -26,6 +26,12 @@ contextBridge.exposeInMainWorld('jetrunnerEditor', {
     ipcRenderer.on('update:state', listener);
     return () => ipcRenderer.removeListener('update:state', listener);
   },
+  payloadReady: () => ipcRenderer.send('update:payload-ready'),
+  getRecoveryStatus: () => ipcRenderer.invoke('update:recovery-status'),
+  rollbackEditor: () => ipcRenderer.invoke('update:rollback'),
+  openRecoveryFolder: () => ipcRenderer.invoke('update:open-recovery'),
+  getGameLauncher: () => ipcRenderer.invoke('game:get-launcher'),
+  setGameLauncher: (launcher) => ipcRenderer.invoke('game:set-launcher', launcher),
   // This comes from the same module as the main-process verifier allowlist.
   verificationSupportedAssetIds: Array.isArray(verificationSupportedAssetIds)
     ? [...verificationSupportedAssetIds]

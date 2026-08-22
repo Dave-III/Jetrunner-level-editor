@@ -40,6 +40,7 @@ Saved Levels/Verification Backups/
 Logs/
 BuildAndInstallLevel.latest*.log
 Scripts/__pycache__/
+generated/game-data/
 
 # Bundled third-party binaries are supplied separately
 UAssetPipeline/Tools/UAssetGUI/*

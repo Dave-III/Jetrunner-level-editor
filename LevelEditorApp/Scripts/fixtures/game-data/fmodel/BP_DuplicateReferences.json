@@ -1,0 +1,1 @@
+{"Type":"Blueprint","GeneratedClass":"BP_DuplicateReferences_C","StaticMesh":"/Game/Props/SM_Crate.SM_Crate","Components":[{"Type":"StaticMeshComponent","StaticMesh":"/Game/Props/SM_Crate.SM_Crate"},{"Type":"StaticMeshComponent","StaticMesh":"/Game/Props/SM_Crate.SM_Crate"}]}

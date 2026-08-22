@@ -3,6 +3,7 @@ const path = require('node:path');
 const fs = require('node:fs/promises');
 const { spawn } = require('node:child_process');
 const { autoUpdater } = require('electron-updater');
+const { ModularUpdater, compareVersions } = require('./modular-updater.cjs');
 const {
   surfaceAssetIds: verifiedSurfaceAssetIds,
   verificationObjectAssetIds,
@@ -23,16 +24,63 @@ let sessionLogPath = null;
 let mainWindow = null;
 let availableEditorUpdate = null;
 let updaterConfigured = false;
+let modularUpdater = null;
+let modularUpdateOffer = null;
+let activePayloadPath = null;
+let activePayloadConfirmed = false;
 let pendingExternalProjectPath = process.argv.find((argument) => /\.jle$/i.test(argument)) || null;
 
 function sendEditorUpdateState(state) {
   mainWindow?.webContents.send('update:state', state);
 }
 
+function releaseNotesText(value) {
+  if (typeof value === 'string') return value.slice(0, 12000);
+  if (Array.isArray(value)) return value
+    .map((entry) => typeof entry === 'string' ? entry : entry?.note || entry?.body || '')
+    .filter(Boolean)
+    .join('\n\n')
+    .slice(0, 12000);
+  return '';
+}
+
 async function checkForEditorUpdates() {
   if (!app.isPackaged) return;
   if (updaterConfigured) return;
   updaterConfigured = true;
+  try {
+    const releaseResponse = await fetch('https://api.github.com/repos/Dave-III/Jetrunner-level-editor/releases/latest', { headers: { Accept: 'application/vnd.github+json', 'User-Agent': `JLE/${app.getVersion()}` } });
+    if (releaseResponse.ok) {
+      const release = await releaseResponse.json();
+      const descriptorAsset = release.assets?.find((asset) => asset.name === 'payload-release.json');
+      if (descriptorAsset) {
+        const descriptorResponse = await fetch(descriptorAsset.browser_download_url);
+        const descriptor = descriptorResponse.ok ? await descriptorResponse.json() : null;
+        const currentPayloadVersion = (await modularUpdater.readState()).active || app.getVersion();
+        if (descriptor?.updateType === 'payload' && compareVersions(descriptor.version, currentPayloadVersion) > 0) {
+          const manifestAsset = release.assets?.find((asset) => asset.name === descriptor.manifestAsset);
+          const manifestResponse = manifestAsset && await fetch(manifestAsset.browser_download_url);
+          if (manifestResponse?.ok) {
+            modularUpdateOffer = { version: descriptor.version, manifest: await manifestResponse.json(), release };
+            availableEditorUpdate = null;
+            sendEditorUpdateState({ status: 'available', version: descriptor.version, updateType: 'payload', notes: releaseNotesText(release.body) });
+            return;
+          }
+        }
+        // A payload release is authoritative for this launcher. Once its
+        // active payload is current, do not fall through to electron-updater:
+        // it compares the release against the deliberately stable launcher
+        // version and would offer the already-installed payload again.
+        if (descriptor?.updateType === 'payload') {
+          availableEditorUpdate = null;
+          sendEditorUpdateState({ status: 'current' });
+          return;
+        }
+      }
+    }
+  } catch (error) {
+    appendApplicationLog('payload-updater-warning', `Payload discovery failed; using full updater fallback: ${error?.stack || error}`);
+  }
   autoUpdater.autoDownload = false;
   autoUpdater.autoInstallOnAppQuit = false;
   autoUpdater.allowPrerelease = false;
@@ -70,7 +118,7 @@ async function checkForEditorUpdates() {
     const available = result?.updateInfo?.version && result.updateInfo.version !== app.getVersion();
     availableEditorUpdate = available ? result.updateInfo : null;
     sendEditorUpdateState(available
-      ? { status: 'available', version: result.updateInfo.version }
+      ? { status: 'available', version: result.updateInfo.version, notes: releaseNotesText(result.updateInfo.releaseNotes) }
       : { status: 'current' });
     return;
   } catch (error) {
@@ -80,11 +128,45 @@ async function checkForEditorUpdates() {
 }
 
 ipcMain.handle('update:download', async () => {
+  if (app.isPackaged && modularUpdateOffer) {
+    const offer = modularUpdateOffer;
+    try {
+      const assetUrls = new Map((offer.release.assets || []).map((asset) => [asset.name, asset.browser_download_url]));
+      const result = await modularUpdater.install(offer.manifest, {
+        resolveUrl: (file) => assetUrls.get(file.assetName),
+        progress: ({ percent }) => sendEditorUpdateState({ status: 'downloading', version: offer.version, percent, updateType: 'payload' }),
+        healthCheck: async (candidate) => {
+          const html = await fs.readFile(path.join(candidate, 'index.html'), 'utf8');
+          if (!/<script[^>]+src=/i.test(html) || !/<div[^>]+id=["']app["']/i.test(html)) return false;
+          for (const match of html.matchAll(/(?:src|href)=["']\.\/?([^"'#?]+)["']/gi)) await fs.access(path.join(candidate, ...match[1].split('/')));
+          return true;
+        },
+      });
+      modularUpdateOffer = null;
+      sendEditorUpdateState({ status: 'downloaded', version: offer.version, updateType: 'payload' });
+      const answer = await dialog.showMessageBox(mainWindow, { type: 'info', title: 'Editor update ready', message: `JLE ${offer.version} is installed and verified.`, detail: 'Restart now to use it? The previous editor remains available for recovery.', buttons: ['Restart now', 'Later'], defaultId: 0, cancelId: 1 });
+      if (answer.response === 0) { app.relaunch(); app.quit(); }
+      return { started: true, updateType: 'payload', result: result.kind };
+    } catch (error) {
+      appendApplicationLog('payload-updater-error', error?.stack || error);
+      sendEditorUpdateState({ status: 'error', detail: error instanceof Error ? error.message : String(error) });
+      return { started: false, error: error instanceof Error ? error.message : String(error) };
+    }
+  }
   if (!app.isPackaged || !availableEditorUpdate) return { started: false };
   sendEditorUpdateState({ status: 'downloading', version: availableEditorUpdate.version, percent: 0 });
   await autoUpdater.downloadUpdate();
   return { started: true };
 });
+
+ipcMain.handle('update:recovery-status', async () => ({ ...(await modularUpdater.readState()), root: modularUpdater.root }));
+ipcMain.handle('update:rollback', async () => {
+  const result = await modularUpdater.rollback();
+  if (result.rolledBack) { app.relaunch(); app.quit(); }
+  return result;
+});
+ipcMain.handle('update:open-recovery', async () => shell.openPath(modularUpdater.root));
+ipcMain.on('update:payload-ready', () => { activePayloadConfirmed = true; appendApplicationLog('payload-updater', 'Active payload completed renderer startup health handshake.'); });
 
 async function openExternalProject(filePath) {
   if (!filePath || !/\.jle$/i.test(filePath)) return;
@@ -618,6 +700,30 @@ async function rememberJETRUNNERPaks(gamePaksDirectory) {
   await fs.writeFile(settingsPath, `${JSON.stringify(settings, null, 2)}\n`, 'utf8');
 }
 
+function normalizeGameLauncher(value) {
+  return value === 'epic' || value === 'steam' ? value : 'steam';
+}
+
+async function gameLauncherPreference() {
+  try {
+    const settings = JSON.parse(await fs.readFile(path.join(app.getPath('userData'), 'settings.json'), 'utf8'));
+    return normalizeGameLauncher(settings.gameLauncher);
+  } catch {
+    return 'steam';
+  }
+}
+
+ipcMain.handle('game:get-launcher', async () => ({ launcher: await gameLauncherPreference() }));
+ipcMain.handle('game:set-launcher', async (_event, launcher) => {
+  const settingsPath = path.join(app.getPath('userData'), 'settings.json');
+  await fs.mkdir(path.dirname(settingsPath), { recursive: true });
+  let settings = {};
+  try { settings = JSON.parse(await fs.readFile(settingsPath, 'utf8')); } catch {}
+  settings.gameLauncher = normalizeGameLauncher(launcher);
+  await fs.writeFile(settingsPath, `${JSON.stringify(settings, null, 2)}\n`, 'utf8');
+  return { launcher: settings.gameLauncher };
+});
+
 // Only these executable names, inside the JETRUNNER installation selected by
 // the user, are eligible for termination. This prevents the editor from ever
 // closing an unrelated process with a similar name.
@@ -883,7 +989,7 @@ async function exportAndCompile(event, levelData, options = {}) {
       }
       gamePaks = await validateJETRUNNERPaks(selection.filePaths[0]);
       if (!gamePaks) {
-        throw new Error('The selected folder is not a valid JETRUNNER installation. Select the Steam JETRUNNER folder or its JETRUNNER\\Content\\Paks folder.');
+        throw new Error('The selected folder is not a valid JETRUNNER installation. Select the JETRUNNER folder or its JETRUNNER\\Content\\Paks folder.');
       }
     }
     await rememberJETRUNNERPaks(gamePaks);
@@ -1027,6 +1133,26 @@ async function waitForJETRUNNERStart(gamePaks, status, consoleLine) {
   status('verification-result', 'Verification is running. Keep playing until you are happy with your best time.');
 }
 
+async function launchJETRUNNERForVerification(gamePaks) {
+  if (await gameLauncherPreference() !== 'epic') {
+    // JETRUNNER defines DX12 as option1 and DX11 as option2 in Steam. Select
+    // its native DX11 launch entry so Steam performs the required bootstrap.
+    await shell.openExternal('steam://launch/2865670/option2');
+    return;
+  }
+  const executable = path.join(gameInstallRootFromPaks(gamePaks), jetrunnerRelativeExecutable);
+  try {
+    const stat = await fs.stat(executable);
+    if (!stat.isFile() || stat.size <= 1024) throw new Error('missing executable');
+  } catch {
+    throw new Error('Epic Games launch failed: the selected JETRUNNER installation does not contain JetrunnerGame.exe. Select the correct game folder in the export prompt and retry.');
+  }
+  // Epic installations have no Steam launch URI. Start the selected game
+  // executable directly, using the same DX11 renderer JLE requests on Steam.
+  const game = spawn(executable, ['-d3d11'], { detached: true, stdio: 'ignore', windowsHide: true });
+  game.unref();
+}
+
 ipcMain.handle('verification:begin', async (event, levelData) => {
   const status = (stage, message) => event.sender.send('level:pipeline-status', { stage, message });
   const consoleLine = (source, message) => status('console', `[${new Date().toLocaleTimeString()}] [${source}] ${message}`);
@@ -1051,10 +1177,7 @@ ipcMain.handle('verification:begin', async (event, levelData) => {
     const savePrepared = await prepareVerificationSave();
     if (!savePrepared) consoleLine('verification-save', 'No prior verification record existed; a new record will be accepted.');
     status('verification-launch', 'Launching JETRUNNER for verification...');
-    // JETRUNNER defines DX12 as option1 and DX11 as option2 in Steam. Select
-    // its native DX11 launch entry so Steam performs the required bootstrap
-    // and Unreal receives exactly one RHI argument.
-    await shell.openExternal('steam://launch/2865670/option2');
+    await launchJETRUNNERForVerification(gamePaks);
     await waitForJETRUNNERStart(gamePaks, status, consoleLine);
     return { ...result, started: true, savePrepared };
   } catch (error) {
@@ -1096,6 +1219,12 @@ ipcMain.handle('verification:read', async () => {
 });
 
 function createWindow() {
+  const recoverFromStartupFailure = (reason) => {
+    if (activePayloadConfirmed || !modularUpdater) return;
+    void modularUpdater.rollback().then((result) => {
+      if (result.rolledBack) { appendApplicationLog('payload-updater', `Rolled back after renderer startup failure: ${reason}`); app.relaunch(); app.quit(); }
+    }).catch((error) => appendApplicationLog('payload-updater-error', error?.stack || error));
+  };
   const window = new BrowserWindow({
     width: 1440,
     height: 900,
@@ -1108,7 +1237,10 @@ function createWindow() {
     icon: app.isPackaged
       ? path.join(process.resourcesPath, 'juan.png')
       : path.join(__dirname, '..', 'src', 'assets', 'juan.png'),
-    autoHideMenuBar: true,
+    // A hidden auto-menu appears whenever Alt is tapped on Windows, which
+    // conflicts with UE-style Alt+Drag. This editor has no menu commands, so
+    // remove that menu rather than intercepting Alt and losing modifier input.
+    autoHideMenuBar: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
       contextIsolation: true,
@@ -1117,6 +1249,8 @@ function createWindow() {
     },
   });
   mainWindow = window;
+  window.removeMenu();
+  window.setMenuBarVisibility(false);
   window.once('ready-to-show', () => {
     window.setFullScreen(true);
     window.show();
@@ -1127,16 +1261,18 @@ function createWindow() {
   });
   window.webContents.on('did-fail-load', (_event, code, description, url) => {
     appendApplicationLog('renderer-load-error', `${code} ${description} ${url}`);
+    recoverFromStartupFailure(`${code} ${description}`);
   });
   window.webContents.on('render-process-gone', (_event, details) => {
     appendApplicationLog('renderer-process-gone', JSON.stringify(details));
+    recoverFromStartupFailure(details?.reason || 'renderer process ended');
   });
 
   const devServer = process.env.VITE_DEV_SERVER_URL;
   if (devServer) {
     window.loadURL(devServer);
   } else {
-    window.loadFile(path.join(__dirname, '..', 'dist', 'index.html'));
+    window.loadFile(path.join(activePayloadPath || path.join(__dirname, '..', 'dist'), 'index.html'));
   }
   window.webContents.once('did-finish-load', () => {
     if (pendingExternalProjectPath) {
@@ -1160,6 +1296,8 @@ app.on('second-instance', (_event, argv) => {
 });
 
 app.whenReady().then(async () => {
+  modularUpdater = new ModularUpdater({ root: path.join(app.getPath('userData'), 'ModularUpdates'), bundledPayload: path.join(__dirname, '..', 'dist'), launcherVersion: app.getVersion(), logger: (level, message) => appendApplicationLog(`payload-updater-${level}`, message) });
+  try { activePayloadPath = await modularUpdater.activePayload(); } catch (error) { activePayloadPath = path.join(__dirname, '..', 'dist'); appendApplicationLog('payload-updater-error', `Recovery state could not be initialized; using bundled editor: ${error?.stack || error}`); }
   // A forced close during verification can leave only this reserved temporary
   // pak behind. It is never a user level, so remove it before a new session.
   const discoveredPaks = await findJETRUNNERPaks();

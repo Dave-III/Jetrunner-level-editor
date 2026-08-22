@@ -1,0 +1,1 @@
+{"Type":"Blueprint","GeneratedClass":"BP_CollisionBox_C","Components":[{"Type":"BoxComponent","Name":"Collision","BoxExtent":{"X":100,"Y":50,"Z":25},"CollisionProfileName":"BlockAll"},{"Type":"StaticMeshComponent","StaticMesh":"/Game/Props/SM_Crate.SM_Crate"}]}

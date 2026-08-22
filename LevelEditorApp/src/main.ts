@@ -21,7 +21,16 @@ import { editorShortcuts, restoreDefaultEditorShortcuts, setEditorShortcut, shor
 import newObjectCatalog from './new-object-catalog.json';
 import catalogLayout from './catalog-layout.json';
 import blueprintAssemblyManifest from './blueprint-visual-assemblies.json';
+import { jetrunnerAdapter } from './games/jetrunner/adapter';
+import { applyEditorTheme } from './framework';
 import './styles.css';
+
+// The legacy JETRUNNER renderer is the production composition root. Its game
+// identity and optional feature gates now come from the same adapter contract
+// used by independent editors such as ExampleGame.
+document.documentElement.dataset.gameAdapter = jetrunnerAdapter.id;
+applyEditorTheme(jetrunnerAdapter.config.theme);
+document.title = jetrunnerAdapter.config.branding.applicationName;
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <main class="editor-shell">
@@ -224,10 +233,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <div class="home-card options-card"><h1>Keybinds</h1><div id="shortcut-options"></div><button id="reset-shortcuts" type="button">Restore Default Shortcuts</button><button id="options-back" type="button">Back to Options</button></div>
     </section>
     <section id="advanced-options-screen" class="home-screen" hidden>
-      <div class="home-card options-card advanced-options-card"><h1>Advanced</h1><div class="advanced-options-list"><label><span>Show Interaction Ranges</span><input id="show-interaction-ranges" type="checkbox" /></label><label><span>Push-to-edit</span><input id="push-to-edit" type="checkbox" /></label><label><span>Paste in place</span><input id="paste-in-place" type="checkbox" /></label><label><span>Move on rotated axes</span><input id="move-on-rotated-axes" type="checkbox" /></label><label title="Applies only to audited static-mesh props; Blueprint and gameplay objects remain at normal minimum size."><span>Allow Fractional Object Sizing</span><input id="allow-fractional-object-sizing" type="checkbox" /></label></div><button id="advanced-options-back" type="button">Back to Options</button></div>
+      <div class="home-card options-card advanced-options-card"><h1>Advanced</h1><div class="advanced-options-list"><label><span>Show Interaction Ranges</span><input id="show-interaction-ranges" type="checkbox" /></label><label><span>Push-to-edit</span><input id="push-to-edit" type="checkbox" /></label><label><span>Paste in place</span><input id="paste-in-place" type="checkbox" /></label><label><span>Move on rotated axes</span><input id="move-on-rotated-axes" type="checkbox" /></label><label title="Projects WASD movement onto the camera-up-relative plane. Camera up/down shortcuts remain world vertical."><span>Camera-relative WASD</span><input id="camera-relative-wasd" type="checkbox" /></label><label title="Applies only to audited static-mesh props; Blueprint and gameplay objects remain at normal minimum size."><span>Allow Fractional Object Sizing</span><input id="allow-fractional-object-sizing" type="checkbox" /></label><label title="Choose Epic Games before verifying if JETRUNNER was installed through Epic. On the first export, select that installation's JETRUNNER folder if requested."><span>JETRUNNER launcher</span><select id="game-launcher"><option value="steam">Steam</option><option value="epic">Epic Games</option></select></label></div><h2>Update recovery</h2><p id="update-recovery-status">Checking installed editor payload…</p><button id="update-rollback" type="button">Restore previous editor</button><button id="update-open-recovery" type="button">Open update files</button><button id="advanced-options-back" type="button">Back to Options</button></div>
     </section>
     <section id="editor-options" class="editor-options" hidden aria-modal="true" role="dialog"><div><h2>Options</h2><button id="editor-option-save" type="button">Save</button><button id="editor-option-load" type="button">Load</button><button id="editor-option-keybinds" type="button">Keybinds</button><button id="editor-option-advanced" type="button">Advanced</button><button id="editor-option-home" type="button">Home</button></div></section>
     <section id="new-level-dialog" class="editor-options" hidden aria-modal="true" role="dialog" aria-labelledby="new-level-title"><div><h2 id="new-level-title">New Level</h2><label class="new-level-label" for="new-level-name">Level name</label><input id="new-level-name" type="text" maxlength="48" value="Unnamed Level" spellcheck="false" /><p id="new-level-error" class="new-level-error" hidden></p><button id="new-level-confirm" type="button">Create Level</button><button id="new-level-cancel" type="button">Cancel</button></div></section>
+    <section id="update-notes-dialog" class="editor-options" hidden aria-modal="true" role="dialog" aria-labelledby="update-notes-title"><div class="update-notes-card"><button id="update-notes-close" class="update-notes-close" type="button" aria-label="Close update notes">×</button><h2 id="update-notes-title">New version available</h2><p id="update-notes-version"></p><div id="update-notes-body" class="update-notes-body"></div><button id="update-notes-download" type="button">Download update</button></div></section>
   </main>
 `;
 
@@ -263,12 +273,18 @@ const advancedOptionsScreen = document.querySelector<HTMLElement>('#advanced-opt
 const newLevelDialog = document.querySelector<HTMLElement>('#new-level-dialog')!;
 const newLevelNameInput = document.querySelector<HTMLInputElement>('#new-level-name')!;
 const newLevelError = document.querySelector<HTMLParagraphElement>('#new-level-error')!;
+const updateNotesDialog = document.querySelector<HTMLElement>('#update-notes-dialog')!;
+const updateNotesTitle = document.querySelector<HTMLElement>('#update-notes-title')!;
+const updateNotesVersion = document.querySelector<HTMLElement>('#update-notes-version')!;
+const updateNotesBody = document.querySelector<HTMLElement>('#update-notes-body')!;
+const updateNotesDownload = document.querySelector<HTMLButtonElement>('#update-notes-download')!;
 const recentLevels = document.querySelector<HTMLDivElement>('#recent-levels')!;
 const shortcutOptions = document.querySelector<HTMLDivElement>('#shortcut-options')!;
+verifyButton.hidden = !jetrunnerAdapter.capabilities.verification;
 
 type RecentLevel = { displayName: string; filePath: string; openedAt: string };
 const SETTINGS_KEY = 'jle-project-management-settings-v1';
-function readProjectSettings(): { shortcuts?: Partial<Record<EditorShortcutId, string>>; recent?: RecentLevel[]; showInteractionRanges?: boolean; pushToEdit?: boolean; pasteInPlace?: boolean; moveOnRotatedAxes?: boolean; allowFractionalObjectSizing?: boolean } {
+function readProjectSettings(): { shortcuts?: Partial<Record<EditorShortcutId, string>>; recent?: RecentLevel[]; showInteractionRanges?: boolean; pushToEdit?: boolean; pasteInPlace?: boolean; moveOnRotatedAxes?: boolean; cameraRelativeWASD?: boolean; allowFractionalObjectSizing?: boolean } {
   try { return JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}'); } catch { return {}; }
 }
 function writeProjectSettings(next: ReturnType<typeof readProjectSettings>) {
@@ -329,38 +345,61 @@ function hideHome() { homeScreen.hidden = true; }
 applySavedShortcuts(); updateShortcutLabels(); renderRecentLevels();
 function showOptions(fromHome: boolean) { optionsReturnHome = fromHome; closeEditorOptions(); homeScreen.hidden = true; optionsScreen.hidden = false; renderOptions(); }
 function closeKeybindOptions() { optionsScreen.hidden = true; if (optionsReturnHome) showHome(); else openEditorOptions(); }
-function showAdvancedOptions() { optionsReturnHome = false; closeEditorOptions(); homeScreen.hidden = true; advancedOptionsScreen.hidden = false; }
+async function showAdvancedOptions() { optionsReturnHome = false; closeEditorOptions(); homeScreen.hidden = true; advancedOptionsScreen.hidden = false; const [status, game] = await Promise.all([window.jetrunnerEditor?.getRecoveryStatus(), window.jetrunnerEditor?.getGameLauncher()]); const text = document.querySelector<HTMLElement>('#update-recovery-status')!; text.textContent = status ? `Active ${status.active || 'bundled'}${status.previous ? `; recovery ${status.previous}` : '; no older recovery version'}.` : 'Recovery is available in the packaged desktop app.'; document.querySelector<HTMLButtonElement>('#update-rollback')!.disabled = !status?.previous; document.querySelector<HTMLSelectElement>('#game-launcher')!.value = game?.launcher === 'epic' ? 'epic' : 'steam'; }
 function closeAdvancedOptions() { advancedOptionsScreen.hidden = true; openEditorOptions(); }
 document.querySelector<HTMLButtonElement>('#home-options')!.addEventListener('click', () => showOptions(true));
 document.querySelector<HTMLButtonElement>('#options-back')!.addEventListener('click', closeKeybindOptions);
 document.querySelector<HTMLButtonElement>('#advanced-options-back')!.addEventListener('click', closeAdvancedOptions);
+document.querySelector<HTMLButtonElement>('#update-rollback')!.addEventListener('click', async () => { if (confirm('Restore the previous editor version and restart JLE? Your levels and settings will be kept.')) await window.jetrunnerEditor?.rollbackEditor(); });
+document.querySelector<HTMLButtonElement>('#update-open-recovery')!.addEventListener('click', () => { void window.jetrunnerEditor?.openRecoveryFolder(); });
+document.querySelector<HTMLSelectElement>('#game-launcher')!.addEventListener('change', (event) => { void window.jetrunnerEditor?.setGameLauncher((event.target as HTMLSelectElement).value as 'steam' | 'epic'); });
 document.querySelector<HTMLButtonElement>('#home-quit')!.addEventListener('click', () => { window.jetrunnerEditor?.quitApp(); });
-homeUpdateButton.addEventListener('click', async () => {
+let pendingUpdate: { version?: string; notes?: string } | null = null;
+function closeUpdateNotes() { updateNotesDialog.hidden = true; }
+function openUpdateNotes() {
+  if (!pendingUpdate) return;
+  updateNotesTitle.textContent = pendingUpdate.version ? `JLE ${pendingUpdate.version}` : 'New version available';
+  updateNotesVersion.textContent = 'What’s new';
+  updateNotesBody.textContent = pendingUpdate.notes?.trim() || 'This update contains the latest confirmed fixes and improvements.';
+  updateNotesDialog.hidden = false;
+}
+async function downloadPendingUpdate() {
   if (!window.jetrunnerEditor || homeUpdateButton.disabled) return;
   homeUpdateButton.disabled = true;
   homeUpdateButton.textContent = 'Starting Download...';
+  updateNotesDownload.disabled = true;
   const result = await window.jetrunnerEditor.downloadEditorUpdate();
   if (!result.started) {
     homeUpdateButton.disabled = false;
     homeUpdateButton.hidden = true;
+    updateNotesDownload.disabled = false;
   }
-});
+  closeUpdateNotes();
+}
+homeUpdateButton.addEventListener('click', openUpdateNotes);
+updateNotesDownload.addEventListener('click', () => { void downloadPendingUpdate(); });
+document.querySelector<HTMLButtonElement>('#update-notes-close')!.addEventListener('click', closeUpdateNotes);
 window.jetrunnerEditor?.onEditorUpdateState((state) => {
   if (state.status === 'current' || state.status === 'error') {
     homeUpdateButton.hidden = true;
     homeUpdateButton.disabled = false;
+    pendingUpdate = null;
+    closeUpdateNotes();
     return;
   }
   homeUpdateButton.hidden = false;
   if (state.status === 'available') {
+    pendingUpdate = { version: state.version, notes: state.notes };
     homeUpdateButton.disabled = false;
     homeUpdateButton.textContent = state.version ? `New Version ${state.version} Available` : 'New Version Available';
   } else if (state.status === 'downloading') {
     homeUpdateButton.disabled = true;
     homeUpdateButton.textContent = `Downloading Update ${Math.round(state.percent || 0)}%`;
-  } else {
-    homeUpdateButton.disabled = true;
-    homeUpdateButton.textContent = 'Update Ready';
+  } else if (state.status === 'downloaded') {
+    homeUpdateButton.hidden = true;
+    homeUpdateButton.disabled = false;
+    pendingUpdate = null;
+    closeUpdateNotes();
   }
 });
 document.querySelector<HTMLButtonElement>('#reset-shortcuts')!.addEventListener('click', () => { restoreDefaultEditorShortcuts(); const settings = readProjectSettings(); writeProjectSettings({ ...settings, shortcuts: {} }); updateShortcutLabels(); renderOptions(); });
@@ -490,6 +529,10 @@ controls.dampingFactor = 0.075;
 controls.screenSpacePanning = true;
 controls.minDistance = 100;
 controls.maxDistance = 30000;
+// Avoid the singularities at exactly overhead/underfoot while keeping the
+// familiar near-vertical orbit range available.
+controls.minPolarAngle = THREE.MathUtils.degToRad(1);
+controls.maxPolarAngle = THREE.MathUtils.degToRad(179);
 controls.zoomSpeed = 1.15;
 controls.panSpeed = 0.8;
 controls.rotateSpeed = 0.55;
@@ -3419,6 +3462,7 @@ let placementPreview: THREE.Mesh | null = null;
 let selectedAsset: THREE.Mesh | null = null;
 let transformInteraction = false;
 let transformSnappingEnabled = false;
+let altDuplicateRequested = false;
 const lastTransformPointer = new THREE.Vector2();
 interface ScaleDragAnchor {
   axis: 'x' | 'y' | 'z';
@@ -3783,6 +3827,7 @@ let showInteractionRanges = readProjectSettings().showInteractionRanges === true
 let pushToEdit = readProjectSettings().pushToEdit === true;
 let pasteInPlace = readProjectSettings().pasteInPlace === true;
 let moveOnRotatedAxes = readProjectSettings().moveOnRotatedAxes === true;
+let cameraRelativeWASD = readProjectSettings().cameraRelativeWASD === true;
 let allowFractionalObjectSizing = readProjectSettings().allowFractionalObjectSizing === true;
 
 function attachInteractionRange(mesh: THREE.Mesh, definition: AssetDefinition, preview: boolean) {
@@ -5200,6 +5245,41 @@ function pasteSelection() {
   scheduleAutosave();
 }
 
+function duplicateSelectionForAltDrag() {
+  const originals = selectedMeshes();
+  if (originals.length === 0) return false;
+  // Player Start is intentionally unique in a playable JETRUNNER level.
+  const snapshots = originals
+    .filter((mesh) => mesh.userData.assetId !== 'player_start')
+    .map((mesh) => ({
+      assetId: mesh.userData.assetId as AssetId,
+      id: '',
+      entityData: { ...(mesh.userData.entityData || {}) },
+      wallSnapNormal: mesh.userData.wallSnapNormal ? { ...mesh.userData.wallSnapNormal } : undefined,
+      transform: serializeTransform(mesh),
+      // Selection pivots can temporarily parent meshes. Preserve the exact
+      // world pose for Alt+Drag instead of passing through rounded export data.
+      worldPosition: mesh.getWorldPosition(new THREE.Vector3()),
+      worldQuaternion: mesh.getWorldQuaternion(new THREE.Quaternion()),
+      worldScale: mesh.getWorldScale(new THREE.Vector3()),
+    }));
+  if (snapshots.length === 0) return false;
+  const duplicates = snapshots.map((snapshot) => {
+    const mesh = createMeshFromSnapshot(snapshot, true);
+    placedAssets.push(mesh);
+    scene.add(mesh);
+    mesh.position.copy(snapshot.worldPosition);
+    mesh.quaternion.copy(snapshot.worldQuaternion);
+    mesh.scale.copy(snapshot.worldScale);
+    mesh.updateMatrixWorld(true);
+    return mesh;
+  });
+  updateAllWoodenPlatformSupports();
+  updateUniqueAssetAvailability();
+  selectAssetGroup(duplicates);
+  return true;
+}
+
 function buildLevelData(options: { verification?: boolean } = {}) {
   const playerStarts = placedAssets.filter((mesh) => mesh.userData.assetId === 'player_start');
   const goals = placedAssets.filter((mesh) => mesh.userData.assetId === 'time_trial_goal');
@@ -5383,6 +5463,13 @@ moveOnRotatedAxesCheckbox.addEventListener('change', () => {
   const settings = readProjectSettings();
   writeProjectSettings({ ...settings, moveOnRotatedAxes });
   updateTransformSpace();
+});
+const cameraRelativeWASDCheckbox = document.querySelector<HTMLInputElement>('#camera-relative-wasd')!;
+cameraRelativeWASDCheckbox.checked = cameraRelativeWASD;
+cameraRelativeWASDCheckbox.addEventListener('change', () => {
+  cameraRelativeWASD = cameraRelativeWASDCheckbox.checked;
+  const settings = readProjectSettings();
+  writeProjectSettings({ ...settings, cameraRelativeWASD });
 });
 const allowFractionalObjectSizingCheckbox = document.querySelector<HTMLInputElement>('#allow-fractional-object-sizing')!;
 allowFractionalObjectSizingCheckbox.checked = allowFractionalObjectSizing;
@@ -5792,10 +5879,15 @@ renderer.domElement.addEventListener('pointerdown', (event) => {
     ((event.clientX - bounds.left) / bounds.width) * 2 - 1,
     -((event.clientY - bounds.top) / bounds.height) * 2 + 1,
   );
+  altDuplicateRequested = event.button === 0 && event.altKey;
 }, { capture: true });
 
 transformControls.addEventListener('mouseDown', () => {
   recordHistory();
+  // Match Unreal's Alt+Drag workflow: duplicate the current selection at the
+  // moment a transform begins, then keep dragging the new copy.
+  if (altDuplicateRequested) duplicateSelectionForAltDrag();
+  altDuplicateRequested = false;
   transformInteraction = true;
   controls.enabled = false;
   scaleDragAnchor = selectedAsset && multiSelectedAssets.length === 0
@@ -6643,6 +6735,7 @@ const forward = new THREE.Vector3();
 const right = new THREE.Vector3();
 const movement = new THREE.Vector3();
 const worldUp = new THREE.Vector3(0, 0, 1);
+const cameraScreenUp = new THREE.Vector3();
 const laserPreviewRaycaster = new THREE.Raycaster();
 let previousTime = performance.now();
 
@@ -6688,10 +6781,16 @@ function moveCamera(deltaSeconds: number) {
   if (forward.lengthSq() < 0.001) forward.set(0, 1, 0);
   forward.normalize();
   right.crossVectors(forward, worldUp).normalize();
-  movement.copy(forward).multiplyScalar(forwardAmount)
-    .addScaledVector(right, rightAmount)
-    .addScaledVector(worldUp, verticalAmount)
-    .normalize();
+  movement.copy(forward).multiplyScalar(forwardAmount).addScaledVector(right, rightAmount);
+  if (cameraRelativeWASD && movement.lengthSq() > 0) {
+    const horizontalMagnitude = movement.length();
+    // Start with the existing horizontal intent, project it onto the plane
+    // perpendicular to the camera's screen-up vector, then restore its speed.
+    cameraScreenUp.set(0, 1, 0).applyQuaternion(camera.quaternion).normalize();
+    movement.projectOnPlane(cameraScreenUp);
+    if (movement.lengthSq() > 0.000001) movement.normalize().multiplyScalar(horizontalMagnitude);
+  }
+  movement.addScaledVector(worldUp, verticalAmount).normalize();
 
   const fast = pressed.has('ShiftLeft') || pressed.has('ShiftRight');
   const speed = fast ? 2400 : 800;
@@ -6900,3 +6999,4 @@ function animate(time: number) {
 }
 
 requestAnimationFrame(animate);
+window.jetrunnerEditor?.payloadReady();

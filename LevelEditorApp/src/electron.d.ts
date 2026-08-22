@@ -49,10 +49,19 @@ declare global {
       beginNewProject: () => Promise<{ ready: boolean; error?: string }>;
       quitApp: () => Promise<{ quitting: boolean }>;
       downloadEditorUpdate: () => Promise<{ started: boolean }>;
+      payloadReady: () => void;
+      getRecoveryStatus: () => Promise<{ active: string | null; previous: string | null; knownGood: string | null; pending: string | null; root: string }>;
+      rollbackEditor: () => Promise<{ rolledBack: boolean }>;
+      openRecoveryFolder: () => Promise<string>;
+      getGameLauncher: () => Promise<{ launcher: 'steam' | 'epic' }>;
+      setGameLauncher: (launcher: 'steam' | 'epic') => Promise<{ launcher: 'steam' | 'epic' }>;
       onEditorUpdateState: (callback: (state: {
         status: 'available' | 'downloading' | 'downloaded' | 'current' | 'error';
         version?: string;
         percent?: number;
+        updateType?: 'payload' | 'full';
+        detail?: string;
+        notes?: string;
       }) => void) => () => void;
       verificationSupportedAssetIds: string[];
       logEditor: (source: string, message: unknown) => void;

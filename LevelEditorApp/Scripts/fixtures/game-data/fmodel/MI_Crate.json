@@ -1,0 +1,1 @@
+{"Type":"MaterialInstanceConstant","Name":"MI_Crate","Parent":"/Game/Materials/M_Master.M_Master","TextureParameterValues":[{"ParameterName":"BaseColor","ParameterValue":"/Game/Textures/T_Crate.T_Crate"}],"ScalarParameterValues":[{"ParameterName":"Roughness","ParameterValue":0.6}]}

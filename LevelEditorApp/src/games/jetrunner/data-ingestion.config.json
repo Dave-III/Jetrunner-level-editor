@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "game": "jetrunner",
+  "interpretation": {
+    "engine": "Unreal Engine",
+    "runtimeClassSuffix": "_C",
+    "verificationRequiresCuratedApproval": true,
+    "dummyFamilies": ["PlacedObject", "surface", "gameplay", "mandatory-actor"]
+  },
+  "overridePolicy": "Curated JLE catalogues remain authoritative until generated evidence is proven equivalent."
+}

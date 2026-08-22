@@ -1,0 +1,10 @@
+import { createJsonAdapter, identityTransform } from '../../framework';
+
+const asset = (id: string, label: string, shape: 'box' | 'ramp' | 'cylinder') => ({ id, label, category: 'Primitives', shape, defaultTransform: identityTransform(), properties: [{ id: 'solid', label: 'Solid', kind: 'boolean' as const, defaultValue: true }] });
+export const exampleGameAdapter = createJsonAdapter({
+  id: 'example-game', displayName: 'ExampleGame', projectSchema: 'example-level-v1',
+  capabilities: { preview: true, verification: false, runtimePackaging: false, environments: false },
+  config: { branding:{applicationName:'Aurora Workshop',editorTitle:'ExampleGame Builder'},theme:{name:'aurora-example',fonts:{primary:'Inter, "Segoe UI", sans-serif',monospace:'"Cascadia Mono", monospace',weights:{regular:400,strong:700},baseSize:'15px'},colours:{background:'#07131b',panel:'#102630',panelAlt:'#173744',text:'#eafffb',muted:'#8fb8b3',accent:'#35f2c2',accentAlt:'#ffad42',selection:'#ffdf6e',border:'#287d7a',warning:'#ffad42',error:'#ff637d',success:'#35f2c2',grid:'#32b8aa'},gradients:{primary:'linear-gradient(110deg,#123e4a,#17223e 60%,#3b2045)',panel:'linear-gradient(180deg,#102f37,#101c2a)',home:'linear-gradient(135deg,#09212b,#241a38)'},surfaces:{button:'#164850',buttonHover:'#216a69',toolbar:'#112c3d',inspector:'#102630ee',overlay:'#07131bee'},controls:{radius:'8px',borderWidth:'1px',selectionGlow:'0 0 18px #ffdf6e88'},viewport:{background:'#07131b',gridOpacity:.3,gizmoSize:.9}},categories:['Primitives'],snapping:{enabled:true,translation:1,rotationDegrees:15,scale:1},grid:{size:1,subdivisions:10},units:{name:'metres',symbol:'m',unitsPerMetre:1},coordinates:{upAxis:'y',handedness:'right',forwardAxis:'-z'},preview:{cameraPosition:{x:8,y:8,z:8},background:'#07131b',physics:false} },
+  assets: [asset('cube', 'Cube', 'box'), asset('platform', 'Platform', 'box'), asset('ramp', 'Ramp', 'ramp'), asset('cylinder', 'Cylinder', 'cylinder')],
+  exportRuntime: async (project) => ({ format: 'example-runtime-v1', entities: project.entities }),
+});

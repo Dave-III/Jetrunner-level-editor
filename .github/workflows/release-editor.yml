@@ -44,6 +44,9 @@ jobs:
           node Scripts/Audit-AssetSupport.mjs
           node Scripts/Validate-AssetSupportSerialization.mjs
           node Scripts/Validate-PreviewCollision.mjs
+          npm --prefix LevelEditorApp run test:updater
+          npm --prefix LevelEditorApp run test:framework
+          npm --prefix LevelEditorApp run test:game-data
       - name: Build NSIS installer and updater metadata
         run: npm run package:win
         env:
@@ -63,6 +66,10 @@ jobs:
           if ((Get-Content -Raw release/latest.yml) -notmatch "(?m)^version: $([regex]::Escape($version))$") {
             throw 'latest.yml does not match package.json.'
           }
+      - name: Build and validate modular payload metadata
+        run: |
+          node scripts/build-payload-release.mjs
+          node scripts/validate-payload-release.cjs
       - name: Publish complete GitHub Release
         shell: pwsh
         run: |
@@ -80,6 +87,9 @@ jobs:
             "release/JETRUNNER-Level-Editor-Setup-$version.exe" `
             "release/JETRUNNER-Level-Editor-Setup-$version.exe.blockmap" `
             'release/latest.yml' `
+            'release/payload/payload-release.json' `
+            'release/payload/payload-manifest.json' `
+            'release/payload/blobs/*' `
             --clobber
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

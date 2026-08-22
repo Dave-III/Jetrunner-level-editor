@@ -1,0 +1,1 @@
+{"Type":"Blueprint","GeneratedClass":"BP_Constructed_C","UberGraphFunction":"ExecuteUbergraph_BP_Constructed","SimpleConstructionScript":{"AllNodes":[]},"Components":[{"Type":"StaticMeshComponent","StaticMesh":"/Game/Props/SM_Crate.SM_Crate"}]}

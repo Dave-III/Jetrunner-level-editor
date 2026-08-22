@@ -1,0 +1,1 @@
+{"Type":"Blueprint","GeneratedClass":"BP_MultiMesh_C","Components":[{"Type":"StaticMeshComponent","Name":"Base","StaticMesh":"/Game/Props/SM_Crate.SM_Crate","RelativeLocation":{"X":0,"Y":0,"Z":0}},{"Type":"StaticMeshComponent","Name":"Top","StaticMesh":"/Game/Props/SM_Top.SM_Top","RelativeLocation":{"X":0,"Y":0,"Z":100}}]}

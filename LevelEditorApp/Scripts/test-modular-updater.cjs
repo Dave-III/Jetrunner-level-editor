@@ -1,0 +1,21 @@
+const assert = require('node:assert/strict'); const fs = require('node:fs/promises'); const os = require('node:os'); const path = require('node:path'); const crypto = require('node:crypto');
+const { ModularUpdater, validateManifest } = require('../electron/modular-updater.cjs');
+const hash = (data) => crypto.createHash('sha256').update(data).digest('hex');
+const entry = (name, data) => ({ path: name, size: Buffer.byteLength(data), sha256: hash(data), url: `https://github.com/${name}` });
+(async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'jle-updater-')); const bundled = path.join(root, 'bundled'); await fs.mkdir(bundled); await fs.writeFile(path.join(bundled, 'index.html'), 'old'); await fs.writeFile(path.join(bundled, 'same.js'), 'same');
+  const downloads = new Map([['https://github.com/index.html', 'new'], ['https://github.com/add.js', 'add']]);
+  const updater = new ModularUpdater({ root: path.join(root, 'updates'), bundledPayload: bundled, launcherVersion: '1.0.7', fetchImpl: async (url) => ({ ok: true, arrayBuffer: async () => Buffer.from(downloads.get(url)) }) });
+  await updater.initialize(); assert.equal((await updater.readState()).active, '1.0.7');
+  const manifest = { schemaVersion: 1, version: '1.0.8', files: [entry('index.html', 'new'), entry('same.js', 'same'), entry('add.js', 'add')], removed: [] };
+  const plan = await updater.plan(manifest); assert.equal(plan.changed.length, 2, 'only changed files should download');
+  await updater.install(manifest, { healthCheck: async () => true }); assert.equal((await updater.readState()).active, '1.0.8'); assert.equal(await fs.readFile(path.join(updater.versionRoot('1.0.8'), 'same.js'), 'utf8'), 'same');
+  const noOp = await updater.plan(manifest); assert.equal(noOp.kind, 'none');
+  await updater.rollback(); assert.equal((await updater.readState()).active, '1.0.7');
+  const bad = { ...manifest, version: '1.0.9', files: [{ ...entry('index.html', 'new'), sha256: '0'.repeat(64) }] }; await assert.rejects(() => updater.install(bad), /Integrity check/); assert.equal((await updater.readState()).active, '1.0.7');
+  const unhealthy = { ...manifest, version: '1.0.9' }; await assert.rejects(() => updater.install(unhealthy, { healthCheck: async () => false }), /health check/); assert.equal((await updater.readState()).active, '1.0.7');
+  await fs.writeFile(updater.statePath, JSON.stringify({ ...(await updater.readState()), pending: 'interrupted' })); await fs.mkdir(path.join(updater.staging, 'interrupted'), { recursive: true }); await updater.initialize(); assert.equal((await updater.readState()).pending, null);
+  assert.throws(() => validateManifest({ schemaVersion: 1, version: '2', files: [{ ...entry('../escape', 'x'), path: '../escape' }] }), /Unsafe/);
+  const full = await updater.plan({ schemaVersion: 1, version: '2.0.0', minimumLauncherVersion: '9.0.0', files: [] }); assert.equal(full.kind, 'full');
+  await fs.rm(root, { recursive: true, force: true }); console.log('Modular updater tests passed: no-op, delta, activation, rollback, bad hash, interruption, traversal, full fallback.');
+})().catch((error) => { console.error(error); process.exitCode = 1; });

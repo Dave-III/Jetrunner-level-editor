@@ -1,0 +1,1 @@
+{"Type":"StaticMesh","Name":"SM_Crate","PackagePath":"/Game/Props/SM_Crate","Bounds":{"BoxExtent":{"X":50,"Y":50,"Z":50}},"StaticMaterials":[{"MaterialInterface":"/Game/Materials/MI_Crate"}],"BodySetup":{"CollisionBoxes":[{"X":100,"Y":100,"Z":100}]}}

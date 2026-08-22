@@ -1,0 +1,1 @@
+{"Type":"BlueprintGeneratedClass","Name":"BP_OneMesh_C","GeneratedClass":"BP_OneMesh_C","ParentClass":"/Game/Missing/BP_MissingParent.BP_MissingParent_C","Components":[{"Type":"StaticMeshComponent","Name":"Body","StaticMesh":"/Game/Props/SM_Crate.SM_Crate","RelativeTransform":{"Location":{"X":0,"Y":0,"Z":50},"Scale3D":{"X":1,"Y":1,"Z":1}}}]}
