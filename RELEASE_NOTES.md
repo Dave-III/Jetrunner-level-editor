@@ -1,4 +1,4 @@
-# 1.1.0 Patch Info
+# 1.1.1 Patch Info
 
 ## Level authoring
 
@@ -30,6 +30,8 @@
 
 - Added in-app update checking, update recovery options, and update-available prompts on the home screen.
 - Patch notes now appear automatically once after a successful update.
+- Fixed the update prompt repeating after a successful restart.
+- Added the top update notice, dismissible bottom-right Update and What’s New controls, and formatted patch notes.
 - Added safe rollback/recovery handling for interrupted payload updates.
 - Improved release publishing to resume uploads, upload in paced batches, and retry temporary GitHub rate-limit errors.
 
